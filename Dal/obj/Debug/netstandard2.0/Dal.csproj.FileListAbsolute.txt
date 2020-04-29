@@ -1,0 +1,12 @@
+c:\Users\Martinez\Documents\Web\Proyecto Web\Dal\bin\Debug\netstandard2.0\Dal.deps.json
+c:\Users\Martinez\Documents\Web\Proyecto Web\Dal\bin\Debug\netstandard2.0\Dal.dll
+c:\Users\Martinez\Documents\Web\Proyecto Web\Dal\bin\Debug\netstandard2.0\Dal.pdb
+c:\Users\Martinez\Documents\Web\Proyecto Web\Dal\bin\Debug\netstandard2.0\Entity.dll
+c:\Users\Martinez\Documents\Web\Proyecto Web\Dal\bin\Debug\netstandard2.0\Entity.pdb
+c:\Users\Martinez\Documents\Web\Proyecto Web\Dal\obj\Debug\netstandard2.0\Dal.csprojAssemblyReference.cache
+c:\Users\Martinez\Documents\Web\Proyecto Web\Dal\obj\Debug\netstandard2.0\Dal.csproj.CoreCompileInputs.cache
+c:\Users\Martinez\Documents\Web\Proyecto Web\Dal\obj\Debug\netstandard2.0\Dal.AssemblyInfoInputs.cache
+c:\Users\Martinez\Documents\Web\Proyecto Web\Dal\obj\Debug\netstandard2.0\Dal.AssemblyInfo.cs
+c:\Users\Martinez\Documents\Web\Proyecto Web\Dal\obj\Debug\netstandard2.0\Dal.csproj.CopyComplete
+c:\Users\Martinez\Documents\Web\Proyecto Web\Dal\obj\Debug\netstandard2.0\Dal.dll
+c:\Users\Martinez\Documents\Web\Proyecto Web\Dal\obj\Debug\netstandard2.0\Dal.pdb

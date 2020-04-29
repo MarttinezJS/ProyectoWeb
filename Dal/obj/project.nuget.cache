@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "5LZYgCxs75e7xvstFFPU9+d6dAPYT4/wuwifsBK6a4D+OLPWDEaAfSC3dP1R1FLzP5fyK8E+sADlcq9gqhcASw==",
+  "success": true,
+  "projectFilePath": "c:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Dal\\Dal.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Martinez\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Martinez\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
