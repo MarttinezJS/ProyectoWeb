@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
+using System;
 
 namespace GUI
 {
@@ -21,6 +23,28 @@ namespace GUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            //Agregar OpenApi Swagger
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Parcial",
+                    Description = "Primer parcial de programacion web",
+                    TermsOfService = new Uri("https://cla.dotnetfoundation.org/"),
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Unicesar",
+                        Email = string.Empty,
+                        Url = new Uri("https://github.com/MarttinezJS/PrimerParcial.git"),
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "Licencia del viejo marcelo",
+                        Url = new Uri("http://quebolu.com/y2b"),
+                    }
+                });
+            });
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -57,7 +81,13 @@ namespace GUI
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
             });
-
+            //start swagger
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Primer Parcial");
+            });
+            //end swagger
             app.UseSpa(spa =>
             {
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,

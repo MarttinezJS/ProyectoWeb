@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\Entity.csproj": {}
+    "C:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\Entity.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\Entity.csproj": {
+    "C:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\Entity.csproj",
+        "projectUniqueName": "C:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "c:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\Entity.csproj",
+        "projectPath": "C:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\Entity.csproj",
         "packagesPath": "C:\\Users\\Martinez\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\obj\\",
+        "outputPath": "C:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Martinez\\AppData\\Roaming\\NuGet\\NuGet.Config"
