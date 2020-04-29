@@ -28,15 +28,15 @@ namespace GUI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Version = "v1",
-                    Title = "Parcial",
-                    Description = "Primer parcial de programacion web",
-                    TermsOfService = new Uri("https://cla.dotnetfoundation.org/"),
+                    Version = "pre-alpha 03a6-vanilla-1",
+                    Title = "Carniceria Freddy",
+                    Description = "Proyecto de programacion web e ingenieria de software",
+                    TermsOfService = new Uri("https://www.cuantocabron.com/meme_otros/derechos-de-imagen"),
                     Contact = new OpenApiContact
                     {
-                        Name = "Unicesar",
-                        Email = string.Empty,
-                        Url = new Uri("https://github.com/MarttinezJS/PrimerParcial.git"),
+                        Name = "Jhonatan Stevens Martinez Muñoz",
+                        Email = "jstevensmartinez@unicesar.edu.co",
+                        Url = new Uri("https://github.com/MarttinezJS/ProyectoWeb.git"),
                     },
                     License = new OpenApiLicense
                     {
@@ -85,7 +85,7 @@ namespace GUI
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Primer Parcial");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Carniceria Freddy");
             });
             //end swagger
             app.UseSpa(spa =>
