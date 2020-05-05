@@ -7,12 +7,16 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { MenuComponent } from './components/shared/menu/menu.component';
+import { LoginComponent } from './components/usuario/login/login.component';
+import { SigninComponent } from './components/usuario/signin/signin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
     MenuComponent,
+    LoginComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
