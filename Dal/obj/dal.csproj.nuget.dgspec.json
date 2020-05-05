@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Dal\\Dal.csproj": {}
+    "C:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Dal\\Dal.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Dal\\Dal.csproj": {
+    "C:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Dal\\Dal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Dal\\Dal.csproj",
+        "projectUniqueName": "C:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Dal\\Dal.csproj",
         "projectName": "Dal",
-        "projectPath": "c:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Dal\\Dal.csproj",
+        "projectPath": "C:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Dal\\Dal.csproj",
         "packagesPath": "C:\\Users\\Martinez\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Dal\\obj\\",
+        "outputPath": "C:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Dal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Martinez\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -25,8 +25,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "c:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\Entity.csproj": {
-                "projectPath": "c:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\Entity.csproj"
+              "C:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\Entity.csproj": {
+                "projectPath": "C:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\Entity.csproj"
               }
             }
           }
@@ -45,6 +45,14 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "System.Collections": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.1, )"
             }
           },
           "imports": [
@@ -61,14 +69,14 @@
         }
       }
     },
-    "c:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\Entity.csproj": {
+    "C:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\Entity.csproj",
+        "projectUniqueName": "C:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "c:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\Entity.csproj",
+        "projectPath": "C:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\Entity.csproj",
         "packagesPath": "C:\\Users\\Martinez\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\obj\\",
+        "outputPath": "C:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Martinez\\AppData\\Roaming\\NuGet\\NuGet.Config"

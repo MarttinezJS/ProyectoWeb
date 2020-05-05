@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
+using System;
 
 namespace GUI
 {
@@ -21,6 +23,28 @@ namespace GUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            //Agregar OpenApi Swagger
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "pre-alpha 03a6-vanilla-1",
+                    Title = "Carniceria Freddy",
+                    Description = "Proyecto de programacion web e ingenieria de software",
+                    TermsOfService = new Uri("https://www.cuantocabron.com/meme_otros/derechos-de-imagen"),
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Jhonatan Stevens Martinez Muñoz",
+                        Email = "jstevensmartinez@unicesar.edu.co",
+                        Url = new Uri("https://github.com/MarttinezJS/ProyectoWeb.git"),
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "Licencia del viejo marcelo",
+                        Url = new Uri("http://quebolu.com/y2b"),
+                    }
+                });
+            });
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -57,7 +81,13 @@ namespace GUI
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
             });
-
+            //start swagger
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Carniceria Freddy");
+            });
+            //end swagger
             app.UseSpa(spa =>
             {
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,
