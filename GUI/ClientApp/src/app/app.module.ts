@@ -9,6 +9,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { MenuComponent } from './components/shared/menu/menu.component';
 import { LoginComponent } from './components/usuario/login/login.component';
 import { SigninComponent } from './components/usuario/signin/signin.component';
+import { ROUTES } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -22,10 +23,7 @@ import { SigninComponent } from './components/usuario/signin/signin.component';
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: InicioComponent , pathMatch: 'full' },
-      { path: 'inicio', component: InicioComponent },
-    ])
+    RouterModule.forRoot(ROUTES, { useHash: true })
   ],
   providers: [],
   bootstrap: [AppComponent]
