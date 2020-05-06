@@ -1,20 +1,20 @@
 
 body{
-    background: url(../../../../assets/img/login.jpg);
+    background: url(../../../../assets/img/portada.jpg);
     background-size: cover;
 }
 
 .main-section{
     margin: 0 auto;
-    margin-top: 25%;
-    padding: 0;
+   margin-top: 25%;
+    padding: 0; 
 }
 
 .modal-content{
     background-color: #3b4652;
     opacity: .85;
-    padding: 0 20px;
-    box-shadow: 0px 0px 3px #848484;
+    padding: 0 20px; 
+    box-shadow: #848484;
 }
 
 .user-img{
@@ -23,8 +23,8 @@ body{
 }
 
 .user-img img{
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 130px;
     box-shadow: 0px 0px 3px #848484;
     border-radius: 50%;
 }
@@ -35,7 +35,7 @@ body{
     border: 0;
     padding-left: 54px;
     border-radius: 5px;
-}
+} 
 
 .form-group::before{
     font-family: "font Awesome\ 5 free";
@@ -53,14 +53,11 @@ body{
     content: "\f023";
 }
 
-button{
-    width: 60%;
-    margin: 5px;
-}
-
 .forgot a{
     color: white;
 }
+
+
 
 
 
