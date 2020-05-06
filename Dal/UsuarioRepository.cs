@@ -2,7 +2,8 @@
 
 namespace dal
 {
-    public class Class1
+    public class UsuarioRepository
+    
     {
     }
 }
