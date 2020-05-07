@@ -7,5 +7,5 @@ export const ROUTES: Routes = [
     { path: 'inicio', component: InicioComponent },
     { path: 'login', component: LoginComponent },
     { path: 'signin', component: SigninComponent },
-    { path: '**', pathMatch: 'full', component: InicioComponent }
+    { path: '', pathMatch: 'full', component: InicioComponent }
 ];

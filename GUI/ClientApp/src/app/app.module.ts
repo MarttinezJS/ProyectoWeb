@@ -24,7 +24,7 @@ import { ROUTES } from './app.routes';
     HttpClientModule,
     FormsModule,
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
-    RouterModule.forRoot(ROUTES, { useHash: true })
+    RouterModule.forRoot(ROUTES, { useHash: false })
   ],
   providers: [],
   bootstrap: [AppComponent]
