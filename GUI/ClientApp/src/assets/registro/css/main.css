@@ -151,7 +151,7 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+
   
   background-position: center;
   background-size: cover;
@@ -235,6 +235,7 @@ iframe {
   height: 62px;
   padding: 0 20px 0 38px;
 }
+
 /*------------------------------------------------------------------
 [ Focus Input ]*/
 
