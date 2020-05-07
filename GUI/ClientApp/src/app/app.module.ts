@@ -10,6 +10,8 @@ import { MenuComponent } from './components/shared/menu/menu.component';
 import { LoginComponent } from './components/usuario/login/login.component';
 import { SigninComponent } from './components/usuario/signin/signin.component';
 import { ROUTES } from './app.routes';
+import { ProductoComponent } from './components/produtos/producto/producto.component';
+import { RegistrarProductoComponent } from './components/produtos/registrar-producto/registrar-producto.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ROUTES } from './app.routes';
     InicioComponent,
     MenuComponent,
     LoginComponent,
-    SigninComponent
+    SigninComponent,
+    ProductoComponent,
+    RegistrarProductoComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
