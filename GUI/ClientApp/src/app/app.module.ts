@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -24,9 +24,10 @@ import { RegistrarProductoComponent } from './components/produtos/registrar-prod
     RegistrarProductoComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     RouterModule.forRoot(ROUTES, { useHash: true })
   ],
   providers: [],
