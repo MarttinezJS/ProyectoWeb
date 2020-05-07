@@ -4,12 +4,12 @@ using Entity;
 namespace GUI.Models
 {
     public class UsuarioInputModel{
-        public int id { get; set; }
+        public string id { get; set; }
         public string nombre { get; set; }
         public string correo { get; set; }
         public string pass { get; set; }
         public string direccion { get; set; }
-        public int telefono { get; set; }
+        public string telefono { get; set; }
     }
     public class UsuarioViewModel: UsuarioInputModel
     {

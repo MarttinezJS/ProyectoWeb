@@ -10,7 +10,7 @@ import { Usuario } from '../components/models/Usuario';
    providedIn: 'root'
 })
 
-export class ClienteService {
+export class UsuarioService {
 
    baseUrl: string;
 

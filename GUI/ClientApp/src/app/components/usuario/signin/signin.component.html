@@ -1,28 +1,29 @@
 <div class="limiter animated fadeInRight">
     <div class="container-login100">
         <div class="wrap-login100 p-t-50 p-b-90">
-            <form action="" class="login100-form validate-form flex-sb flex-w">
+            <form action="" class="login100-form validate-form flex-sb flex-w" [formGroup]="formGroup">
                 <span class="login100-form-title p-b-51">
                       Crear nueva cuenta
                   </span>
                 <div class="wrap-input100 m-b-16">
-                    <input class="input100" type="text" name="nombre" placeholder="Nombre y apellidos">
+                    <input formControlName="nombre" class="input100" type="text" name="nombre" placeholder="Nombre y apellidos">
+                    <span class="focus-imput100"></span>
+
+                </div>
+                <div class="wrap-input100 m-b-16">
+                    <input formControlName="correo" class="input100" type="email" name="email" placeholder="Correo electronico">
                     <span class="focus-imput100"></span>
                 </div>
                 <div class="wrap-input100 m-b-16">
-                    <input class="input100" type="email" name="email" placeholder="Correo electronico">
+                    <input formControlName="pass" class="input100" type="password" name="pass" placeholder="Digite Contraseña">
                     <span class="focus-imput100"></span>
                 </div>
                 <div class="wrap-input100 m-b-16">
-                    <input class="input100" type="password" name="pass" placeholder="Digite Contraseña">
+                    <input formControlName="telefono" class="input100" type="text" name="telefono" placeholder="Numero de telefono">
                     <span class="focus-imput100"></span>
                 </div>
                 <div class="wrap-input100 m-b-16">
-                    <input class="input100" type="text" name="telefono" placeholder="Numero de telefono">
-                    <span class="focus-imput100"></span>
-                </div>
-                <div class="wrap-input100 m-b-16">
-                    <input class="input100" type="text" name="direccion" placeholder="Direccion de su casa">
+                    <input formControlName="direccion" class="input100" type="text" name="direccion" placeholder="Direccion de su casa">
                     <span class="focus-imput100"></span>
                 </div>
                 <div>
@@ -31,7 +32,7 @@
                     </a>
                 </div>
                 <div class="container-login100-form-btn m-t-16">
-                    <button class="login100-form-btn" type="submit">
+                    <button [disabled]="formGroup.invalid" (click)="onSubmit()" class="login100-form-btn" type="submit">
                         Crear cuenta
                     </button>
                 </div>
@@ -39,3 +40,15 @@
         </div>
     </div>
 </div>
+
+<hr>
+
+<pre>
+    status: {{formGroup.status}}
+    id: {{usuario.id}}
+</pre>
+
+<pre>
+    {{formGroup.value | json}}
+
+</pre>

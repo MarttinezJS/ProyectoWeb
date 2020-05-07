@@ -16,6 +16,7 @@ namespace Datos
         _conexion = cadena._conexion;
     }
     public void Guardar(Usuario usuario) {
+        System.Console.WriteLine(usuario.Id);
         using (var comando = _conexion.CreateCommand())
         {
             comando.CommandText = @"insert into usuarios (id, nombre, correo, direccion, pass, telefono)
@@ -52,12 +53,12 @@ namespace Datos
     public Usuario mapearCliente(SqlDataReader datos) {
         if (!datos.HasRows) return null;
         Usuario usuario = new Usuario();
-        usuario.Id = (int)datos["id"];
+        usuario.Id = (string)datos["id"];
         usuario.Nombre = (string)datos["nombre"];
         usuario.Correo = (string)datos["correo"];
         usuario.Direccion = (string)datos["direccion"];
         usuario.Pass = (string)datos["pass"];
-        usuario.Telefono = (int)datos["telefono"];
+        usuario.Telefono = (string)datos["telefono"];
 
         return usuario;
     }
