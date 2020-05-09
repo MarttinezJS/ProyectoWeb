@@ -1,0 +1,118 @@
+body{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+.contenedor{
+    width: 100%;
+    margin: auto;
+}
+img{
+    width: 100%;
+}
+.header_contenido{
+  position: relative;
+  z-index: 100;
+}
+.banner{
+    height: 60vh;
+    position: relative;
+    background: url('../../../assets/fondos/28.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.banner_descripcion{
+    font-family: cambria;
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    transform: translateX(-50%) translateY(-70%);
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    font-size: 15px;
+    margin-top: 25px;
+}
+
+.galeria h1{
+    font-size: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: arial;
+}
+
+.galeria{
+    margin: 20px;
+}
+
+.banner2{
+    padding: 0 0 0 40px; 
+    height: 50vh;
+    position: relative;
+    /* color: #fff;
+    background: url('../assets/fondos/ff.jpg'); */ 
+    background-size: cover;
+    background-position: right;
+    background-attachment: fixed;
+}
+
+.banner h1{
+    font-size: 28px;
+    
+}
+.banner2_descripcion{
+    font-family: cambria;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+}
+
+.footer{
+    background: #292929;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+@media(min-width:520px){
+    .banner h1{
+        font-size: 30px;
+    }
+    .grid{
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .banner2 h1{
+        font-size: 50px;
+    }
+    .banner2 p{
+        font-size: 25px;
+    }
+}
+
+@media(min-width:1024px){
+    .contenedor{
+        width: 1000px;
+    }
+    .banner h1{
+        font-size: 45px;
+    }
+    .grid{
+        grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+        grid-auto-flow: dense;
+    }
+    .big{
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    .banner2 p{
+        font-size: 30px;
+    }
+}
