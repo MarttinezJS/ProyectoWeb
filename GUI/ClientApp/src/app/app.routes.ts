@@ -11,5 +11,5 @@ export const ROUTES: Routes = [
     { path: 'signin', component: SigninComponent },
     { path: 'producto', component: ProductoComponent},
     { path: 'registroProducto', component: RegistrarProductoComponent},
-    { path: '**', pathMatch: 'full', component: InicioComponent }
+    { path: '', pathMatch: 'full', component: InicioComponent }
 ];

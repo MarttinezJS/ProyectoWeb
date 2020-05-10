@@ -27,7 +27,7 @@ export class SigninComponent {
     Swal.fire({
       allowOutsideClick: false,
       icon: 'info',
-      text:'Espere por favor...'
+      text: 'Espere por favor...'
     });
     Swal.showLoading();
 
@@ -41,14 +41,14 @@ export class SigninComponent {
         alert(p.nombre + ' ha sido creado');
 
         Swal.fire({
-          icon:'error',
+          icon: 'error',
           title: 'Error al registrar',
           text: 'Este correo ya esta registrado creado'
         });
-      }else{
+      } else {
         Swal.fire({
           title: 'Registrado correctamente',
-          icon:'success' 
+          icon: 'success'
         });
       }
     });
@@ -56,17 +56,18 @@ export class SigninComponent {
   get nombreNoValido(){
     return this.formGroup.get('nombre').invalid && this.formGroup.get('nombre').touched
   }
-  get passNoValido(){
-    return this.formGroup.get('pass').invalid && this.formGroup.get('pass').touched
+  get passNoValido() {
+    return this.formGroup.get('pass').invalid && this.formGroup.get('pass').touched;
   }
+
   get correoNoValido(){
     return this.formGroup.get('correo').invalid && this.formGroup.get('correo').touched
   }
-  get telefonoNoValido(){
-    return this.formGroup.get('telefono').invalid && this.formGroup.get('telefono').touched
+  get telefonoNoValido() {
+    return this.formGroup.get('telefono').invalid && this.formGroup.get('telefono').touched;
   }
-  get direccionNoValido(){
-    return this.formGroup.get('direccion').invalid && this.formGroup.get('direccion').touched
+  get direccionNoValido() {
+    return this.formGroup.get('direccion').invalid && this.formGroup.get('direccion').touched;
   }
 
 
