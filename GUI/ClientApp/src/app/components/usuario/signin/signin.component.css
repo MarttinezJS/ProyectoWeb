@@ -15,6 +15,7 @@ body {
     letter-spacing: .05rem;
     background: #15181f;
     background-size: cover;
+    height: 100vh;
 }
 
 h1{

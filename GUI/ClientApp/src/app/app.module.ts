@@ -14,6 +14,9 @@ import { ProductoComponent } from './components/produtos/producto/producto.compo
 import { RegistrarProductoComponent } from './components/produtos/registrar-producto/registrar-producto.component';
 import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +33,7 @@ import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
     HttpClientModule,
     FormsModule,
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
-    RouterModule.forRoot(ROUTES, { useHash: false })
+    RouterModule.forRoot(ROUTES, { useHash: false }) 
   ],
   providers: [],
   bootstrap: [AppComponent]
