@@ -13,6 +13,7 @@ import { ROUTES } from './app.routes';
 import { ProductoComponent } from './components/produtos/producto/producto.component';
 import { RegistrarProductoComponent } from './components/produtos/registrar-producto/registrar-producto.component';
 import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
+import { BusquedaPipe } from './pipes/busqueda.pipe';
 
 
 
@@ -26,7 +27,8 @@ import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
     SigninComponent,
     ProductoComponent,
     RegistrarProductoComponent,
-    TarjetasComponent
+    TarjetasComponent,
+    BusquedaPipe
   ],
   imports: [
     ReactiveFormsModule,
