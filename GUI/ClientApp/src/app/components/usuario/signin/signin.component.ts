@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
+  styleUrls: ['./signin.component.css']
 })
 export class SigninComponent {
 
@@ -54,8 +55,8 @@ export class SigninComponent {
   get passNoValido() {
     return this.formGroup.get('pass').invalid && this.formGroup.get('pass').touched;
   }
-  get emailNoValido() {
-    return this.formGroup.get('email').invalid && this.formGroup.get('email').touched;
+  get correoNoValido() {
+    return this.formGroup.get('correo').invalid && this.formGroup.get('correo').touched;
   }
   get telefonoNoValido() {
     return this.formGroup.get('telefono').invalid && this.formGroup.get('telefono').touched;
@@ -68,11 +69,11 @@ export class SigninComponent {
   private crearFormulario () {
 
     this.formGroup = this.fb.group({
-      nombre   : ['', Validators.required, Validators.minLength(2)],
+      nombre   : ['', [Validators.required, Validators.minLength(3)]],
       correo   : ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
-      pass     : ['', Validators.required, Validators.minLength(6)],
-      telefono : [, Validators.required, Validators.minLength(10), Validators.pattern('[0-9]')],
-      direccion: ['', Validators.required, Validators.minLength(5)]
+      pass     : ['', [Validators.required, Validators.minLength(6)]],
+      telefono : ['', [Validators.required, Validators.minLength(10)]],
+      direccion: ['', [Validators.required, Validators.minLength(5)]]
     });
   }
 }
