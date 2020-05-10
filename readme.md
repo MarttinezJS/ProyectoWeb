@@ -13,3 +13,5 @@
 0.0.5 - hay un error en parse del json
 
 0.1.0 - guardar usuario terminado
+
+0.2.0 - guardar producto creado
