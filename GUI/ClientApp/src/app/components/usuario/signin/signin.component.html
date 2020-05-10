@@ -1,9 +1,11 @@
+<body>
 <div class="limiter animated fadeInRight">
     <div class="container-login100">
-        <div class="wrap-login100 p-t-50 p-b-90">
+
+        <div class="wrap-login120 p-t-70 p-b-100">
             <form autocomplete="off" class="login100-form validate-form flex-sb flex-w" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-                <span class="login100-form-title p-b-51">
-                      Crear nueva cuenta
+                <span class="login120-form-title p-b-51 m-b-16">
+                      Crear cuenta
                   </span>
                 <div class="wrap-input100 m-b-16">
                     <input formControlName="nombre" 
@@ -12,7 +14,7 @@
                            name="nombre" 
                            placeholder="Nombre y apellidos"
                            [class.is-invalid]="nombreNoValido">
-                           <small *ngIf="nombreNoValido" class="text-dager">
+                           <small *ngIf="nombreNoValido" class="text-danger">
                             ingrese como minimo 3 caracteres
                           </small>
                     <span class="focus-imput100"></span>
@@ -21,10 +23,10 @@
                     <input formControlName="correo" 
                            class="input100" 
                            type="email" 
-                           name="email" 
+                           name="correo" 
                            placeholder="Correo electronico"
-                           [class.is-invalid]="emailNoValido">
-                           <small *ngIf="emailNoValido" class="text-dager">
+                           [class.is-invalid]="correoNoValido">
+                           <small *ngIf="correoNoValido" class="text-danger">
                             Correo invalido
                           </small> 
                     <span class="focus-imput100"></span>
@@ -36,7 +38,7 @@
                            name="pass" 
                            placeholder="Digite Contraseña"
                            [class.is-invalid]="passNoValido">
-                           <small *ngIf="passNoValido" class="text-dager">
+                           <small *ngIf="passNoValido" class="text-danger">
                             La contraseña debe tener minimo 6 caracteres
                           </small>
                     <span class="focus-imput100"></span>
@@ -48,8 +50,8 @@
                            name="telefono" 
                            placeholder="Numero de telefono"
                            [class.is-invalid]="telefonoNoValido">
-                           <small *ngIf="telefonoNoValido" class="text-dager">
-                            Numero de telefono invalido
+                           <small *ngIf="telefonoNoValido" class="text-danger">
+                            Numero de telefono invalido, solo numeros y 10 digitos
                           </small>
                     <span class="focus-imput100"></span>
                 </div>
@@ -60,17 +62,17 @@
                            name="direccion" 
                            placeholder="Direccion de su casa"
                            [class.is-invalid]="direccionNoValido">
-                           <small *ngIf="direccionNoValido" class="text-dager">
+                           <small *ngIf="direccionNoValido" class="text-danger">
                             direccion debe tener minimo 6 caracteres
                           </small>
                     <span class="focus-imput100"></span>
                 </div>
                 <div>
-                    <a routerLink="/login" class="txt1">
+                    <a routerLink="/login" class="txt2">
                         ¿Ya tienes cuenta? / Ingresar
                     </a>
                 </div>
-                <div class="container-login100-form-btn m-t-16">
+                <div class="container-login100-form-btn m-t-16 m-b-16">
                     <button [disabled]="formGroup.invalid" (click)="onSubmit()" class="login100-form-btn" type="submit">
                         Crear cuenta
                     </button>
@@ -79,15 +81,6 @@
         </div>
     </div>
 </div>
+</body>
 
-<hr>
 
-<pre>
-    status: {{formGroup.status}}
-    id: {{usuario.id}}
-</pre>
-
-<pre>
-    {{formGroup.value | json}}
-
-</pre>
