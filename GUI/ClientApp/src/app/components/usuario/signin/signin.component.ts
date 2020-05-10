@@ -5,9 +5,11 @@ import { UsuarioService } from '../../../services/usuario.service';
 
 import Swal from 'sweetalert2';
 
+
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
+
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent {
@@ -29,12 +31,15 @@ export class SigninComponent {
     });
     Swal.showLoading();
 
+
+
     this.usuario = this.formGroup.value;
     this.usuario.id = new Date().getTime().toString();
     this._usuarioService.post(this.usuario).subscribe(p => {
       if (p != null) {
         p = this.usuario;
         alert(p.nombre + ' ha sido creado');
+
         Swal.fire({
           icon:'error',
           title: 'Error al registrar',
@@ -48,7 +53,6 @@ export class SigninComponent {
       }
     });
   }
-
   get nombreNoValido(){
     return this.formGroup.get('nombre').invalid && this.formGroup.get('nombre').touched
   }
