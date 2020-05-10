@@ -38,8 +38,6 @@ export class SigninComponent {
     this._usuarioService.post(this.usuario).subscribe(p => {
       if (p != null) {
         p = this.usuario;
-        alert(p.nombre + ' ha sido creado');
-
         Swal.fire({
           icon: 'error',
           title: 'Error al registrar',
@@ -53,15 +51,14 @@ export class SigninComponent {
       }
     });
   }
-  get nombreNoValido(){
-    return this.formGroup.get('nombre').invalid && this.formGroup.get('nombre').touched
+  get nombreNoValido() {
+    return this.formGroup.get('nombre').invalid && this.formGroup.get('nombre').touched;
   }
   get passNoValido() {
     return this.formGroup.get('pass').invalid && this.formGroup.get('pass').touched;
   }
-
-  get correoNoValido(){
-    return this.formGroup.get('correo').invalid && this.formGroup.get('correo').touched
+  get correoNoValido() {
+    return this.formGroup.get('correo').invalid && this.formGroup.get('correo').touched;
   }
   get telefonoNoValido() {
     return this.formGroup.get('telefono').invalid && this.formGroup.get('telefono').touched;

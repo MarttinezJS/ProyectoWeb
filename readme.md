@@ -15,3 +15,5 @@
 0.1.0 - guardar usuario terminado
 
 0.2.0 - guardar producto creado
+
+0.2.1 - creadas targetas y hay un bug con el guardar producto
