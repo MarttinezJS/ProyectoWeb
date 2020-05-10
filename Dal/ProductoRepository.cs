@@ -18,7 +18,7 @@ namespace Datos
         using (var comando = _conexion.CreateCommand())
         {
             comando.CommandText = @"insert into productos (id, nombre, precio, presentacion, descripcion, id_provedor, id_servicio)
-                                    values (@id, @nombre, @precio, @presentacion, @descripcion, id_provedor, id_servicio)";
+                                    values (@id, @nombre, @precio, @presentacion, @descripcion, @id_provedor, @id_servicio)";
             comando.Parameters.AddWithValue("@id",producto.Id);
             comando.Parameters.AddWithValue("@nombre",producto.Nombre);
             comando.Parameters.AddWithValue("@precio",producto.Precio);

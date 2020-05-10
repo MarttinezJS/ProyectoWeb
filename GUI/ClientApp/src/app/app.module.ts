@@ -12,6 +12,7 @@ import { SigninComponent } from './components/usuario/signin/signin.component';
 import { ROUTES } from './app.routes';
 import { ProductoComponent } from './components/produtos/producto/producto.component';
 import { RegistrarProductoComponent } from './components/produtos/registrar-producto/registrar-producto.component';
+import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RegistrarProductoComponent } from './components/produtos/registrar-prod
     LoginComponent,
     SigninComponent,
     ProductoComponent,
-    RegistrarProductoComponent
+    RegistrarProductoComponent,
+    TarjetasComponent
   ],
   imports: [
     ReactiveFormsModule,
