@@ -9,12 +9,15 @@ import { Producto } from '../models/Producto';
 export class TarjetasComponent implements OnInit {
 
   @Input() productos: any = {};
+  @Input() termino: any;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  verProducto( producto: Producto ) {}
+  verProducto( producto: Producto ) {
+
+  }
 
 }

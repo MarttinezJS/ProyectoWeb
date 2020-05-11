@@ -1,16 +1,28 @@
-<h1 class="mt-4">Catalogo de Productos</h1>
-<hr>
+<div class="container">
+        <h1 class="mt-5">Catalogo de Productos</h1>
+    <hr>
 
-<div class="row">
-    <div class="col text-right">
-        <button routerLink= "/registroProducto"
-                class="btn btn-primary">
-            <i class="fa fa-plus"></i>
-            Agregar
-        </button>
+    <div class="row">
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" [(ngModel)]="termino" name="Busqueda" type="search" placeholder="Nombre del producto" aria-label="Buscar">
+            <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="button">buscar</button> -->
+        </form>
+        <div class="col text-right">
+            <button routerLink= "/registroProducto"
+                    class="btn btn-primary">
+                <i class="fa fa-plus"></i>
+                Agregar
+            </button>
+        </div>
     </div>
-</div>
-
-<div class="card-columns">
-    <app-tarjetas [productos]="productos" ></app-tarjetas>
+    <div class="card-columns">
+        <div  class="card animated fadeIn fast" *ngFor="let producto of productos | busqueda:termino">
+            <img src="../../../assets/img/noimage.png"  class="card-img-top img-fluid" alt="">
+            <div class="card-body">
+                <h4 class="card-title"> {{ producto.nombre }} <small>{{ producto.presentacion }}</small></h4>
+                <p class="card-text text-center"> {{ producto.precio | currency:'COP' }} </p>
+                <button type="button" class="btn btn-outline-primary text-center">Ver mas..</button>
+            </div>
+        </div>
+    </div>
 </div>
