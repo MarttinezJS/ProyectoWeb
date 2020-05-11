@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Producto } from '../../models/Producto';
 import { ProductoService } from '../../../services/producto.service';
 import Swal from 'sweetalert2';
@@ -21,13 +21,30 @@ export class RegistrarProductoComponent implements OnInit {
   ngOnInit() {
   }
 
+  get nombreNoValido() {
+    return this.grupo.get('nombre').invalid && this.grupo.get('nombre').touched;
+  }
+  get idNoValido() {
+    return this.grupo.get('id').invalid && this.grupo.get('id').touched;
+  }
+  get proveedorNoValido() {
+    return this.grupo.get('proveedor').invalid && this.grupo.get('proveedor').touched;
+  }
+  get precioNoValido() {
+    return this.grupo.get('precio').invalid && this.grupo.get('precio').touched;
+  }
+  get descripcionNoValido() {
+    return this.grupo.get('descripcion').invalid && this.grupo.get('descripcion').touched;
+  }
+
   crearFormulario() {
     this.grupo = this.fb.group({
-      id         : [],
-      nombre     : [],
-      prevedor   : [],
-      precio     : [],
-      descripcion: []
+      id         : ['', Validators.required, Validators.maxLength(3)],
+      nombre     : ['', Validators.required],
+      proveedor   : ['', Validators.required],
+      precio     : ['', Validators.required],
+      descripcion: ['',Validators.required],
+      servicio: [''],
     });
   }
 

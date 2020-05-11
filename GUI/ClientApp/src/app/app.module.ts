@@ -15,6 +15,9 @@ import { RegistrarProductoComponent } from './components/produtos/registrar-prod
 import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 import { BusquedaPipe } from './pipes/busqueda.pipe';
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,7 @@ import { BusquedaPipe } from './pipes/busqueda.pipe';
     HttpClientModule,
     FormsModule,
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
-    RouterModule.forRoot(ROUTES, { useHash: false })
+    RouterModule.forRoot(ROUTES, { useHash: false }) 
   ],
   providers: [],
   bootstrap: [AppComponent]
