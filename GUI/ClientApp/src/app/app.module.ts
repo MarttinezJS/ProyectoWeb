@@ -35,7 +35,7 @@ import { BusquedaPipe } from './pipes/busqueda.pipe';
     HttpClientModule,
     FormsModule,
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
-    RouterModule.forRoot(ROUTES, { useHash: false }) 
+    RouterModule.forRoot(ROUTES, { useHash: false })
   ],
   providers: [],
   bootstrap: [AppComponent]

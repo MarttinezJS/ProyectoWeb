@@ -19,3 +19,5 @@
 0.2.1 - creadas targetas y hay un bug con el guardar producto
 
 0.2.2- pipe busqueda creado
+
+0.2.3 - bugfix guardar producto

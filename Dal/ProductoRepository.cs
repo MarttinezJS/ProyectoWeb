@@ -24,7 +24,7 @@ namespace Datos
             comando.Parameters.AddWithValue("@precio",producto.Precio);
             comando.Parameters.AddWithValue("@presentacion",producto.Presentacion);
             comando.Parameters.AddWithValue("@descripcion",producto.Descripcion);
-            comando.Parameters.AddWithValue("@id_provedor",producto.Provedor);
+            comando.Parameters.AddWithValue("@id_provedor",producto.Proveedor);
             comando.Parameters.AddWithValue("@id_servicio",producto.Servicio);
 
             var filas = comando.ExecuteNonQuery();
@@ -57,7 +57,7 @@ namespace Datos
         producto.Precio = (int)datos["precio"];
         producto.Presentacion = (string)datos["presentacion"];
         producto.Descripcion = (string)datos["descripcion"];
-        producto.Provedor = (string)datos["id_provedor"];
+        producto.Proveedor = (string)datos["id_provedor"];
         producto.Servicio = (string)datos["id_servicio"];
 
         return producto;
