@@ -30,6 +30,7 @@ export class ProductoService {
    }
 
    post(producto: Producto): Observable<Producto> {
+      console.log(producto);
       return this.http.post<Producto>(this.baseUrl + 'api/Producto', producto).pipe(
          tap(_ => this.handleErrorService.log('datos enviados')),
          catchError(this.handleErrorService.handleError<Producto>('Registrar Producto', null))

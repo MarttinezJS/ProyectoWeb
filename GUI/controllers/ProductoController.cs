@@ -1,3 +1,4 @@
+using System.Net.Http.Headers;
 using System.Collections.Generic;
 using System.Linq;
 using Entity;
@@ -41,7 +42,7 @@ namespace GUI.Controllers
           Producto producto = new Producto();
           producto.Id = productoInput.id;
           producto.Nombre = productoInput.nombre;
-          producto.Provedor = productoInput.provedor;
+          producto.Proveedor = productoInput.proveedor;
           producto.Precio = productoInput.precio;
           producto.Servicio = productoInput.servicio;
           producto.Presentacion = productoInput.presentacion;
