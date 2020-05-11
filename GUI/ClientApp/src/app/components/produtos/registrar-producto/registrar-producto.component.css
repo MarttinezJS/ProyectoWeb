@@ -1,16 +1,100 @@
-.form-group input{
-  font-family: Ubuntu-Bold;
- 
-
-    /* border: 0;
-    background-color: #3b4652;
-    opacity: .85;
-    box-shadow: 0px 0px 3px #848484; */
+:root {
+  --color-dark: #15181f;
+  --color-dark-x: #2d343f;
+  --color-dark-xx: #1f232b;
+  --color-light: #ffffff;
+  --color-grey: #f5f6f8;
 }
 
-.but{
-    padding: 20px 200px 0 0;
-} 
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #ffffff;
+  letter-spacing: .05rem;
+  background: #15181f;
+  background-size: cover;
+  height: 200vh;
+  
+}
+
+h1{
+  color: white;
+}
+
+label{
+  color: white;
+}
+
+.butt{
+  padding-top: 30px;
+}
+
+.bg-dark {
+  background-color: #15181f !important;
+  background-size: cover;
+}
+
+.p-6 {
+  padding: 4rem 7rem;
+}
+
+
+.btn {
+  font-weight: 400;
+  padding: 1rem 2rem;
+  border-radius: 5rem;
+  min-width: 10rem;
+  text-align: center;
+}
+
+.btn-outline-dark {
+  border: 2px solid #1f232b;
+}
+
+.form-control {
+  background-color: #15181f;
+  border: 2px solid #1f232b;
+  border-radius: .2rem;
+  padding: 1.6rem 1rem;
+  color: #ffffff;
+}
+
+
+.form-control::placeholder{
+  color: white;
+  
+}
+.form-control:focus{
+  background: none;
+  outline: none;
+  color: #ffffff;
+}
+
+
+
+.testiomonial {
+  bottom: 10px
+}
+
+
+@media (max-width: 575.98px) {
+  .p-6 {
+      padding: 2rem;
+  }
+
+  .contact-box {
+      padding: 0;
+  }
+
+  body{
+      height: 230vh;
+  }
+
+  .width-100 {
+      width: 100%;
+  }
+}
 
 
 
