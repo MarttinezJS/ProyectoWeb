@@ -6,6 +6,7 @@ using Logica;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using GUI.Models;
+using Dal;
 
 namespace GUI.Controllers
 {
@@ -14,12 +15,9 @@ namespace GUI.Controllers
    public class ProductoController: ControllerBase
    {
        private readonly ProductoService _productoService;
-       public IConfiguration Configuration {get;}
 
-       public ProductoController(IConfiguration configuration){
-           Configuration = configuration;
-           string connectionString = Configuration["ConnectionStrings:DefaultConnection"];
-           _productoService = new ProductoService(connectionString);
+       public ProductoController( CarniceriaContext context ){
+           _productoService = new ProductoService( context );
        }
 
       [HttpGet]
@@ -44,7 +42,6 @@ namespace GUI.Controllers
           producto.Nombre = productoInput.nombre;
           producto.Proveedor = productoInput.proveedor;
           producto.Precio = productoInput.precio;
-          producto.Servicio = productoInput.servicio;
           producto.Presentacion = productoInput.presentacion;
           producto.Descripcion = productoInput.descripcion;
           

@@ -8,16 +8,15 @@ import { Producto } from '../../models/Producto';
   templateUrl: './producto.component.html',
   styleUrls: ['./producto.component.css']
 })
-export class ProductoComponent implements OnInit {
+export class ProductoComponent {
 
   productos: Producto[];
+  termino: string;
+  constructor(private productosServicio: ProductoService) { this.cargarLista(); }
 
-  constructor(private productosServicio: ProductoService) { }
-
-  ngOnInit(): void {
+  cargarLista() {
     this.productosServicio.get().subscribe(result => {
-        this.productos = result;
-    });
+      this.productos = result;
+  });
   }
-
 }

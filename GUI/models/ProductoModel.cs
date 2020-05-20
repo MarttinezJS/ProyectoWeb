@@ -4,11 +4,10 @@ using Entity;
 namespace GUI.Models
 {
     public class ProductoInputModel{
-         public string id { get; set; }
+        public string id { get; set; }
         public string nombre { get; set; }
         public string proveedor { get; set; }
         public int precio { get; set; }
-        public string servicio { get; set; }
         public string presentacion { get; set; }
         public string descripcion { get; set; }
     }
@@ -21,7 +20,6 @@ namespace GUI.Models
             nombre = producto.Nombre;
             proveedor = producto.Proveedor;
             precio = producto.Precio;
-            servicio = producto.Servicio;
             presentacion = producto.Presentacion;
             descripcion = producto.Descripcion;
         }
