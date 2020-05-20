@@ -21,3 +21,5 @@
 0.2.2- pipe busqueda creado
 
 0.2.3 - bugfix guardar producto
+
+0.2.4 - ORM agregado (entityFamework)

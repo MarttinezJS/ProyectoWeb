@@ -45,7 +45,6 @@ export class RegistrarProductoComponent implements OnInit {
       proveedor   : ['', Validators.required],
       precio     : ['', Validators.required],
       descripcion: ['', Validators.required],
-      servicio: [''],
       presentacion: ['']
     });
   }

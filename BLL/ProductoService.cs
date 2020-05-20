@@ -2,44 +2,70 @@ using System.Resources;
 using System;
 using Entity;
 using System.Collections.Generic;
-using Datos;
+using Dal;
+using System.Linq;
 
 namespace Logica
 {
     public class ProductoService
     {
-        private readonly ConnectionManager _conexion;
-        private readonly ProductoRepository productoRepository;
-       public ProductoService(string cadena) {
-           _conexion = new ConnectionManager(cadena);
-           productoRepository = new ProductoRepository(_conexion);
+        private readonly CarniceriaContext _context;
+       public ProductoService(CarniceriaContext context) {
+           _context = context;
        }
         public List<Producto> consultarTodos() {
-            List<Producto> productos = new List<Producto>();
-
-            _conexion.open();
-            productos = productoRepository.ConsultarTodos();
-            _conexion.close();
-
+            List<Producto> productos = _context.Productos.ToList();
             return productos;
         }
+
         public GuardarProductoResponse guardar(Producto producto) {
             try
             {
-                _conexion.open();
-                productoRepository.Guardar(producto);
-                _conexion.close();
+                if (_context.Productos.Find( producto.Id ) != null)
+                {
+                    return new GuardarProductoResponse("Error el Producto se encuentra registrado");   
+                }
+                _context.Productos.Add(producto);
+                _context.SaveChanges();
                 return new GuardarProductoResponse(producto);
             }catch (Exception e) {
                 return new GuardarProductoResponse($"Error de la aplicacion: {e.Message}");
             }
-            finally
-            {
-                _conexion.close();
-            }
         }
         public string eliminar(string id) {
-            return "";
+            try
+            {
+                var producto = _context.Productos.Find( id );
+                if (producto == null)
+                {
+                    return "Error, el producto no se encuentra registrado";
+                }
+                _context.Productos.Remove( producto );
+                _context.SaveChanges();
+                return "El producto esta fuera del catalogo.";
+            }
+            catch (Exception e)
+            {
+                return ($"Error de la aplicacion: {e.Message}");
+            }
+        }
+
+        public string modificar( Producto productoNuevo ) {
+            var producto = _context.Productos.Find( productoNuevo.Id );
+            if (producto == null)
+            {
+                return "El producto no se encuentra registrado";
+            }
+            producto.Descripcion = productoNuevo.Descripcion;
+            producto.Nombre = productoNuevo.Nombre;
+            producto.Precio = productoNuevo.Precio;
+            producto.Presentacion = productoNuevo.Presentacion;
+            producto.Proveedor = productoNuevo.Proveedor;
+
+            _context.Productos.Update( producto );
+            _context.SaveChanges();
+
+            return "El producto se actualizó";
         }
     }
     public class GuardarProductoResponse{

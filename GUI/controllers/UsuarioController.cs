@@ -5,6 +5,7 @@ using Logica;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using GUI.Models;
+using Dal;
 
 namespace GUI.Controllers
 {
@@ -13,12 +14,9 @@ namespace GUI.Controllers
    public class UsuarioController: ControllerBase
    {
        private readonly UsuarioService _usuarioService;
-       public IConfiguration Configuration {get;}
 
-       public UsuarioController(IConfiguration configuration){
-           Configuration = configuration;
-           string connectionString = Configuration["ConnectionStrings:DefaultConnection"];
-           _usuarioService = new UsuarioService(connectionString);
+       public UsuarioController( CarniceriaContext context ){
+           _usuarioService = new UsuarioService( context );
        }
 
       [HttpGet]
