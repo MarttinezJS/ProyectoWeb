@@ -23,3 +23,5 @@
 0.2.3 - bugfix guardar producto
 
 0.2.4 - ORM agregado (entityFamework)
+
+0.3.0 - Validado la autenticacion Y aplicacion acoplada con firebase

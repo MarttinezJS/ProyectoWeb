@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-menu',
@@ -8,13 +10,20 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private afAuth: AngularFireAuth,
+              private authService: AuthService) { }
 
   ngOnInit() {
   }
 
-  registrarse(){
-    this.router.navigateByUrl('/signin')
+  registrarse() {
+    this.router.navigateByUrl('/signin');
+  }
+
+  logout() {
+    this.afAuth.auth.signOut();
+    this.authService.borrarToken();
   }
 
 }

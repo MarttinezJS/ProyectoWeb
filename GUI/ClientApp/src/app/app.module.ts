@@ -28,6 +28,7 @@ import { ProductoComponent } from './components/produtos/producto/producto.compo
 import { RegistrarProductoComponent } from './components/produtos/registrar-producto/registrar-producto.component';
 import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 import { environment } from '../environments/environment';
+import { ConfiguracionComponent } from './components/usuario/configuracion/configuracion.component';
 
 
 
@@ -42,7 +43,8 @@ import { environment } from '../environments/environment';
     ProductoComponent,
     RegistrarProductoComponent,
     TarjetasComponent,
-    BusquedaPipe
+    BusquedaPipe,
+    ConfiguracionComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
