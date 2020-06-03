@@ -17,7 +17,7 @@
     </div>
     <div class="card-columns">
         <div  class="card animated fadeIn fast" *ngFor="let producto of productos | busqueda:termino">
-            <img src="../../../assets/img/noimage.png"  class="card-img-top img-fluid" alt="">
+            <img [src]="producto.imagenURL | noImage"  class="card-img-top img-fluid" alt="">
             <div class="card-body">
                 <h4 class="card-title"> {{ producto.nombre }} <small>{{ producto.presentacion }}</small></h4>
                 <p class="card-text text-center"> {{ producto.precio | currency:'COP' }} </p>
