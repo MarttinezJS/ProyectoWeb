@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Producto } from '../../models/Producto';
 import { ProductoService } from '../../../services/producto.service';
 import Swal from 'sweetalert2';
+import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-registrar-producto',
@@ -43,8 +44,8 @@ export class RegistrarProductoComponent implements OnInit {
       nombre     : ['', Validators.required],
       proveedor   : ['', Validators.required],
       precio     : ['', Validators.required],
-      descripcion: ['',Validators.required],
-      servicio: [''],
+      descripcion: ['', Validators.required],
+      presentacion: ['']
     });
   }
 
@@ -53,16 +54,16 @@ export class RegistrarProductoComponent implements OnInit {
       this.producto = this.grupo.value;
       this.productoService.post(this.producto).subscribe( p => {
         if (p != null) {
+          Swal.fire({
+            title: 'Registrado correctamente',
+            icon: 'success'
+          });
+        } else {
           p = this.producto;
           Swal.fire({
             icon: 'error',
             title: 'Error al registrar',
             text: 'No se pudo completar la operacion'
-          });
-        } else {
-          Swal.fire({
-            title: 'Registrado correctamente',
-            icon: 'success'
           });
         }
       });

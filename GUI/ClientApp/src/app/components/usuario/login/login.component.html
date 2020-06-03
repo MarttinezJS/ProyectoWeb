@@ -2,7 +2,7 @@
     <div class="limiter animated fadeInLeft">
         <div class="container-login100">
             <div class="wrap-login110 p-t-70 p-b-90">
-                <form class="login100-form validate-form flex-sb flex-w">
+                <form class="login100-form validate-form flex-sb flex-w" [formGroup]="formulario" (submit)="ingresar()">
                      <div class="login110-form-title p-b-10 user-img">
                     <img src="../../../../assets/img/login-user.png">
                     </div>
@@ -12,14 +12,14 @@
                     <div class="wrap-input100 m-b-16">
                         <input  class="input100"
                                 type="email"
-                                name="email"
+                                formControlName="email"
                                 placeholder="Correo electronico">
                                 <span class="focus-imput100"></span>
                     </div>
                     <div class="wrap-input100 m-b-16">
                         <input  class="input100"
                                 type="password"
-                                name="pass"
+                                formControlName="password"
                                 placeholder="Digite Contraseña">
                                 <span class="focus-imput100"></span>
                     </div>
@@ -29,7 +29,7 @@
                     </a>
                     </div>
                     <div class="container-login100-form-btn m-t-17 m-b-16">
-                    <button class="login100-form-btn" type="submit">
+                    <button class="login100-form-btn" [disabled]="formulario.invalid" type="submit">
                         Ingresar
                     </button>
                     </div>

@@ -1,44 +1,70 @@
 ﻿using System;
 using Entity;
 using System.Collections.Generic;
-using Datos;
+using Dal;
+using System.Linq;
 
 namespace Logica
 {
     public class UsuarioService
     {
-        private readonly ConnectionManager _conexion;
-        private readonly UsuarioRepository usuarioRepository;
-       public UsuarioService(string cadena) {
-           _conexion = new ConnectionManager(cadena);
-           usuarioRepository = new UsuarioRepository(_conexion);
-       }
+        private readonly CarniceriaContext _context;
+        public UsuarioService( CarniceriaContext context ) {
+           _context = context;
+        }
+
         public List<Usuario> consultarTodos() {
-            List<Usuario> usuarios = new List<Usuario>();
-
-            _conexion.open();
-            usuarios = usuarioRepository.ConsultarTodos();
-            _conexion.close();
-
+            List<Usuario> usuarios = _context.Usuarios.ToList();
             return usuarios;
         }
+
         public GuardarUsuarioResponse guardar(Usuario usuario) {
             try
             {
-                _conexion.open();
-                usuarioRepository.Guardar(usuario);
-                _conexion.close();
+                if (_context.Usuarios.Find( usuario.Correo ) != null)
+                {
+                    return new GuardarUsuarioResponse( "Error, el correo ya es utilizado" );
+                }
+                _context.Usuarios.Add( usuario );
+                _context.SaveChanges();
                 return new GuardarUsuarioResponse(usuario);
             }catch (Exception e) {
                 return new GuardarUsuarioResponse($"Error de la aplicacion: {e.Message}");
             }
-            finally
+        }
+        public string eliminar(string correo) {
+            try
             {
-                _conexion.close();
+                var usuario = _context.Usuarios.Find( correo );
+                if (usuario == null)
+                {
+                    return "Error, el usuario no se encuentra registrado";
+                }
+                _context.Usuarios.Remove( usuario );
+                _context.SaveChanges();
+                return "La cuenta está eliminada";
+            }
+            catch (Exception e)
+            {
+                return ($"Error de la aplicacion: {e.Message}");
             }
         }
-        public string eliminar(string id) {
-            return "";
+
+        public string modificar( Usuario usuarioNuevo ) {
+            var usuario = _context.Usuarios.Find( usuarioNuevo.Correo );
+            if (usuario == null)
+            {
+                return "El usuario no se encuentra registrado";
+            }
+            usuario.Direccion = usuarioNuevo.Direccion;
+            usuario.Nombre = usuarioNuevo.Nombre;
+            usuario.Pass = usuarioNuevo.Pass;
+            usuario.Telefono = usuarioNuevo.Telefono;
+
+            _context.Usuarios.Update( usuario );
+            _context.SaveChanges();
+
+            return "El usuario se actualizó";
         }
     }
     public class GuardarUsuarioResponse{

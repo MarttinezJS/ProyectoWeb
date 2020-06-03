@@ -12,12 +12,12 @@ create table productos(
 	nombre varchar(15)not null,
 	precio int not null,
 	presentacion varchar(15) not null,
-	descripcion varchar(50) default (''),
-	id_provedor varchar(2) not null,
+	descripcion varchar(100) default (''),
+	id_proveedor varchar(2) not null,
 	id_servicio varchar(2)
 )
 
-create table provedores(
+create table proveedores(
 	id VARCHAR(2) not null primary key,
 	nombre varchar(30) not null
 )

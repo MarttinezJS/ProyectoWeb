@@ -8,7 +8,7 @@
 
 0.0.3 - creada la entity
 
-0.0.4 - backen usuarios terminado
+0.0.4 - backend usuarios terminado
 
 0.0.5 - hay un error en parse del json
 
@@ -19,3 +19,9 @@
 0.2.1 - creadas targetas y hay un bug con el guardar producto
 
 0.2.2- pipe busqueda creado
+
+0.2.3 - bugfix guardar producto
+
+0.2.4 - ORM agregado (entityFamework)
+
+0.3.0 - Validado la autenticacion Y aplicacion acoplada con firebase
