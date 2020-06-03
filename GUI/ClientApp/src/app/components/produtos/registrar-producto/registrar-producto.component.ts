@@ -39,7 +39,7 @@ export class RegistrarProductoComponent implements OnInit {
 
   crearFormulario() {
     this.grupo = this.fb.group({
-      id         : ['', Validators.required, Validators.maxLength(3)],
+      id         : ['', [Validators.required, Validators.maxLength(3)]],
       nombre     : ['', Validators.required],
       proveedor   : ['', Validators.required],
       precio     : ['', Validators.required],
