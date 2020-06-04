@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark gris scrolling-navbar fixed-top" (submit)="logout()">
+<nav class="navbar navbar-expand-lg navbar-dark gris scrolling-navbar fixed-top" >
     <a class="navbar-brand" href="/">
         <img src="" alt=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +25,7 @@
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <button class="btn btn-primary my-2 my-sm-0" (click)="registrarse()">Registrarse</button>
-            <button class="btn btn-primary my-2 my-sm-0" type="submit" (click)="logout()">Cerrar sesion</button>
+            <button class="btn btn-primary my-2 my-sm-0" [routerLink]="['/']" (click)="logout()">Cerrar sesion</button>
         </form>
     </div>
 </nav>
