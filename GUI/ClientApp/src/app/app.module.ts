@@ -6,7 +6,9 @@ import { HttpClientModule} from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { AngularFireModule } from 'angularfire2';
-
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 
 // Providers
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -29,6 +31,7 @@ import { RegistrarProductoComponent } from './components/produtos/registrar-prod
 import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 import { environment } from '../environments/environment';
 import { ConfiguracionComponent } from './components/usuario/configuracion/configuracion.component';
+import { NoImagePipe } from './pipes/no-image.pipe';
 
 
 
@@ -44,9 +47,12 @@ import { ConfiguracionComponent } from './components/usuario/configuracion/confi
     RegistrarProductoComponent,
     TarjetasComponent,
     BusquedaPipe,
-    ConfiguracionComponent
+    ConfiguracionComponent,
+    NoImagePipe
   ],
   imports: [
+    TooltipModule.forRoot(),
+    ProgressbarModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     RouterModule.forRoot(ROUTES, { useHash: false }),
@@ -54,6 +60,7 @@ import { ConfiguracionComponent } from './components/usuario/configuracion/confi
     HttpClientModule,
     FormsModule,
     NgxSpinnerModule,
+    AngularFireStorageModule
   ],
   providers: [
     AngularFireAuth,
