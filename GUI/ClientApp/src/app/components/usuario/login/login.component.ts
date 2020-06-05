@@ -26,6 +26,13 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  get passNoValido() {
+    return this.formulario.get('pass').invalid && this.formulario.get('pass').touched;
+  }
+  get correoNoValido() {
+    return this.formulario.get('correo').invalid && this.formulario.get('correo').touched;
+  }
+
   ingresar() {
     this.afAuth.auth.signInWithEmailAndPassword(this.formulario.value.email, this.formulario.value.password)
     .then( rest => {

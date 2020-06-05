@@ -1,4 +1,56 @@
-<nav class="navbar navbar-expand-lg navbar-dark gris scrolling-navbar fixed-top" >
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark scrolling-navbar fixed-top">
+
+    <a class="navbar-brand" [routerLink]="['/presentacion']">
+      <img src="../../../assets/img/carniceria.png" width="30" height="30" alt="">
+      Carniceria Freddy
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto w-75 justify-content-center">
+          <li class="nav-item a mr-sm-3" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/producto']">Productos</a>
+          </li>
+          <li class="nav-item mr-sm-3 a" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/producto']">Servicio</a>
+          </li>
+          <li class="nav-item a" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/producto']">Proveedores</a>
+          </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <button class="btn btn-primary  mr-sm-2" *ngIf="desbloquear" routerLink="/login" >
+          <i class="fas fa-user-circle"></i> Login</button>
+        <button class="btn btn-primary my-2 my-sm-0" *ngIf="desbloquear" routerLink="/signin">
+          <i class="fas fa-address-card"></i> Registrarse</button>
+        <button *ngIf="!desbloquear" (click)="logout()" class="btn btn-danger my-2 my-sm-0" >
+          <i class="fas fa-sign-out-alt"></i> Cerrar sesion</button>
+      </form>
+    </div>
+  </nav>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-dark gris scrolling-navbar fixed-top" >
     <a class="navbar-brand" href="/">
         <img src="" alt=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,4 +80,4 @@
             <button class="btn btn-primary my-2 my-sm-0" [routerLink]="['/']" (click)="logout()">Cerrar sesion</button>
         </form>
     </div>
-</nav>
+</nav> -->
