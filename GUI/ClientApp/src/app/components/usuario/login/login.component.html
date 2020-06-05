@@ -1,44 +1,64 @@
 <body>
-    <div class="limiter animated fadeInLeft">
-        <div class="container-login100">
-            <div class="wrap-login110 p-t-70 p-b-90">
-                <form class="login100-form validate-form flex-sb flex-w" [formGroup]="formulario" (submit)="ingresar()">
-                     <div class="login110-form-title p-b-10 user-img">
-                    <img src="../../../../assets/img/login-user.png">
+    <section class="contact-box">
+        <div class="row no-gutters bg-dark">
+            <div class="col-xl-6 col-lg-12 register-bg">
+             <div class="position-absolute testiomonial p-4">
+             </div>
+            </div>
+            <div class="col-xl-6 col-lg-12 d-flex">
+                 <div class="container align-self-center p-6">
+                    <div class="user-img">
+                        <img src="../../../../assets/img/iniciar-sesion.png">
                     </div>
-                    <span class="login110-form-title p-b-52">
-                        Login
-                    </span>
-                    <div class="wrap-input100 m-b-16">
-                        <input  class="input100"
-                                type="email"
-                                formControlName="email"
-                                placeholder="Correo electronico">
-                                <span class="focus-imput100"></span>
-                    </div>
-                    <div class="wrap-input100 m-b-16">
-                        <input  class="input100"
-                                type="password"
-                                formControlName="password"
-                                placeholder="Digite Contraseña">
-                                <span class="focus-imput100"></span>
-                    </div>
-                    <div>
-                    <a routerLink="/signin" class="txt2 forgot">
-                        ¿No tienes cuenta?
-                    </a>
-                    </div>
-                    <div class="container-login100-form-btn m-t-17 m-b-16">
-                    <button class="login100-form-btn" [disabled]="formulario.invalid" type="submit">
-                        Ingresar
-                    </button>
-                    </div>
-                </form>
-               
+                   
+                     <form autocomplete="off" [formGroup]="formulario"> 
+                        <h1 class="titulo">LOGIN</h1>
+                         <div class="form-group mt-3">
+                             <label class="font-weight-bold">Correo electrónico</label>
+                             <input type="email"
+                                    class="form-control"
+                                    placeholder="Ingresa tu correo electrónico"
+                                    name="correo"
+                                    formControlName="correo"
+                                    [class.is-invalid]="correoNoValido">
+                            <small *ngIf="correoNoValido" class="text-danger">
+                             Correo requerido
+                           </small> 
+                         </div>
+                         
+                         <div class="form-group mt-2">
+                             <label class="font-weight-bold">Contraseña</label>
+                             <input type="password"
+                                    class="form-control" 
+                                    placeholder="Ingresa una contraseña"
+                                    formControlName="pass"
+                                    name="pass" 
+                                    placeholder="Digite Contraseña"
+                                    [class.is-invalid]="passNoValido">
+                             <small *ngIf="passNoValido" class="text-danger">
+                             Contraseña requerida
+                             </small>
+                         </div>
+                         <div class="mt-2">
+                             <a>
+                                 ¿ No tienes cuenta? / Registrate
+                             </a>
+                         </div>
+                         <div class="width-100 mt-3 boton">
+                             <button class="btn btn-primary" 
+                                 [disabled]="formulario.invalid" 
+                                 (click)="ingresar()"
+                                 type="submit">
+                                 <i class="fas fa-sign-in-alt"></i>
+                             Ingresar
+                         </button>
+                         </div>
+                         
+                     </form>
+                 </div>
             </div>
         </div>
-
-    </div>
-</body>
+    </section>
+</body>  
 
 

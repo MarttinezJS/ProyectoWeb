@@ -10,6 +10,8 @@ import { AuthService } from '../../../services/auth.service';
 })
 export class MenuComponent implements OnInit {
 
+  desbloquear = false;
+
   constructor(private router: Router,
               private afAuth: AngularFireAuth,
               private authService: AuthService) { }
