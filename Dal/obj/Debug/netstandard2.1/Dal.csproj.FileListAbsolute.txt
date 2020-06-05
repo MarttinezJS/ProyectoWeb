@@ -10,3 +10,15 @@ C:\Users\Martinez\Documents\Web\Proyecto Web\Dal\obj\Debug\netstandard2.1\Dal.As
 C:\Users\Martinez\Documents\Web\Proyecto Web\Dal\obj\Debug\netstandard2.1\Dal.csproj.CopyComplete
 C:\Users\Martinez\Documents\Web\Proyecto Web\Dal\obj\Debug\netstandard2.1\Dal.dll
 C:\Users\Martinez\Documents\Web\Proyecto Web\Dal\obj\Debug\netstandard2.1\Dal.pdb
+C:\Users\Martinez\Documents\Web\ProyectoWeb\Dal\bin\Debug\netstandard2.1\Dal.deps.json
+C:\Users\Martinez\Documents\Web\ProyectoWeb\Dal\bin\Debug\netstandard2.1\Dal.dll
+C:\Users\Martinez\Documents\Web\ProyectoWeb\Dal\bin\Debug\netstandard2.1\Dal.pdb
+C:\Users\Martinez\Documents\Web\ProyectoWeb\Dal\bin\Debug\netstandard2.1\Entity.dll
+C:\Users\Martinez\Documents\Web\ProyectoWeb\Dal\bin\Debug\netstandard2.1\Entity.pdb
+C:\Users\Martinez\Documents\Web\ProyectoWeb\Dal\obj\Debug\netstandard2.1\Dal.csprojAssemblyReference.cache
+C:\Users\Martinez\Documents\Web\ProyectoWeb\Dal\obj\Debug\netstandard2.1\Dal.AssemblyInfoInputs.cache
+C:\Users\Martinez\Documents\Web\ProyectoWeb\Dal\obj\Debug\netstandard2.1\Dal.AssemblyInfo.cs
+C:\Users\Martinez\Documents\Web\ProyectoWeb\Dal\obj\Debug\netstandard2.1\Dal.csproj.CoreCompileInputs.cache
+C:\Users\Martinez\Documents\Web\ProyectoWeb\Dal\obj\Debug\netstandard2.1\Dal.csproj.CopyComplete
+C:\Users\Martinez\Documents\Web\ProyectoWeb\Dal\obj\Debug\netstandard2.1\Dal.dll
+C:\Users\Martinez\Documents\Web\ProyectoWeb\Dal\obj\Debug\netstandard2.1\Dal.pdb

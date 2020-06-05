@@ -10,7 +10,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 1.1rem;
     font-weight: 300;
-    background-color:  #f5f6f8;
+    background-color: #f5f6f8;
     color: #ffffff;
     letter-spacing: .05rem;
     background: #15181f;
@@ -18,38 +18,36 @@ body {
     height: 100vh;
 }
 
-.titulo{
+.titulo {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     font-family: 'Fredoka One', cursive;
 }
 
-h1{
+h1 {
     color: white;
 }
 
-label{
+label {
     color: white;
 }
 
-.user-img{
+.user-img {
     margin-top: -50px;
     margin-bottom: 15px;
     text-align: center;
 }
 
-.user-img img{
+.user-img img {
     width: 150px;
     height: 130px;
-    
     border-radius: 50%;
 }
 
-.boton{
+.boton {
     text-align: center;
 }
-
 
 .bg-dark {
     background-color: #15181f !important;
@@ -59,7 +57,6 @@ label{
 .p-6 {
     padding: 0 7rem;
 }
-
 
 .btn {
     font-weight: 400;
@@ -80,18 +77,19 @@ label{
     padding: 1.5rem 1rem;
     color: #ffffff;
 }
-.form-control::placeholder{
+
+.form-control::placeholder {
     color: white;
-    
 }
-.form-control:focus{
+
+.form-control:focus {
     background: none;
     outline: none;
     color: #ffffff;
 }
 
 .register-bg {
-    background-image: url('../../../assets/fondos/23.jpg');
+    background-image: url('../../../../assets/fondos/23.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
@@ -102,34 +100,29 @@ label{
     bottom: 10px
 }
 
-
 @media (max-width: 575.98px) {
     .p-6 {
         padding: 2rem;
     }
-
     .contact-box {
         padding: 0;
     }
-
     .width-100 {
         width: 100%;
     }
-    .user-img{
+    .user-img {
         margin-top: 20px;
         margin-bottom: 15px;
     }
 }
 
-@media (max-width: 1200px) { 
+@media (max-width: 1200px) {
     .register-bg {
         min-height: 20vh;
     }
-
-    .user-img{
-        display:block;
+    .user-img {
+        display: block;
         margin-top: 10px;
         margin-bottom: 15px;
     }
-
 }

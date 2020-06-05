@@ -27,3 +27,5 @@
 0.3.0 - Validado la autenticacion Y aplicacion acoplada con firebase
 
 0.3.1 - Creado los metodos de manejo de subida de archivos
+
+0.3.2 - Validacion de los botones de sesion y agregado icono
