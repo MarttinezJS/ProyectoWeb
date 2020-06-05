@@ -1,83 +1,37 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark scrolling-navbar fixed-top">
 
     <a class="navbar-brand" [routerLink]="['/presentacion']">
-      <img src="../../../assets/img/carniceria.png" width="30" height="30" alt="">
-      Carniceria Freddy
+        <img src="../../../assets/img/carniceria.png" width="30" height="30" alt=""> Carniceria Freddy
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto w-75 justify-content-center">
-          <li class="nav-item a mr-sm-3" routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['/producto']">Productos</a>
-          </li>
-          <li class="nav-item mr-sm-3 a" routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['/producto']">Servicio</a>
-          </li>
-          <li class="nav-item a" routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['/producto']">Proveedores</a>
-          </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <button class="btn btn-primary  mr-sm-2" *ngIf="desbloquear" routerLink="/login" >
-          <i class="fas fa-user-circle"></i> Login</button>
-        <button class="btn btn-primary my-2 my-sm-0" *ngIf="desbloquear" routerLink="/signin">
-          <i class="fas fa-address-card"></i> Registrarse</button>
-        <button *ngIf="!desbloquear" (click)="logout()" class="btn btn-danger my-2 my-sm-0" >
-          <i class="fas fa-sign-out-alt"></i> Cerrar sesion</button>
-      </form>
-    </div>
-  </nav>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <nav class="navbar navbar-expand-lg navbar-dark gris scrolling-navbar fixed-top" >
-    <a class="navbar-brand" href="/">
-        <img src="" alt=""></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item " routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['/inicio']">Home</a>
-            </li>
-            <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['/login']">ingresar</a>
-            </li>
-            <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['/signin']">Regisrarse</a>
-            </li>
-            <li class="nav-item" routerLinkActive="active">
+        <ul class="navbar-nav mr-auto w-75 justify-content-center">
+            <li class="nav-item a mr-sm-3" routerLinkActive="active">
                 <a class="nav-link" [routerLink]="['/producto']">Productos</a>
             </li>
-            <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['/usuarioconfig']">Cofigurar cuenta</a>
+            <li class="nav-item mr-sm-3 a" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/producto']">Servicio</a>
+            </li>
+            <li class="nav-item a" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/producto']">Proveedores</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <button class="btn btn-primary my-2 my-sm-0" (click)="registrarse()">Registrarse</button>
-            <button class="btn btn-primary my-2 my-sm-0" [routerLink]="['/']" (click)="logout()">Cerrar sesion</button>
+            <button class="btn btn-outline-primary  mr-sm-2" *ngIf="!logeado" routerLink="/login">
+          <i class="fas fa-user-circle"></i> Login</button>
+            <button class="btn btn-outline-primary my-2 my-sm-0" *ngIf="!logeado" routerLink="/signin">
+          <i class="fas fa-address-card"></i> Registrarse</button>
+            <button *ngIf="logeado" (click)="logout()" class="btn btn-outline-red my-2 my-sm-0">
+          <i class="fas fa-sign-out-alt"></i> Cerrar sesion</button>
         </form>
     </div>
-</nav> -->
+</nav>
+
+
+
+<ngx-spinner bdColor="rgba(0,0,0,0.98)" size="large" color="#fff" type="ball-clip-rotate-multiple" [fullScreen]="true">
+    <p style="color: white"> Por favor espere.... </p>
+</ngx-spinner>

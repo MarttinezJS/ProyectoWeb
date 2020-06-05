@@ -2,63 +2,47 @@
     <section class="contact-box">
         <div class="row no-gutters bg-dark">
             <div class="col-xl-6 col-lg-12 register-bg">
-             <div class="position-absolute testiomonial p-4">
-             </div>
+                <div class="position-absolute testiomonial p-4">
+                </div>
             </div>
             <div class="col-xl-6 col-lg-12 d-flex">
-                 <div class="container align-self-center p-6">
+                <div class="container align-self-center p-6">
                     <div class="user-img">
                         <img src="../../../../assets/img/iniciar-sesion.png">
                     </div>
-                   
-                     <form autocomplete="off" [formGroup]="formulario"> 
+
+                    <form autocomplete="off" [formGroup]="formulario">
                         <h1 class="titulo">LOGIN</h1>
-                         <div class="form-group mt-3">
-                             <label class="font-weight-bold">Correo electrónico</label>
-                             <input type="email"
-                                    class="form-control"
-                                    placeholder="Ingresa tu correo electrónico"
-                                    name="correo"
-                                    formControlName="correo"
-                                    [class.is-invalid]="correoNoValido">
+                        <div class="form-group mt-3">
+                            <label class="font-weight-bold">Correo electrónico</label>
+                            <input type="email" class="form-control" placeholder="Ingresa tu correo electrónico" name="correo" formControlName="email" [class.is-invalid]="correoNoValido">
                             <small *ngIf="correoNoValido" class="text-danger">
                              Correo requerido
-                           </small> 
-                         </div>
-                         
-                         <div class="form-group mt-2">
-                             <label class="font-weight-bold">Contraseña</label>
-                             <input type="password"
-                                    class="form-control" 
-                                    placeholder="Ingresa una contraseña"
-                                    formControlName="pass"
-                                    name="pass" 
-                                    placeholder="Digite Contraseña"
-                                    [class.is-invalid]="passNoValido">
-                             <small *ngIf="passNoValido" class="text-danger">
+                           </small>
+                        </div>
+
+                        <div class="form-group mt-2">
+                            <label class="font-weight-bold">Contraseña</label>
+                            <input type="password" class="form-control" placeholder="Ingresa una contraseña" formControlName="password" name="pass" placeholder="Digite Contraseña" [class.is-invalid]="passNoValido">
+                            <small *ngIf="passNoValido" class="text-danger">
                              Contraseña requerida
                              </small>
-                         </div>
-                         <div class="mt-2">
-                             <a>
+                        </div>
+                        <div class="mt-2">
+                            <a [routerLink]="['/signin']">
                                  ¿ No tienes cuenta? / Registrate
                              </a>
-                         </div>
-                         <div class="width-100 mt-3 boton">
-                             <button class="btn btn-primary" 
-                                 [disabled]="formulario.invalid" 
-                                 (click)="ingresar()"
-                                 type="submit">
+                        </div>
+                        <div class="width-100 mt-3 boton">
+                            <button class="btn btn-primary" [disabled]="formulario.invalid" (click)="ingresar()" type="submit">
                                  <i class="fas fa-sign-in-alt"></i>
                              Ingresar
                          </button>
-                         </div>
-                         
-                     </form>
-                 </div>
+                        </div>
+
+                    </form>
+                </div>
             </div>
         </div>
     </section>
-</body>  
-
-
+</body>

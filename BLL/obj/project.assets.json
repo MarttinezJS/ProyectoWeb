@@ -6790,11 +6790,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\BLL\\BLL.csproj",
+      "projectUniqueName": "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\BLL\\BLL.csproj",
       "projectName": "BLL",
-      "projectPath": "C:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\BLL\\BLL.csproj",
+      "projectPath": "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\BLL\\BLL.csproj",
       "packagesPath": "C:\\Users\\Martinez\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\BLL\\obj\\",
+      "outputPath": "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\BLL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Martinez\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -6808,11 +6808,11 @@
       "frameworks": {
         "netstandard2.1": {
           "projectReferences": {
-            "C:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Dal\\Dal.csproj": {
-              "projectPath": "C:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Dal\\Dal.csproj"
+            "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\Dal\\Dal.csproj": {
+              "projectPath": "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\Dal\\Dal.csproj"
             },
-            "C:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\Entity.csproj": {
-              "projectPath": "C:\\Users\\Martinez\\Documents\\Web\\Proyecto Web\\Entity\\Entity.csproj"
+            "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\Entity\\Entity.csproj": {
+              "projectPath": "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\Entity\\Entity.csproj"
             }
           }
         }
@@ -6840,7 +6840,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
