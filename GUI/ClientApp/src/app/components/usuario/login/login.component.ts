@@ -27,10 +27,10 @@ export class LoginComponent implements OnInit {
   }
 
   get passNoValido() {
-    return this.formulario.get('pass').invalid && this.formulario.get('pass').touched;
+    return this.formulario.get('password').invalid && this.formulario.get('password').touched;
   }
   get correoNoValido() {
-    return this.formulario.get('correo').invalid && this.formulario.get('correo').touched;
+    return this.formulario.get('email').invalid && this.formulario.get('email').touched;
   }
 
   ingresar() {
