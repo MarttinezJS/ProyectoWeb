@@ -45,7 +45,11 @@ img{
 }
 
 .galeria{
-    margin: 20px;
+    margin: 30px;
+} 
+.carousel-item{
+    background-size: cover;
+    background-position: cover;
 }
 
 .banner2{
@@ -94,7 +98,7 @@ img{
     }
     .banner2 p{
         font-size: 25px;
-    }
+    } 
 }
 
 @media(min-width:1024px){

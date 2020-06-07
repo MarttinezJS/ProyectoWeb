@@ -32,6 +32,7 @@ import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 import { environment } from '../environments/environment';
 import { ConfiguracionComponent } from './components/usuario/configuracion/configuracion.component';
 import { NoImagePipe } from './pipes/no-image.pipe';
+import { DetalleProductoComponent } from './components/produtos/detalle-producto/detalle-producto.component';
 
 
 
@@ -48,7 +49,8 @@ import { NoImagePipe } from './pipes/no-image.pipe';
     TarjetasComponent,
     BusquedaPipe,
     ConfiguracionComponent,
-    NoImagePipe
+    NoImagePipe,
+    DetalleProductoComponent
   ],
   imports: [
     TooltipModule.forRoot(),
