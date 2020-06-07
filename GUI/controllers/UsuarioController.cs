@@ -3,7 +3,6 @@ using System.Linq;
 using Entity;
 using Logica;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using GUI.Models;
 using Dal;
 
@@ -41,8 +40,6 @@ namespace GUI.Controllers
           usuario.Id = usuarioInput.id;
           usuario.Nombre = usuarioInput.nombre;
           usuario.Direccion = usuarioInput.direccion;
-          usuario.Correo = usuarioInput.correo;
-          usuario.Pass = usuarioInput.pass;
           usuario.Telefono = usuarioInput.telefono;
           
           return usuario;

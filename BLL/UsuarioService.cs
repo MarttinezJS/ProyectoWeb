@@ -21,7 +21,7 @@ namespace Logica
         public GuardarUsuarioResponse guardar(Usuario usuario) {
             try
             {
-                if (_context.Usuarios.Find( usuario.Correo ) != null)
+                if (_context.Usuarios.Find( usuario.Id ) != null)
                 {
                     return new GuardarUsuarioResponse( "Error, el correo ya es utilizado" );
                 }
@@ -51,14 +51,13 @@ namespace Logica
         }
 
         public string modificar( Usuario usuarioNuevo ) {
-            var usuario = _context.Usuarios.Find( usuarioNuevo.Correo );
+            var usuario = _context.Usuarios.Find( usuarioNuevo.Id );
             if (usuario == null)
             {
                 return "El usuario no se encuentra registrado";
             }
             usuario.Direccion = usuarioNuevo.Direccion;
             usuario.Nombre = usuarioNuevo.Nombre;
-            usuario.Pass = usuarioNuevo.Pass;
             usuario.Telefono = usuarioNuevo.Telefono;
 
             _context.Usuarios.Update( usuario );

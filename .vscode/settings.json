@@ -1,0 +1,4 @@
+{
+    "appService.deploySubpath": "GUI\\publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/301ad8d1-79b5-4f8d-aa48-86b7720a152e/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/carniceriafreddy"
+}

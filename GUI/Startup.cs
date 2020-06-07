@@ -25,8 +25,7 @@ namespace GUI
         public void ConfigureServices(IServiceCollection services)
         {
             // Configurar cadena de Conexion con EF
-            var connectionString=Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<CarniceriaContext>(p=>p.UseSqlServer(connectionString));
+            services.AddDbContext<CarniceriaContext>(p=>p.UseSqlServer( Configuration.GetConnectionString("DefaultConnection") ));
 
             services.AddControllersWithViews();
             //Agregar OpenApi Swagger

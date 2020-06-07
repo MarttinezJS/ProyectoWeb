@@ -1,0 +1,14 @@
+C:\Users\Martinez\Documents\Web\ProyectoWeb\BLL\bin\Release\netstandard2.1\BLL.deps.json
+C:\Users\Martinez\Documents\Web\ProyectoWeb\BLL\bin\Release\netstandard2.1\BLL.dll
+C:\Users\Martinez\Documents\Web\ProyectoWeb\BLL\bin\Release\netstandard2.1\BLL.pdb
+C:\Users\Martinez\Documents\Web\ProyectoWeb\BLL\bin\Release\netstandard2.1\Dal.dll
+C:\Users\Martinez\Documents\Web\ProyectoWeb\BLL\bin\Release\netstandard2.1\Entity.dll
+C:\Users\Martinez\Documents\Web\ProyectoWeb\BLL\bin\Release\netstandard2.1\Entity.pdb
+C:\Users\Martinez\Documents\Web\ProyectoWeb\BLL\bin\Release\netstandard2.1\Dal.pdb
+C:\Users\Martinez\Documents\Web\ProyectoWeb\BLL\obj\Release\netstandard2.1\BLL.csprojAssemblyReference.cache
+C:\Users\Martinez\Documents\Web\ProyectoWeb\BLL\obj\Release\netstandard2.1\BLL.AssemblyInfoInputs.cache
+C:\Users\Martinez\Documents\Web\ProyectoWeb\BLL\obj\Release\netstandard2.1\BLL.AssemblyInfo.cs
+C:\Users\Martinez\Documents\Web\ProyectoWeb\BLL\obj\Release\netstandard2.1\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Martinez\Documents\Web\ProyectoWeb\BLL\obj\Release\netstandard2.1\BLL.csproj.CopyComplete
+C:\Users\Martinez\Documents\Web\ProyectoWeb\BLL\obj\Release\netstandard2.1\BLL.dll
+C:\Users\Martinez\Documents\Web\ProyectoWeb\BLL\obj\Release\netstandard2.1\BLL.pdb
