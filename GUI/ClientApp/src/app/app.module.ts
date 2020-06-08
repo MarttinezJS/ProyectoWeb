@@ -9,6 +9,7 @@ import { AngularFireModule } from 'angularfire2';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 import { AngularFireStorageModule } from 'angularfire2/storage';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Providers
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -33,7 +34,8 @@ import { environment } from '../environments/environment';
 import { ConfiguracionComponent } from './components/usuario/configuracion/configuracion.component';
 import { NoImagePipe } from './pipes/no-image.pipe';
 import { DetalleProductoComponent } from './components/produtos/detalle-producto/detalle-producto.component';
-
+import { ServiciosComponent } from './components/servicios/servicios.component';
+import { ProveedoresComponent } from './components/proveedores/proveedores.component';
 
 
 
@@ -50,7 +52,9 @@ import { DetalleProductoComponent } from './components/produtos/detalle-producto
     BusquedaPipe,
     ConfiguracionComponent,
     NoImagePipe,
-    DetalleProductoComponent
+    DetalleProductoComponent,
+    ServiciosComponent,
+    ProveedoresComponent
   ],
   imports: [
     TooltipModule.forRoot(),
@@ -62,7 +66,8 @@ import { DetalleProductoComponent } from './components/produtos/detalle-producto
     HttpClientModule,
     FormsModule,
     NgxSpinnerModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    BrowserAnimationsModule
   ],
   providers: [
     AngularFireAuth,

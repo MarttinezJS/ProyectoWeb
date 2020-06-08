@@ -31,7 +31,8 @@ export class MenuComponent implements OnInit {
   logout() {
     this.logeado = false;
     this.afAuth.auth.signOut();
-    this.authService.borrarToken();
+    this.authService.borrarSesion();
+    this.router.navigateByUrl('/');
   }
 
   verificarSesion() {

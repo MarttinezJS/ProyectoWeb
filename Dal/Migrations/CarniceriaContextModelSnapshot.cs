@@ -26,6 +26,9 @@ namespace Dal.Migrations
                     b.Property<string>("Descripcion")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Nombre")
                         .HasColumnType("nvarchar(max)");
 
@@ -45,25 +48,22 @@ namespace Dal.Migrations
 
             modelBuilder.Entity("Entity.Usuario", b =>
                 {
-                    b.Property<string>("Correo")
+                    b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Direccion")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Id")
+                    b.Property<string>("ImageURL")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombre")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Pass")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Telefono")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Correo");
+                    b.HasKey("Id");
 
                     b.ToTable("Usuarios");
                 });

@@ -6,12 +6,16 @@ import { ProductoComponent } from './components/produtos/producto/producto.compo
 import { RegistrarProductoComponent } from './components/produtos/registrar-producto/registrar-producto.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ConfiguracionComponent } from './components/usuario/configuracion/configuracion.component';
+import { ProveedoresComponent } from './components/proveedores/proveedores.component';
+import { ServiciosComponent } from './components/servicios/servicios.component';
 
 export const ROUTES: Routes = [
     { path: 'inicio', component: InicioComponent },
     { path: 'login', component: LoginComponent },
     { path: 'signin', component: SigninComponent },
-    { path: 'producto', component: ProductoComponent},
+    { path: 'productos', component: ProductoComponent},
+    { path: 'servicios', component: ServiciosComponent},
+    { path: 'proveedores', component: ProveedoresComponent},
     { path: 'registroProducto', component: RegistrarProductoComponent, canActivate: [AuthGuard] },
     { path: 'usuarioconfig', component: ConfiguracionComponent, canActivate: [AuthGuard] },
     { path: '', pathMatch: 'full', component: InicioComponent }
