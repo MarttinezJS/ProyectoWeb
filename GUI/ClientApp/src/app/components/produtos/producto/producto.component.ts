@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ProductoService } from 'src/app/services/producto.service';
 import { Producto } from '../../models/Producto';
 import { AuthService } from '../../../services/auth.service';
-import { AngularFireStorage } from 'angularfire2/storage';
 
 
 @Component({
@@ -25,12 +24,10 @@ export class ProductoComponent {
   cargarLista() {
     this.productosServicio.get().subscribe(result => {
       this.productos = result;
-      console.log(this.productos);
     });
   }
 
   validarAdmin() {
     this.isAdmin = this.authService.verificarAdmin();
-    console.log(this.isAdmin);
   }
 }

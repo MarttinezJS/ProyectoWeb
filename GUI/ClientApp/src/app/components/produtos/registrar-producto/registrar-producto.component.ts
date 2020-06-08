@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Producto } from '../../models/Producto';
 import { ProductoService } from '../../../services/producto.service';
+import { AngularFireStorage, AngularFireUploadTask, AngularFireStorageReference } from 'angularfire2/storage';
 import Swal from 'sweetalert2';
-import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 
 interface HtmlInputEvent extends Event {
   target: HTMLInputElement & EventTarget;
@@ -16,12 +16,18 @@ interface HtmlInputEvent extends Event {
 })
 export class RegistrarProductoComponent implements OnInit {
 
-  grupo: FormGroup;
+  formulario: FormGroup;
   producto: Producto;
   photoSelected: string | ArrayBuffer;
-  file: File;
+  tarea: AngularFireUploadTask;
+  porcentaje: number;
+  imgURL = '';
+  subido = false;
+  pausado = false;
+
   constructor( private fb: FormBuilder,
-               private productoService: ProductoService) {
+               private productoService: ProductoService,
+               private storage: AngularFireStorage) {
     this.crearFormulario();
    }
 
@@ -29,23 +35,23 @@ export class RegistrarProductoComponent implements OnInit {
   }
 
   get nombreNoValido() {
-    return this.grupo.get('nombre').invalid && this.grupo.get('nombre').touched;
+    return this.formulario.get('nombre').invalid && this.formulario.get('nombre').touched;
   }
   get idNoValido() {
-    return this.grupo.get('id').invalid && this.grupo.get('id').touched;
+    return this.formulario.get('id').invalid && this.formulario.get('id').touched;
   }
   get proveedorNoValido() {
-    return this.grupo.get('proveedor').invalid && this.grupo.get('proveedor').touched;
+    return this.formulario.get('proveedor').invalid && this.formulario.get('proveedor').touched;
   }
   get precioNoValido() {
-    return this.grupo.get('precio').invalid && this.grupo.get('precio').touched;
+    return this.formulario.get('precio').invalid && this.formulario.get('precio').touched;
   }
   get descripcionNoValido() {
-    return this.grupo.get('descripcion').invalid && this.grupo.get('descripcion').touched;
+    return this.formulario.get('descripcion').invalid && this.formulario.get('descripcion').touched;
   }
 
   crearFormulario() {
-    this.grupo = this.fb.group({
+    this.formulario = this.fb.group({
       id         : ['', [Validators.required, Validators.maxLength(3)]],
       nombre     : ['', Validators.required],
       proveedor   : ['', Validators.required],
@@ -57,18 +63,55 @@ export class RegistrarProductoComponent implements OnInit {
 
   onPhotoSelected(event: HtmlInputEvent): void {
     if (event.target.files && event.target.files[0]) {
-      this.file = <File>event.target.files[0];
-      // image preview
+      const file = event.target.files[0];
       const reader = new FileReader();
       reader.onload = e => this.photoSelected = reader.result;
-      reader.readAsDataURL(this.file);
+      reader.readAsDataURL(file);
+
+      this.subido = false;
+      this.pausado = false;
+      let nombre = new Date().getTime().toString();
+      nombre = nombre + file.name.toString().substring( file.name.toString().lastIndexOf('.') );
+      const ruta = 'Productos/'  + nombre;
+      console.log(nombre);
+      const ref = this.storage.ref(ruta);
+      this.tarea = ref.put( file );
+
+      this.tareaState( ref );
+      this.tareaPercent();
     }
   }
 
+  tareaState( ref: AngularFireStorageReference ) {
+    this.tarea.then( rest => {
+      this.subido = true;
+      ref.getDownloadURL().subscribe( imgURL => {
+        this.imgURL = imgURL;
+      });
+      Swal.fire({
+        icon: 'success',
+        title: 'Archivo subido'
+      });
+    }).catch( e => {
+      console.log(e);
+      Swal.fire({
+        icon: 'error',
+        title: 'Ops...',
+        text: e.message_
+      });
+    });
+  }
+
+  tareaPercent() {
+    this.tarea.percentageChanges().subscribe( porcentaje => {
+      this.porcentaje = porcentaje;
+    });
+  }
 
   guardarProducto() {
-    if (this.grupo.valid) {
-      this.producto = this.grupo.value;
+    if (this.formulario.valid) {
+      this.producto = this.formulario.value;
+      this.producto.imagenURL = this.imgURL;
       this.productoService.post(this.producto).subscribe( p => {
         if (p != null) {
           Swal.fire({
@@ -85,6 +128,18 @@ export class RegistrarProductoComponent implements OnInit {
         }
       });
     }
+  }
+
+  pausarSubida() {
+    this.pausado = this.tarea.pause();
+  }
+
+  continuarSubida() {
+    this.pausado = !this.tarea.resume();
+  }
+
+  cancelarSubida() {
+    this.subido = !this.tarea.cancel();
   }
 
 }

@@ -2,107 +2,80 @@
     <section class="contact-box">
         <div class="row no-gutters align-items-center justify-content-center vh-100 bg-dark">
             <div class="col-xl-7 col-lg-12 d-flex">
-                 <div class="container align-self-center p-6">
-                     <div class="text-right butt">
-                      <button routerLink="/producto"
-                       class="btn btn-danger mb-4">
+                <div class="container align-self-center p-6">
+                    <div class="text-right butt">
+                        <button routerLink="/producto" class="btn btn-danger mb-4">
                       <i class="fa fa-arrow-left"></i>
                         Regresar    
                       </button>
-                     </div>
-                     <h1 class="font-weight-bold mb-2">Registrar producto</h1>
-                     <p class="text-muted mb-5">Ingresa la siguiente información para registrarte.</p> 
-                     <form autocomplete="off" [formGroup]="grupo" >
-                         <div class="form-group mb-3">
-                                 <label class="font-weight-bold">Nombre</label>
-                                 <input type="text"
-                                        class="form-control" 
-                                        placeholder="Nombre del producto"
-                                        formControlName="nombre"
-                                        [class.is-invalid]="nombreNoValido">
-                                <small *ngIf="nombreNoValido" class="text-danger">
+                    </div>
+                    <h1 class="font-weight-bold mb-2">Registrar producto</h1>
+                    <p class="text-muted mb-5">Ingresa la siguiente información para registrarte.</p>
+                    <form autocomplete="off" [formGroup]="formulario" (submit)="guardarProducto()">
+                        <div class="form-group mb-3">
+                            <label class="font-weight-bold">Nombre</label>
+                            <input type="text" class="form-control" placeholder="Nombre del producto" formControlName="nombre" [class.is-invalid]="nombreNoValido">
+                            <small *ngIf="nombreNoValido" class="text-danger">
                                  Campo obligatorio
-                                </small> 
-                         </div>
- 
-                         <div class="form-group mt-4">
-                             <label class="font-weight-bold">Codigo Producto</label>
-                             <input type="text"
-                                    class="form-control"
-                                    placeholder="Codigo del producto" 
-                                    [class.is-invalid]="idNoValido"
-                                    formControlName="id">
+                                </small>
+                        </div>
+
+                        <div class="form-group mt-4">
+                            <label class="font-weight-bold">Codigo Producto</label>
+                            <input type="text" class="form-control" placeholder="Codigo del producto" [class.is-invalid]="idNoValido" formControlName="id">
                             <small *ngIf="idNoValido" class="text-danger">
                              Campo obligatorio
-                           </small> 
-                         </div>
-                         
-                         <div class="form-group mt-4">
-                             <label class="font-weight-bold">Proveedor</label>
-                             <input type="text"
-                                    class="form-control" 
-                                    formControlName="proveedor"
-                                    name="proveedor" 
-                                    [class.is-invalid]="proveedorNoValido"
-                                    placeholder="Proveedor del producto">
-                             <small *ngIf="proveedorNoValido" class="text-danger">
+                           </small>
+                        </div>
+
+                        <div class="form-group mt-4">
+                            <label class="font-weight-bold">Proveedor</label>
+                            <input type="text" class="form-control" formControlName="proveedor" name="proveedor" [class.is-invalid]="proveedorNoValido" placeholder="Proveedor del producto">
+                            <small *ngIf="proveedorNoValido" class="text-danger">
                              Campo obligatorio
-                             </small> 
-                         </div>
- 
-                         <div class="form-group mt-4">
-                                 <label class="font-weight-bold">Precio</label>
-                                 <input type="number"
-                                        class="form-control" 
-                                        placeholder="Precio del producto"        
-                                        formControlName="precio" 
-                                        [class.is-invalid]="precioNoValido"
-                                        name="precio"> 
-                                 <small *ngIf="precioNoValido" class="text-danger">
+                             </small>
+                        </div>
+
+                        <div class="form-group mt-4">
+                            <label class="font-weight-bold">Precio</label>
+                            <input type="number" class="form-control" placeholder="Precio del producto" formControlName="precio" [class.is-invalid]="precioNoValido" name="precio">
+                            <small *ngIf="precioNoValido" class="text-danger">
                                  Campo obligatorio
-                                 </small> 
-                         </div>
+                                 </small>
+                        </div>
 
-                         <div class="form-group mt-4">
+                        <div class="form-group mt-4">
                             <label class="font-weight-bold">Presentacion</label>
-                            <input type="text"
-                                   class="form-control" 
-                                   placeholder="presentacion del producto"        
-                                   formControlName="presentacion"
-                                   name="presentacion">
-                         </div>
+                            <input type="text" class="form-control" placeholder="presentacion del producto" formControlName="presentacion" name="presentacion">
+                        </div>
 
- 
-                         <div class="form-group mt-4">
 
-                             <label class="font-weight-bold">Descripción</label>
-                             <textarea type="text" 
-                                       class="form-control" 
-                                       aria-label="With textarea" 
-                                       [class.is-invalid]="descripcionNoValido"
-                                       formControlName="descripcion">
-                                       </textarea>                                 
-                             <small *ngIf="descripcionNoValido" class="text-danger">
+                        <div class="form-group mt-4">
+
+                            <label class="font-weight-bold">Descripción</label>
+                            <textarea type="text" class="form-control" aria-label="With textarea" [class.is-invalid]="descripcionNoValido" formControlName="descripcion">
+                                       </textarea>
+                            <small *ngIf="descripcionNoValido" class="text-danger">
                               Campo obligatorio
-                             </small> 
-                         </div>
+                             </small>
+                        </div>
 
-                         <div class="form-group mt-3">
-                            <input type="file" class="d-none" (change)="onPhotoSelected($event)" #photoInput>
-                            <img [src]="photoSelected || 'assets/img/subirimg.png'" class="img-fluid" alt="No image"
-                                (click)="photoInput.click()">
-                         </div>
- 
-                         <button class="btn btn-primary width-100 mt-4" 
-                                 (click)="guardarProducto()"
-                                 type="submit"
-                                 [disabled]="grupo.invalid">
+                        <div class="form-group mt-3">
+                            <input type="file" class="d-none" [disabled]="subido" (change)="onPhotoSelected($event)" #photoInput>
+                            <img [src]="photoSelected || 'assets/img/subirimg.png'" class="img-fluid" alt="No image" (click)="photoInput.click()" height="100" width="100">
+                            <button type="button" *ngIf=" !pausado && !subido " (click)="pausarSubida()" class="btn btn-primary">Pausar</button>
+                            <button type="button" *ngIf=" pausado && !subido  " (click)="continuarSubida()" class="btn btn-primary">Continuar</button>
+                            <button type="button" *ngIf=" !subido " (click)="cancelarSubida()" class="btn btn-danger">Cancelar</button>
+                            <progressbar *ngIf=" !subido  " [value]=" porcentaje " type="success" [striped]="true" [animate]="true"><i>{{ porcentaje }}</i></progressbar>
+                        </div>
+
+                        <button class="btn btn-primary width-100 mt-4" type="submit" [disabled]="formulario.invalid">
                                  <i class="fa fa-save"></i>
                              Regístrar 
                          </button>
-                     </form>
-                 </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
-   </body>  
+</body>

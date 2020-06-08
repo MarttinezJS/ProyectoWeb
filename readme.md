@@ -31,3 +31,5 @@
 0.3.2 - Validacion de los botones de sesion y agregado icono
 
 0.3.3 - validar admin agregado
+
+0.3.4 - cargue de imagenes finalizado
