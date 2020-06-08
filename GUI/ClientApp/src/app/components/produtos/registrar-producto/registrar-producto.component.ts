@@ -5,6 +5,10 @@ import { ProductoService } from '../../../services/producto.service';
 import Swal from 'sweetalert2';
 import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 
+interface HtmlInputEvent extends Event {
+  target: HTMLInputElement & EventTarget;
+}
+
 @Component({
   selector: 'app-registrar-producto',
   templateUrl: './registrar-producto.component.html',
@@ -14,6 +18,8 @@ export class RegistrarProductoComponent implements OnInit {
 
   grupo: FormGroup;
   producto: Producto;
+  photoSelected: string | ArrayBuffer;
+  file: File;
   constructor( private fb: FormBuilder,
                private productoService: ProductoService) {
     this.crearFormulario();
@@ -48,6 +54,17 @@ export class RegistrarProductoComponent implements OnInit {
       presentacion: ['']
     });
   }
+
+  onPhotoSelected(event: HtmlInputEvent): void {
+    if (event.target.files && event.target.files[0]) {
+      this.file = <File>event.target.files[0];
+      // image preview
+      const reader = new FileReader();
+      reader.onload = e => this.photoSelected = reader.result;
+      reader.readAsDataURL(this.file);
+    }
+  }
+
 
   guardarProducto() {
     if (this.grupo.valid) {
