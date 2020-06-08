@@ -10,6 +10,7 @@ namespace GUI.Models
         public int precio { get; set; }
         public string presentacion { get; set; }
         public string descripcion { get; set; }
+        public string imageURL { get; set; }
     }
     public class ProductoViewModel: ProductoInputModel
     {
@@ -22,6 +23,7 @@ namespace GUI.Models
             precio = producto.Precio;
             presentacion = producto.Presentacion;
             descripcion = producto.Descripcion;
+            imageURL = producto.ImageUrl;
         }
     }
 }

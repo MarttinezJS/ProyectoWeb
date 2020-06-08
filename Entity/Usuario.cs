@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Entity
@@ -8,7 +9,8 @@ namespace Entity
         [Key]
         public string Id { get; set; }
         public string Nombre { get; set; }
-        public List<string> Direccion { get; set; }
-        public List<string> Telefono { get; set; }
+        public String ImageURL { get; set; }
+        public string Direccion { get; set; }
+        public string Telefono { get; set; }
     }
 }
