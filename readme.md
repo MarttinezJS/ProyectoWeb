@@ -32,4 +32,6 @@
 
 0.3.3 - validar admin agregado
 
-0.3.4 - cargue de imagenes finalizado
+0.3.4 - Cargue de imagenes finalizado
+
+0.3.5 - Bugfix de traer imagen
