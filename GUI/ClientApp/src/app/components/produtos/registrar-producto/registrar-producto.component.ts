@@ -111,7 +111,7 @@ export class RegistrarProductoComponent implements OnInit {
   guardarProducto() {
     if (this.formulario.valid) {
       this.producto = this.formulario.value;
-      this.producto.imagenURL = this.imgURL;
+      this.producto.imageURL = this.imgURL;
       this.productoService.post(this.producto).subscribe( p => {
         if (p != null) {
           Swal.fire({
@@ -119,7 +119,6 @@ export class RegistrarProductoComponent implements OnInit {
             icon: 'success'
           });
         } else {
-          p = this.producto;
           Swal.fire({
             icon: 'error',
             title: 'Error al registrar',

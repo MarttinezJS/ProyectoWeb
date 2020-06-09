@@ -44,6 +44,7 @@ namespace GUI.Controllers
           producto.Precio = productoInput.precio;
           producto.Presentacion = productoInput.presentacion;
           producto.Descripcion = productoInput.descripcion;
+          producto.ImageUrl = productoInput.imageURL;
           
           return producto;
       }

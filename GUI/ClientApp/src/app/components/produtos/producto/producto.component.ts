@@ -24,6 +24,7 @@ export class ProductoComponent {
   cargarLista() {
     this.productosServicio.get().subscribe(result => {
       this.productos = result;
+      console.log(this.productos);
     });
   }
 
