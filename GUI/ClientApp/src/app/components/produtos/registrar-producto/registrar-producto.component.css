@@ -14,7 +14,7 @@ body {
   letter-spacing: .05rem;
   background: #15181f;
   background-size: cover;
-  height: 220vh;
+  
   
 }
 
@@ -88,9 +88,9 @@ label{
       padding: 0;
   }
 
-  body{
-      height: 240vh;
-  }
+  /* body{
+      height: 200vh;
+  } */
 
   .width-100 {
       width: 100%;

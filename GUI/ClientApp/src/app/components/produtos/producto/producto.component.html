@@ -6,7 +6,7 @@
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" [(ngModel)]="termino" name="Busqueda" type="search" placeholder="Nombre del producto" aria-label="Buscar">
         </form>
-        <div class="col text-right">
+        <div *ngIf="isAdmin" class="col text-right">
             <button routerLink="/registroProducto" class="btn btn-primary">
                 <i class="fa fa-plus"></i>
                 Agregar
