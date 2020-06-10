@@ -35,3 +35,5 @@
 0.3.4 - Cargue de imagenes finalizado
 
 0.3.5 - Bugfix de traer imagen
+
+0.4.0 - Pedido armado, creada pedido service

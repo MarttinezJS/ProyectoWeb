@@ -44,7 +44,6 @@ export class AuthService {
   traerAdmins() {
     this.db.collection('Administradores').valueChanges().subscribe( (rest: Admin[]) => {
       this.administradores = rest;
-      console.log(this.administradores);
     });
   }
 

@@ -36,6 +36,7 @@ import { NoImagePipe } from './pipes/no-image.pipe';
 import { DetalleProductoComponent } from './components/produtos/detalle-producto/detalle-producto.component';
 import { ServiciosComponent } from './components/servicios/servicios.component';
 import { ProveedoresComponent } from './components/proveedores/proveedores.component';
+import { CompraComponent } from './components/compra/compra.component';
 
 
 
@@ -54,7 +55,8 @@ import { ProveedoresComponent } from './components/proveedores/proveedores.compo
     NoImagePipe,
     DetalleProductoComponent,
     ServiciosComponent,
-    ProveedoresComponent
+    ProveedoresComponent,
+    CompraComponent
   ],
   imports: [
     TooltipModule.forRoot(),
