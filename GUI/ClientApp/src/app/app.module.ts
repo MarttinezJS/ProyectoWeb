@@ -37,6 +37,7 @@ import { ServiciosComponent } from './components/servicios/servicios.component';
 import { ProveedoresComponent } from './components/proveedores/proveedores.component';
 import { DetallePedidoComponent } from './components/ventas/detalle-pedido/detalle-pedido.component';
 import { PedidoComponent } from './components/ventas/pedido/pedido.component';
+import { CarritoComponent } from './components/ventas/carrito/carrito.component';
 
 
 
@@ -56,7 +57,8 @@ import { PedidoComponent } from './components/ventas/pedido/pedido.component';
     ServiciosComponent,
     ProveedoresComponent,
     DetallePedidoComponent,
-    PedidoComponent
+    PedidoComponent,
+    CarritoComponent
   ],
   imports: [
     TooltipModule.forRoot(),
