@@ -11,6 +11,7 @@ import { ServiciosComponent } from './components/servicios/servicios.component';
 import { PedidoClienteComponent } from './components/pedido-cliente/pedido-cliente.component';
 import { PedidoVendedorComponent } from './components/pedido-vendedor/pedido-vendedor.component';
 import { DetallePedidoComponent } from './components/ventas/detalle-pedido/detalle-pedido.component';
+import { CarritoComponent } from './components/ventas/carrito/carrito.component';
 
 export const ROUTES: Routes = [
     { path: 'inicio', component: InicioComponent },
@@ -24,5 +25,6 @@ export const ROUTES: Routes = [
     { path: 'pedidoCliente', component: PedidoClienteComponent },
     { path: 'pedidoVendedor', component: PedidoVendedorComponent },
     { path: 'detallePedido', component: DetallePedidoComponent},
+    { path: 'carrito', component: CarritoComponent },
     { path: '', pathMatch: 'full', component: InicioComponent }
 ];
