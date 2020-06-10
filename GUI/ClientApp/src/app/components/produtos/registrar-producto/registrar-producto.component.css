@@ -14,9 +14,10 @@ body {
   letter-spacing: .05rem;
   background: #15181f;
   background-size: cover;
-  height: 200vh;
+  
   
 }
+
 
 h1{
   color: white;
@@ -87,9 +88,9 @@ label{
       padding: 0;
   }
 
-  body{
-      height: 230vh;
-  }
+  /* body{
+      height: 200vh;
+  } */
 
   .width-100 {
       width: 100%;

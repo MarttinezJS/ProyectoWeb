@@ -1,0 +1,54 @@
+<div class="container d-flex  w-100 justify-content-center mt-3">
+    <h1>Historial de pedidos</h1>
+</div>
+<div class="container">
+    <div class="col">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Foto</th>
+                    <th>Descripcion</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr >
+                    <td>
+                        <img src="../../../assets/fondos/2.jpg" class="img-thumb">
+                    </td >
+                    <td > <div class="container">
+                        <h1>carne de cerdo</h1>
+                        <p>codigo pedido:  <i>124521412</i></p>
+                        <p>codigo producto: <i>21f21fas21</i></p>
+                        <p>cantidad: <i>4  kilo</i></p> 
+                        <p>precio: <i>$ 25.000</i></p>
+                        <p>Direccion: <i>calle siempre viva</i></p>
+                    </div>
+                    </td>
+                    <td>
+                        <div class="container">
+                         <span *ngIf="envio && !pendiente" class="badge badge-primary">Enviado</span>
+                         <span *ngIf="!envio && pendiente" class="badge badge-secondary">Pendiente</span>
+                         <span  *ngIf="envio && pendiente" class="badge badge-success">Finalizado</span>
+                         <span  *ngIf="!envio && !pendiente" class="badge badge-danger">Cancelado</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../../../assets/fondos/19.jpg" class="img-thumb">
+                    </td>
+                    <td> <div class="container">
+                        <h1>carne de cerdo</h1>
+                        <p>codigo pedido:124521412</p>
+                        <p>codigo producto:21f21fas21</p>
+                        <p>cantidad: 4  kilo</p> 
+                        <p>precio: $ 25.000</p>
+                    </div>
+                    </td>
+                    <td>Finalizado</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

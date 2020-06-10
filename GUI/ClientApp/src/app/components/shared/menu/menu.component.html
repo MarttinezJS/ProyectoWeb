@@ -15,11 +15,15 @@
             <li class="nav-item mr-sm-3 a" routerLinkActive="active">
                 <a class="nav-link" [routerLink]="['/servicios']">Servicio</a>
             </li>
-            <li class="nav-item a" routerLinkActive="active">
+            <li class="nav-item  mr-sm-3 a" routerLinkActive="active">
                 <a class="nav-link" [routerLink]="['/proveedores']">Proveedores</a>
+            </li>
+            <li class="nav-item a" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/pedidoVendedor']">Pedidos</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
+            <a  class="mr-sm-4" routerLink="/pedidoCliente"> <i class="fas fa-cart-arrow-down icon"></i> </a>
             <button class="btn btn-outline-primary  mr-sm-2" *ngIf="!logeado" routerLink="/login">
           <i class="fas fa-user-circle"></i> Login</button>
             <button class="btn btn-outline-primary my-2 my-sm-0" *ngIf="!logeado" routerLink="/signin">

@@ -36,7 +36,9 @@ import { NoImagePipe } from './pipes/no-image.pipe';
 import { DetalleProductoComponent } from './components/produtos/detalle-producto/detalle-producto.component';
 import { ServiciosComponent } from './components/servicios/servicios.component';
 import { ProveedoresComponent } from './components/proveedores/proveedores.component';
-import { CompraComponent } from './components/compra/compra.component';
+
+import { PedidoClienteComponent } from './components/pedido-cliente/pedido-cliente.component';
+import { PedidoVendedorComponent } from './components/pedido-vendedor/pedido-vendedor.component';
 
 
 
@@ -56,7 +58,8 @@ import { CompraComponent } from './components/compra/compra.component';
     DetalleProductoComponent,
     ServiciosComponent,
     ProveedoresComponent,
-    CompraComponent
+    PedidoClienteComponent,
+    PedidoVendedorComponent
   ],
   imports: [
     TooltipModule.forRoot(),

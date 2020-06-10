@@ -8,6 +8,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { ConfiguracionComponent } from './components/usuario/configuracion/configuracion.component';
 import { ProveedoresComponent } from './components/proveedores/proveedores.component';
 import { ServiciosComponent } from './components/servicios/servicios.component';
+import { PedidoClienteComponent } from './components/pedido-cliente/pedido-cliente.component';
+import { PedidoVendedorComponent } from './components/pedido-vendedor/pedido-vendedor.component';
 
 export const ROUTES: Routes = [
     { path: 'inicio', component: InicioComponent },
@@ -18,5 +20,7 @@ export const ROUTES: Routes = [
     { path: 'proveedores', component: ProveedoresComponent},
     { path: 'registroProducto', component: RegistrarProductoComponent, canActivate: [AuthGuard] },
     { path: 'usuarioconfig', component: ConfiguracionComponent, canActivate: [AuthGuard] },
+    { path: 'pedidoCliente', component: PedidoClienteComponent },
+    { path: 'pedidoVendedor', component: PedidoVendedorComponent },
     { path: '', pathMatch: 'full', component: InicioComponent }
 ];
