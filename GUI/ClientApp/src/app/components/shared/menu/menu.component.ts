@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AuthService } from '../../../services/auth.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-menu',
@@ -12,7 +13,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class MenuComponent implements OnInit {
 
   logeado: boolean;
-
+  items = [5, 5, 6, 8, 4, 5, 1, 2 ];
   constructor(private router: Router,
               private afAuth: AngularFireAuth,
               private authService: AuthService,
@@ -43,6 +44,12 @@ export class MenuComponent implements OnInit {
       } else {
         this.logeado = false;
       }
+    });
+  }
+
+  llamarCarrito() {
+    Swal.fire({
+      position: 'top-right',
     });
   }
 
