@@ -39,3 +39,5 @@
 0.4.0 - Pedido armado, creada pedido service
 
 0.4.1 - Agregado metodo calcular pedido, creadas las clases pedido y detallepedido en la entity
+
+0.4.2 - Mejorado la pagina de pedido, aplicando recursividad
