@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
   ingresar() {
     this.afAuth.auth.signInWithEmailAndPassword(this.formulario.value.email, this.formulario.value.password)
     .then( rest => {
-      console.log( rest );
       this.authService.guardaSesion(rest.user.refreshToken, rest.user.uid);
       this.route.navigateByUrl('/inicio');
     })

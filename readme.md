@@ -43,3 +43,5 @@
 0.4.2 - Mejorado la pagina de pedido, aplicando recursividad
 
 0.4.2.1 - Solucion de conflictos
+
+0.4.3 - Detalles de pedido teminado, pendiente corregir el bug de cantidad 0

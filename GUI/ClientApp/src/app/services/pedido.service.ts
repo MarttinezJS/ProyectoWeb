@@ -4,13 +4,14 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { HandleHttpErrorService } from '../@base/handle-http-error.service';
 import { tap, catchError } from 'rxjs/operators';
+import { DetallePedido } from '../components/models/DetallePedido';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PedidoService {
 
-  pedido: Pedido;
+  detalles: DetallePedido[] = [];
   baseUrl: string;
 
   constructor(private http: HttpClient,
@@ -19,34 +20,36 @@ export class PedidoService {
     this.baseUrl = baseUrl;
   }
 
-  getPedido() {
-    return this.pedido;
+  getdetalles() {
+    return this.detalles;
   }
 
-  setPedido( pedido: Pedido ) {
-    this.pedido = pedido;
+  setdetalles( detalles: DetallePedido[] ) {
+    this.detalles = detalles;
+    this.calcularSubtotal();
+    this.calcularTotal();
+    console.log(this.detalles);
   }
 
   calcularSubtotal() {
-    this.pedido.detallePedido.forEach( dPedido => {
+    this.detalles.forEach( dPedido => {
       let kilo = 0;
       switch ( dPedido.presentacion ) {
-        case 'gramos': kilo = dPedido.cantidad / 1000; break;
-        case 'libra': kilo = dPedido.cantidad / 2; break;
+        case 'Gramos': kilo = dPedido.cantidad / 1000; break;
+        case 'Libra': kilo = dPedido.cantidad / 2; break;
         default: break;
       }
-      console.log(kilo);
+      console.log('Kilos: ' + kilo);
       dPedido.subTotal = kilo * dPedido.producto.precio;
     });
-
   }
 
   calcularTotal() {
     let total = 0;
-    this.pedido.detallePedido.forEach( dPedido => {
+    this.detalles.forEach( dPedido => {
       total += dPedido.subTotal;
     });
-    console.log(total);
+    console.log('total:' + total);
   }
 
   get(): Observable<Pedido[]> {

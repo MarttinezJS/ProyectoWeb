@@ -9,7 +9,8 @@ import { ConfiguracionComponent } from './components/usuario/configuracion/confi
 import { ProveedoresComponent } from './components/proveedores/proveedores.component';
 import { ServiciosComponent } from './components/servicios/servicios.component';
 import { DetallePedidoComponent } from './components/ventas/detalle-pedido/detalle-pedido.component';
-import { PedidoComponent } from './components/ventas/pedido/pedido.component';
+import { PedidosComponent } from './components/ventas/pedidos/pedidos.component';
+import { CarritoComponent } from './components/ventas/carrito/carrito.component';
 
 export const ROUTES: Routes = [
     { path: 'inicio', component: InicioComponent },
@@ -20,7 +21,8 @@ export const ROUTES: Routes = [
     { path: 'proveedores', component: ProveedoresComponent},
     { path: 'registroProducto', component: RegistrarProductoComponent, canActivate: [AuthGuard] },
     { path: 'usuarioconfig', component: ConfiguracionComponent, canActivate: [AuthGuard] },
-    { path: 'pedido', component: PedidoComponent },
+    { path: 'pedidos/:id', component: PedidosComponent },
+    { path: 'carrito', component: CarritoComponent },
     { path: 'detallePedido/:id', component: DetallePedidoComponent},
     { path: '**', component: InicioComponent },
 ];

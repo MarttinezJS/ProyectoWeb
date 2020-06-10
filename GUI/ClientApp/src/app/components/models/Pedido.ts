@@ -7,4 +7,7 @@ export class Pedido {
     total: number;
     detallePedido: DetallePedido[];
     cliente: Usuario;
+    constructor() {
+        this.id = new Date().getTime().toString();
+    }
 }

@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
 export class MenuComponent implements OnInit {
 
   logeado: boolean;
-  items = [5, 5, 6, 8, 4, 5, 1, 2 ];
+  id: string;
   constructor(private router: Router,
               private afAuth: AngularFireAuth,
               private authService: AuthService,
@@ -41,15 +41,10 @@ export class MenuComponent implements OnInit {
       this.spinner.hide();
       if ( rest ) {
         this.logeado = true;
+        this.id = rest.uid;
       } else {
         this.logeado = false;
       }
-    });
-  }
-
-  llamarCarrito() {
-    Swal.fire({
-      position: 'top-right',
     });
   }
 
