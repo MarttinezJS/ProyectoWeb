@@ -7,7 +7,7 @@ export class DetallePedido {
     presentacion: string;
     subTotal: number;
 
-    constructor( id: string ) {
-        this.id = id;
+    constructor( ) {
+        this.id =  new Date().getTime().toString();
     }
 }

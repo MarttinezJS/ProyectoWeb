@@ -4,6 +4,7 @@ import { Producto } from '../../models/Producto';
 import { AuthService } from '../../../services/auth.service';
 import Swal from 'sweetalert2';
 import { DetallePedido } from '../../models/DetallePedido';
+import { PedidoService } from '../../../services/pedido.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ import { DetallePedido } from '../../models/DetallePedido';
 export class ProductoComponent implements OnDestroy {
 
   productos: Producto[];
-  pedido: DetallePedido[] = [];
+  detalles: DetallePedido[] = [];
   termino: string;
   isAdmin: boolean;
   valor: any;
@@ -30,13 +31,14 @@ export class ProductoComponent implements OnDestroy {
   });
 
   constructor(private productosServicio: ProductoService,
-              private authService: AuthService ) {
+              private authService: AuthService,
+              private pedidoService: PedidoService ) {
     this.cargarLista();
     this.validarAdmin();
   }
 
   ngOnDestroy(): void {
-    console.log('Se fue');
+    this.pedidoService.setdetalles(this.detalles);
   }
 
   cargarLista() {
@@ -54,12 +56,11 @@ export class ProductoComponent implements OnDestroy {
       icon: 'success',
       title: 'Se Añadió ' + producto.nombre
     });
-    const detallePedido = new DetallePedido( new Date().getTime().toString() );
+    const detallePedido = new DetallePedido();
     detallePedido.producto = producto;
     detallePedido.cantidad = cantidad;
     detallePedido.presentacion = presentacion;
-    console.log(detallePedido);
-    this.pedido.push( detallePedido );
+    this.detalles.push( detallePedido );
   }
 
    modalEmergente( producto: Producto ) {
@@ -86,8 +87,6 @@ export class ProductoComponent implements OnDestroy {
           showCancelButton: true,
         }).then( presentacion => {
           if ( presentacion ) {
-
-            console.log(producto);
             this.agregarProd( producto, cantidad.value, presentacion.value );
           }
         });

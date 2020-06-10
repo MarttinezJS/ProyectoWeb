@@ -36,7 +36,7 @@ import { DetalleProductoComponent } from './components/produtos/detalle-producto
 import { ServiciosComponent } from './components/servicios/servicios.component';
 import { ProveedoresComponent } from './components/proveedores/proveedores.component';
 import { DetallePedidoComponent } from './components/ventas/detalle-pedido/detalle-pedido.component';
-import { PedidoComponent } from './components/ventas/pedido/pedido.component';
+import { PedidosComponent } from './components/ventas/pedidos/pedidos.component';
 import { CarritoComponent } from './components/ventas/carrito/carrito.component';
 
 
@@ -57,7 +57,7 @@ import { CarritoComponent } from './components/ventas/carrito/carrito.component'
     ServiciosComponent,
     ProveedoresComponent,
     DetallePedidoComponent,
-    PedidoComponent,
+    PedidosComponent,
     CarritoComponent
   ],
   imports: [

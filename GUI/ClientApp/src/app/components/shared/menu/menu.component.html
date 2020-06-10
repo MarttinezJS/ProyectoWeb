@@ -18,22 +18,21 @@
             <li class="nav-item  mr-sm-3 a" routerLinkActive="active">
                 <a class="nav-link" [routerLink]="['/proveedores']">Proveedores</a>
             </li>
-            <li class="nav-item a" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['/pedidoVendedor']">Pedidos</a>
+            <li class="nav-item a" *ngIf="logeado" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/pedidos', id]">Pedidos</a>
             </li>
         </ul>
         <div class="col text-right a">
-          <a  class="mr-sm-4" routerLink="/pedidoCliente"> <i class="fas fa-cart-arrow-down icon"></i> </a>
+            <a class="mr-sm-4" [routerLink]="['/carrito']"> <i class="fas fa-cart-arrow-down icon"></i> </a>
             <button class="btn btn-outline-primary  mr-sm-2" *ngIf="!logeado" routerLink="/login">
           <i class="fas fa-user-circle"></i> Login</button>
             <button class="btn btn-outline-primary my-2 my-sm-0" *ngIf="!logeado" routerLink="/signin">
           <i class="fas fa-address-card"></i> Registrarse</button>
             <button *ngIf="logeado" (click)="logout()" class="btn btn-outline-red my-2 my-sm-0">
           <i class="fas fa-sign-out-alt"></i> Cerrar sesion</button>
-            <button class="btn btn-outline-blue-grey" (click)="llamarCarrito()" routerLink="/carrito">Carrito</button>
         </div>
-            
-        
+
+
     </div>
 </nav>
 

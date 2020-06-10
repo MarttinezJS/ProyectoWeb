@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Pedido } from '../../models/Pedido';
+import { PedidoService } from '../../../services/pedido.service';
 
 @Component({
   selector: 'app-carrito',
@@ -7,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarritoComponent implements OnInit {
 
-  constructor() { }
+  pedido = new Pedido();
+  constructor(private pedidoService: PedidoService) {}
 
   ngOnInit(): void {
   }
