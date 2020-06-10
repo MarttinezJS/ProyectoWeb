@@ -37,3 +37,5 @@
 0.3.5 - Bugfix de traer imagen
 
 0.4.0 - Pedido armado, creada pedido service
+
+0.4.1 - Agregado metodo calcular pedido, creadas las clases pedido y detallepedido en la entity

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { ProductoService } from 'src/app/services/producto.service';
 import { Producto } from '../../models/Producto';
 import { AuthService } from '../../../services/auth.service';
@@ -11,7 +11,7 @@ import { DetallePedido } from '../../models/DetallePedido';
   templateUrl: './producto.component.html',
   styleUrls: ['./producto.component.css']
 })
-export class ProductoComponent {
+export class ProductoComponent implements OnDestroy {
 
   productos: Producto[];
   pedido: DetallePedido[] = [];
@@ -33,6 +33,10 @@ export class ProductoComponent {
               private authService: AuthService ) {
     this.cargarLista();
     this.validarAdmin();
+  }
+
+  ngOnDestroy(): void {
+    console.log('Se fue');
   }
 
   cargarLista() {
