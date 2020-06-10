@@ -29,14 +29,12 @@ import { LoginComponent } from './components/usuario/login/login.component';
 import { SigninComponent } from './components/usuario/signin/signin.component';
 import { ProductoComponent } from './components/produtos/producto/producto.component';
 import { RegistrarProductoComponent } from './components/produtos/registrar-producto/registrar-producto.component';
-import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 import { environment } from '../environments/environment';
 import { ConfiguracionComponent } from './components/usuario/configuracion/configuracion.component';
 import { NoImagePipe } from './pipes/no-image.pipe';
 import { DetalleProductoComponent } from './components/produtos/detalle-producto/detalle-producto.component';
 import { ServiciosComponent } from './components/servicios/servicios.component';
 import { ProveedoresComponent } from './components/proveedores/proveedores.component';
-
 import { PedidoClienteComponent } from './components/pedido-cliente/pedido-cliente.component';
 import { PedidoVendedorComponent } from './components/pedido-vendedor/pedido-vendedor.component';
 
@@ -51,7 +49,6 @@ import { PedidoVendedorComponent } from './components/pedido-vendedor/pedido-ven
     SigninComponent,
     ProductoComponent,
     RegistrarProductoComponent,
-    TarjetasComponent,
     BusquedaPipe,
     ConfiguracionComponent,
     NoImagePipe,

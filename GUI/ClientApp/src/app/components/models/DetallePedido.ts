@@ -5,6 +5,7 @@ export class DetallePedido {
     producto: Producto;
     cantidad: number;
     presentacion: string;
+    subTotal: number;
 
     constructor( id: string ) {
         this.id = id;
