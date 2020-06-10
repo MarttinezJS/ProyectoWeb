@@ -6,23 +6,21 @@
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                    <th>Foto</th>
+                    <th>#</th>
                     <th>Descripcion</th>
                     <th>Estado</th>
                 </tr>
             </thead>
             <tbody>
-                <tr >
-                    <td>
-                        <img src="../../../assets/fondos/2.jpg" class="img-thumb">
-                    </td >
+                <tr>
+                    <td> {{ 1 }} </td> 
                     <td > <div class="container">
-                        <h1>carne de cerdo</h1>
+                        <p>Fechas: <i>17/01/2020</i></p>
                         <p>codigo pedido:  <i>124521412</i></p>
-                        <p>codigo producto: <i>21f21fas21</i></p>
-                        <p>cantidad: <i>4  kilo</i></p> 
-                        <p>precio: <i>$ 25.000</i></p>
+                        <p>Total: <i>$ 40.000</i></p>
+                        <p>Nombre: <i>pamela</i></p>
                         <p>Direccion: <i>calle siempre viva</i></p>
+                        <p>telefono: <i>3008224019</i></p>
                     </div>
                     </td>
                     <td>
@@ -32,12 +30,18 @@
                          <span  *ngIf="envio && pendiente" class="badge badge-success">Finalizado</span>
                          <span  *ngIf="!envio && !pendiente" class="badge badge-danger">Cancelado</span>
                         </div>
+                        <div class="container">
+                             <button class="btn btn-success mr-1"  routerLink="/detallePedido">
+                            <i class="fas fa-address-card"></i>Detalle</button>
+                        </div>
+                        <div>
+                          <button class="btn btn-danger mr-1">
+                          <i class="fas fa-sign-out-alt"></i>Cancelar pedido</button>
+                        </div> 
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <img src="../../../assets/fondos/19.jpg" class="img-thumb">
-                    </td>
+                    <td> {{ 1 }} </td>
                     <td> <div class="container">
                         <h1>carne de cerdo</h1>
                         <p>codigo pedido:124521412</p>

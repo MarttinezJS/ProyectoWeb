@@ -39,6 +39,7 @@ import { ProveedoresComponent } from './components/proveedores/proveedores.compo
 
 import { PedidoClienteComponent } from './components/pedido-cliente/pedido-cliente.component';
 import { PedidoVendedorComponent } from './components/pedido-vendedor/pedido-vendedor.component';
+import { DetallePedidoComponent } from './components/ventas/detalle-pedido/detalle-pedido.component';
 
 
 
@@ -59,7 +60,8 @@ import { PedidoVendedorComponent } from './components/pedido-vendedor/pedido-ven
     ServiciosComponent,
     ProveedoresComponent,
     PedidoClienteComponent,
-    PedidoVendedorComponent
+    PedidoVendedorComponent,
+    DetallePedidoComponent
   ],
   imports: [
     TooltipModule.forRoot(),
