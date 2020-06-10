@@ -45,3 +45,5 @@
 0.4.2.1 - Solucion de conflictos
 
 0.4.3 - Detalles de pedido teminado, pendiente corregir el bug de cantidad 0
+
+0.4.4 - BugFix conflictos de nombre en el signin
