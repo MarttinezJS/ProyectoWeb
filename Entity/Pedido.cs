@@ -10,7 +10,7 @@ namespace Entity
         public string Id { get; set; }
         public string Fecha { get; set; }
         public float Total { get; set; }
-        public DetallePedido[] DetallePedido { get; set; }
+        public List<DetallePedido> DetallePedido { get; set; }
         public string IdCliente { get; set; }
         
     }

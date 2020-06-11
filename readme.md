@@ -49,3 +49,5 @@
 0.4.4 - BugFix conflictos de nombre en el signin
 
 0.4.5 - Guarda pedido, pero no guarda detalles de pedido, la lista no pasa del controller
+
+0.4.6 - Bugfix guardar pedido

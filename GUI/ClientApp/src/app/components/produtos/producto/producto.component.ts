@@ -58,7 +58,8 @@ export class ProductoComponent implements OnDestroy {
     });
     const detallePedido = new DetallePedido();
     detallePedido.producto = producto;
-    detallePedido.cantidad = cantidad;
+    // tslint:disable-next-line: radix
+    detallePedido.cantidad = parseInt(cantidad.toString());
     detallePedido.presentacion = presentacion;
     this.detalles.push( detallePedido );
   }

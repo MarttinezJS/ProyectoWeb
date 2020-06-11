@@ -6,10 +6,14 @@ namespace GUI.Models
 {
     public class PedidoInputModel
     {
+        public PedidoInputModel()
+        {
+            detallePedido = new List<DetallePedido>();
+        }
         public string id { get; set; }
         public string fecha { get; set; }
         public float total { get; set; }
-        public DetallePedido[] detallesPedido { get; set; }
+        public List<DetallePedido> detallePedido { get; set; }
         public string idCliente { get; set; }
     }
 
@@ -24,7 +28,7 @@ namespace GUI.Models
             id = pedido.Id;
             fecha = pedido.Fecha;
             total = pedido.Total;
-            detallesPedido = pedido.DetallePedido;
+            detallePedido = pedido.DetallePedido;
             idCliente = pedido.IdCliente;
         }
     }

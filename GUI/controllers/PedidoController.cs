@@ -37,7 +37,7 @@ namespace GUI.controllers
             Pedido pedido = new Pedido();
             pedido.Id = pedidoInput.id;
             pedido.IdCliente = pedidoInput.idCliente;
-            pedido.DetallePedido = pedidoInput.detallesPedido;
+            pedido.DetallePedido = pedidoInput.detallePedido;
             pedido.Fecha = pedidoInput.fecha;
             pedido.Total = pedidoInput.total;
             return pedido;
