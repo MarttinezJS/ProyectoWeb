@@ -47,3 +47,5 @@
 0.4.3 - Detalles de pedido teminado, pendiente corregir el bug de cantidad 0
 
 0.4.4 - BugFix conflictos de nombre en el signin
+
+0.4.5 - Guarda pedido, pero no guarda detalles de pedido, la lista no pasa del controller

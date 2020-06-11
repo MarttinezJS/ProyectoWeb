@@ -1,10 +1,8 @@
-using System.Net.Http.Headers;
 using System.Collections.Generic;
 using System.Linq;
 using Entity;
 using Logica;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using GUI.Models;
 using Dal;
 

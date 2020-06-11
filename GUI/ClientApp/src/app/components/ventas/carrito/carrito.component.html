@@ -35,15 +35,15 @@
             <div class="col text-center border">
                 <h2 class="mt-3">Resumen del pedido</h2>
                 <hr>
-                <p>Nombre: <i>luisito</i></p>
-                <p>Telefono: <i>2352342523</i></p>
-                <p>Direccion: <i>la pm</i></p>
+                <p>Nombre: <i>{{ usuario.nombre }}</i></p>
+                <p>Telefono: <i>{{ usuario.telefono }}</i></p>
+                <p>Direccion: <i>{{ usuario.direccion }}</i></p>
                 <div class="container">
                     <h3 class="">Total</h3>
-                    <h3>{{ pedido }}</h3>
+                    <h3>{{ total }}</h3>
                 </div>
                 <hr>
-                <button class="btn btn-primary mt-1 mb-2">comprar</button>
+                <button (click)="finalizaCompra()" class="btn btn-primary mt-1 mb-2">comprar</button>
                 <hr>
             </div>
         </div>

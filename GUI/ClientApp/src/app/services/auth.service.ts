@@ -24,21 +24,21 @@ export class AuthService {
   }
 
   traerToken() {
-    return sessionStorage.getItem('token');
+    return localStorage.getItem('token');
   }
 
   traerId() {
-    return sessionStorage.getItem('id');
+    return localStorage.getItem('id');
   }
 
   borrarSesion() {
-    sessionStorage.removeItem('token');
-    sessionStorage.removeItem('id');
+    localStorage.removeItem('token');
+    localStorage.removeItem('id');
   }
 
   guardaSesion(token: string, id: string) {
-    sessionStorage.setItem('token', token);
-    sessionStorage.setItem('id', id);
+    localStorage.setItem('token', token);
+    localStorage.setItem('id', id);
   }
 
   traerAdmins() {

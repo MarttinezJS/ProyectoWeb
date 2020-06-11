@@ -2,9 +2,9 @@ import { Component, OnDestroy } from '@angular/core';
 import { ProductoService } from 'src/app/services/producto.service';
 import { Producto } from '../../models/Producto';
 import { AuthService } from '../../../services/auth.service';
-import Swal from 'sweetalert2';
 import { DetallePedido } from '../../models/DetallePedido';
-import { PedidoService } from '../../../services/pedido.service';
+import { DetallePedidoService } from '../../../services/detalle-pedido.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -32,13 +32,13 @@ export class ProductoComponent implements OnDestroy {
 
   constructor(private productosServicio: ProductoService,
               private authService: AuthService,
-              private pedidoService: PedidoService ) {
+              private detallePedidoService: DetallePedidoService ) {
     this.cargarLista();
     this.validarAdmin();
   }
 
   ngOnDestroy(): void {
-    this.pedidoService.setdetalles(this.detalles);
+    this.detallePedidoService.setdetalles(this.detalles);
   }
 
   cargarLista() {
