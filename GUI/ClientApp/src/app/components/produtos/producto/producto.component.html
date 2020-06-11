@@ -1,19 +1,18 @@
 <div class="container mt-5 a">
     <h1 class="mt-5">Catalogo de Productos</h1>
     <hr>
-
-    <div class="row">
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" [(ngModel)]="termino" name="Busqueda" type="search" placeholder="Nombre del producto" aria-label="Buscar">
-        </form>
         <div *ngIf="isAdmin" class="col text-right">
             <button routerLink="/registroProducto" class="btn btn-primary">
                 <i class="fa fa-plus"></i>
                 Agregar
             </button>
         </div>
-    </div>
-    <div class="card-columns">
+    
+    <div class="col mt-3">
+        <form class="form-inline">
+            <input class="form-control col-10" [(ngModel)]="termino" name="Busqueda" type="search" placeholder="Nombre del producto" aria-label="Buscar">
+    </form>
+    <div class="card-columns mt-5">
         <div class="card animated fadeIn fast" *ngFor="let producto of productos | busqueda:termino">
             <img [src]="producto.imageURL |noImage" class="card-img-top img-fluid" alt="">
             <div class="card-body">
@@ -24,4 +23,5 @@
             </div>
         </div>
     </div>
+    </div> 
 </div>

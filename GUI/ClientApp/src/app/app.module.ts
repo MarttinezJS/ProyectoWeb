@@ -38,6 +38,7 @@ import { ProveedoresComponent } from './components/proveedores/proveedores.compo
 import { DetallePedidoComponent } from './components/ventas/detalle-pedido/detalle-pedido.component';
 import { PedidosComponent } from './components/ventas/pedidos/pedidos.component';
 import { CarritoComponent } from './components/ventas/carrito/carrito.component';
+import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
 
 
 
@@ -58,7 +59,8 @@ import { CarritoComponent } from './components/ventas/carrito/carrito.component'
     ProveedoresComponent,
     DetallePedidoComponent,
     PedidosComponent,
-    CarritoComponent
+    CarritoComponent,
+    TarjetaComponent
   ],
   imports: [
     TooltipModule.forRoot(),
