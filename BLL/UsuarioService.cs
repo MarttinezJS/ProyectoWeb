@@ -65,6 +65,8 @@ namespace Logica
 
             return "El usuario se actualizó";
         }
+
+        public Usuario BuscarxIdentificacion( string id ) =>  _context.Usuarios.Find( id );
     }
     public class GuardarUsuarioResponse{
         public bool Error { get; set; }

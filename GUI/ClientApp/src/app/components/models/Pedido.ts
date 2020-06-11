@@ -3,12 +3,12 @@ import { Usuario } from './Usuario';
 
 export class Pedido {
     id: string;
-    fecha: Date;
+    fecha: string;
     total: number;
     detallePedido: DetallePedido[];
-    cliente: Usuario;
+    idCliente: string;
     constructor() {
         this.id = new Date().getTime().toString();
-        this.fecha = new Date();
+        this.fecha = new Date().toString();
     }
 }

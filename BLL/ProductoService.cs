@@ -10,9 +10,9 @@ namespace Logica
     public class ProductoService
     {
         private readonly CarniceriaContext _context;
-       public ProductoService(CarniceriaContext context) {
-           _context = context;
-       }
+        public ProductoService(CarniceriaContext context) {
+            _context = context;
+        }
         public List<Producto> consultarTodos() {
             List<Producto> productos = _context.Productos.ToList();
             return productos;
