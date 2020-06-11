@@ -12,5 +12,7 @@ p{
 .b{
     background: #eeee;
     border: black;
-
+}
+.border{
+    border: 4px black ;
 }

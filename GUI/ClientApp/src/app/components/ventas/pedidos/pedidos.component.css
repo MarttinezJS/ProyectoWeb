@@ -1,0 +1,21 @@
+.a{
+    padding-top: 13vh;
+}
+.icon{
+    font-size: 25px;
+}
+.img-thumb {
+    width: 150px;
+    height: 150px;
+}
+p{
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+}
+.border{
+    border: 4px black ;
+}
+
+.z{
+    font-size: 23px;
+}
