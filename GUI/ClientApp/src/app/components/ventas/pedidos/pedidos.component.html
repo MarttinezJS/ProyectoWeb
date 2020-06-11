@@ -1,67 +1,60 @@
-<div class="container d-flex  w-100 justify-content-center mt-3">
+<div class="container d-flex  w-100 justify-content-center mt-3 a">
     <h1>Historial de pedidos</h1>
 </div>
-<div class="container">
+<div class="container mt-4">
     <div class="col">
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                    <th>#</th>
-                    <th>Descripcion</th>
-                    <th>Estado</th>
+                    <th scope="col">#</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Estado</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td> {{ 1 }} </td>
-                    <td>
-                        <div class="container">
-                            <p>Fechas: <i>17/01/2020</i></p>
-                            <p>codigo pedido: <i>124521412</i></p>
-                            <p>Total: <i>$ 40.000</i></p>
-                            <p>Nombre: <i>pamela</i></p>
-                            <p>Direccion: <i>calle siempre viva</i></p>
-                            <p>telefono: <i>3008224019</i></p>
-                        </div>
+                    <td> {{ 1 }} </td> 
+                    <td > <div class="container">
+                        <p>Fechas: <i>17/01/2020</i></p>
+                        <p>codigo pedido:  <i>124521412</i></p>
+                        <p>Total: <i>$ 40.000</i></p>
+                        <p>Nombre: <i>pamela</i></p>
+                        <p>Direccion: <i>calle siempre viva</i></p>
+                        <p>telefono: <i>3008224019</i></p>
+                    </div>
                     </td>
                     <td>
-                        <div class="container">
-                            <span class="badge badge-primary">Enviado</span>
-                            <span class="badge badge-secondary">Pendiente</span>
-                            <span class="badge badge-success">Finalizado</span>
-                            <span class="badge badge-danger">Cancelado</span>
+                        <div class="col mb-1 z">
+                         <span *ngIf="" class="badge badge-primary">Enviado</span>
+                         <span *ngIf="" class="badge badge-secondary">Pendiente</span>
+                         <span  *ngIf="" class="badge badge-success">Finalizado</span>
+                         <span  *ngIf="" class="badge badge-danger">Cancelado</span>
                         </div>
-                        <div class="input-group mb-3 mt-4 ">
-                            <div class="input-group-prepend ">
-                                <label class="input-group-text" for="inputGroupSelect01">Estado</label>
-                            </div>
-                            <select class="custom-select" id="inputGroupSelect01">
-                              <option selected>Choose...</option>
-                              <option value="1">Pendiente</option>
-                              <option value="2">Enviado</option>
-                              <option value="3">Finalizado</option>
-                            </select>
-                        </div>
-                        <div class="container">
-                            <button class="btn btn-success mr-1" routerLink="/detallePedido">
+                        <select class="custom-select col-8 mb-2 ml-3" id="inputGroupSelect01">
+                            <option selected>Choose...</option>
+                            <option value="1">Pendiente</option>
+                            <option value="2">Enviado</option>
+                            <option value="3">Finalizado</option>
+                        </select>
+                        <div class="col mb-2">
+                             <button class="btn btn-success mr-1"  routerLink="/detallePedido">
                             <i class="fas fa-address-card"></i>Detalle</button>
                         </div>
-                        <div>
-                            <button class="btn btn-danger mr-1">
+                        <div class="col mb-2">
+                          <button class="btn btn-danger mr-1">
                           <i class="fas fa-sign-out-alt"></i>Cancelar pedido</button>
-                        </div>
+                        </div> 
                     </td>
                 </tr>
                 <tr>
                     <td> {{ 1 }} </td>
-                    <td>
-                        <div class="container">
-                            <h1>carne de cerdo</h1>
-                            <p>codigo pedido:124521412</p>
-                            <p>codigo producto:21f21fas21</p>
-                            <p>cantidad: 4 kilo</p>
-                            <p>precio: $ 25.000</p>
-                        </div>
+                    <td> <div class="container">
+                        <h1>carne de cerdo</h1>
+                        <p>codigo pedido:124521412</p>
+                        <p>codigo producto:21f21fas21</p>
+                        <p>cantidad: 4  kilo</p> 
+                        <p>precio: $ 25.000</p>
+                    </div>
                     </td>
                     <td>Finalizado</td>
                 </tr>
