@@ -9,5 +9,6 @@ export class Pedido {
     cliente: Usuario;
     constructor() {
         this.id = new Date().getTime().toString();
+        this.fecha = new Date();
     }
 }
