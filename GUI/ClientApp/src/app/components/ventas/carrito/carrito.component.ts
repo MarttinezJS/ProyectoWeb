@@ -6,6 +6,8 @@ import { UsuarioService } from '../../../services/usuario.service';
 import { Usuario } from '../../models/Usuario';
 import Swal from 'sweetalert2';
 import { PedidoService } from '../../../services/pedido.service';
+import { Router } from '@angular/router';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-carrito',
@@ -18,12 +20,16 @@ export class CarritoComponent implements OnInit {
   detallePedido: DetallePedido[];
   total: number;
   usuario = new Usuario();
+  logueado: boolean;
 
   constructor(private detallePService: DetallePedidoService,
               private usuarioService: UsuarioService,
-              private pedidoService: PedidoService) {
+              private pedidoService: PedidoService,
+              private router: Router,
+              private authService: AuthService) {
     this.detallePedido = detallePService.getdetalles();
     this.buscarUsuario();
+    this.logueado = authService.usuarioAutenticado();
   }
 
   ngOnInit(): void {
@@ -68,13 +74,13 @@ export class CarritoComponent implements OnInit {
           icon: 'success',
           title: 'Hecho'
         });
+        this.router.navigateByUrl('/pedidos/' + this.usuario.id);
       } else {
         Swal.fire({
           icon: 'error',
           text: 'No se pudo prosesar tu solicitud.'
         });
       }
-      Swal.close();
     });
 
   }

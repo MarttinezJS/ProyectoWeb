@@ -12,51 +12,38 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td> {{ 1 }} </td> 
-                    <td > <div class="container">
-                        <p>Fechas: <i>17/01/2020</i></p>
-                        <p>codigo pedido:  <i>124521412</i></p>
-                        <p>Total: <i>$ 40.000</i></p>
-                        <p>Nombre: <i>pamela</i></p>
-                        <p>Direccion: <i>calle siempre viva</i></p>
-                        <p>telefono: <i>3008224019</i></p>
-                    </div>
+                <tr *ngFor="let pedido of pedidos; let i = index">
+                    <td> {{ i }} </td>
+                    <td>
+                        <div class="container">
+                            <p>Fechas: <i>{{ pedido.fecha }}</i></p>
+                            <p>codigo pedido: <i>{{ pedido.id }}</i></p>
+                            <p>Total: <i>{{ pedido.total | currency }} COP</i></p>
+                            <p>Nombre destinatario: <i>{{ pedido.cliente.nombre }}</i></p>
+                            <p>Direccion: <i>{{ pedido.cliente.direccion }}</i></p>
+                            <p>telefono: <i>{{ pedido.cliente.telefono }}</i></p>
+                        </div>
                     </td>
                     <td>
                         <div class="col mb-1 z">
-                         <span *ngIf="" class="badge badge-primary">Enviado</span>
-                         <span *ngIf="" class="badge badge-secondary">Pendiente</span>
-                         <span  *ngIf="" class="badge badge-success">Finalizado</span>
-                         <span  *ngIf="" class="badge badge-danger">Cancelado</span>
+                            <span [ngClass]="[clase]">{{ pedido.estado }}</span>
                         </div>
-                        <select class="custom-select col-8 mb-2 ml-3" id="inputGroupSelect01">
-                            <option selected>Choose...</option>
-                            <option value="1">Pendiente</option>
-                            <option value="2">Enviado</option>
-                            <option value="3">Finalizado</option>
+                        <select *ngIf="isAdmin" [(ngModel)]="estado" class="custom-select col-8 mb-2 ml-3" id="inputGroupSelect01">
+                            <option selected disabled>Cambia el estado</option>
+                            <option value="Pendiente">Pendiente</option>
+                            <option value="Enviado">Enviado</option>
+                            <option value="Finalizado">Finalizado</option>
+                            <option value="Cancelado">Cancelado</option>
                         </select>
                         <div class="col mb-2">
-                             <button class="btn btn-success mr-1"  routerLink="/detallePedido">
-                            <i class="fas fa-address-card"></i>Detalle</button>
+                            <button class="btn btn-success mr-1" [routerLink]="['/detallePedido', pedido.id]">
+                            <i class="fas fa-address-card" ></i>Detalles</button>
                         </div>
-                        <div class="col mb-2">
-                          <button class="btn btn-danger mr-1">
-                          <i class="fas fa-sign-out-alt"></i>Cancelar pedido</button>
-                        </div> 
+                        <div *ngIf="!isAdmin" class="col mb-2">
+                            <button [disabled]="estado === 'cancelado'" class="btn btn-danger mr-1">
+                          <i class="fas fa-sign-out-alt" ></i>Cancelar pedido</button>
+                        </div>
                     </td>
-                </tr>
-                <tr>
-                    <td> {{ 1 }} </td>
-                    <td> <div class="container">
-                        <h1>carne de cerdo</h1>
-                        <p>codigo pedido:124521412</p>
-                        <p>codigo producto:21f21fas21</p>
-                        <p>cantidad: 4  kilo</p> 
-                        <p>precio: $ 25.000</p>
-                    </div>
-                    </td>
-                    <td>Finalizado</td>
                 </tr>
             </tbody>
         </table>

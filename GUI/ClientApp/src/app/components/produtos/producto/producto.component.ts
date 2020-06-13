@@ -35,6 +35,7 @@ export class ProductoComponent implements OnDestroy {
               private detallePedidoService: DetallePedidoService ) {
     this.cargarLista();
     this.validarAdmin();
+    this.detalles = detallePedidoService.getdetalles();
   }
 
   ngOnDestroy(): void {
@@ -42,8 +43,16 @@ export class ProductoComponent implements OnDestroy {
   }
 
   cargarLista() {
+    Swal.fire({
+      icon: 'info',
+      title: 'Colocando productos en el mostrador.',
+      text: 'por favor espere...',
+      allowOutsideClick: false
+    });
+    Swal.showLoading();
     this.productosServicio.get().subscribe(result => {
       this.productos = result;
+      Swal.close();
     });
   }
 
@@ -58,6 +67,7 @@ export class ProductoComponent implements OnDestroy {
     });
     const detallePedido = new DetallePedido();
     detallePedido.producto = producto;
+    detallePedido.idProducto = producto.id;
     // tslint:disable-next-line: radix
     detallePedido.cantidad = parseInt(cantidad.toString());
     detallePedido.presentacion = presentacion;
@@ -77,7 +87,7 @@ export class ProductoComponent implements OnDestroy {
     }).then( cantidad => {
       if (!cantidad.dismiss) {
         Swal.fire({
-          title: 'selecciona la presentacion',
+          title: 'Presentacion (Kilo por defecto)',
           input: 'select',
           inputOptions: {
             Kilo: 'Kilo',

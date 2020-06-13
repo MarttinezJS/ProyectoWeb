@@ -57,4 +57,10 @@ export class AuthService {
     });
     return isAdmin;
   }
+
+  verificarSesion() {
+    this.afAuth.user.subscribe( rest => {
+      return rest != null;
+    });
+  }
 }

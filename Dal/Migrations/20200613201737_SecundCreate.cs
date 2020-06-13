@@ -2,7 +2,7 @@
 
 namespace Dal.Migrations
 {
-    public partial class KeyAdd : Migration
+    public partial class SecundCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

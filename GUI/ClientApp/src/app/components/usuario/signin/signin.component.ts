@@ -5,6 +5,8 @@ import { UsuarioService } from '../../../services/usuario.service';
 
 import Swal from 'sweetalert2';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { Router } from '@angular/router';
+import { AuthService } from '../../../services/auth.service';
 
 
 @Component({
@@ -19,7 +21,9 @@ export class SigninComponent {
   usuario: Usuario;
   constructor( private fb: FormBuilder,
                private _usuarioService: UsuarioService,
-               private afAuth: AngularFireAuth
+               private afAuth: AngularFireAuth,
+               private router: Router,
+               private authService: AuthService
     ) {
     this.crearFormulario();
     this.usuario = new Usuario();
@@ -49,6 +53,8 @@ export class SigninComponent {
             title: 'Registrado correctamente',
             icon: 'success'
           });
+          this.router.navigateByUrl('/');
+          this.authService.guardaSesion( rest.user.refreshToken, rest.user.uid );
         }
       });
     }).catch( err => {

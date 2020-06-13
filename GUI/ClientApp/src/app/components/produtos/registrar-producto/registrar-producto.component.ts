@@ -4,6 +4,8 @@ import { Producto } from '../../models/Producto';
 import { ProductoService } from '../../../services/producto.service';
 import { AngularFireStorage, AngularFireUploadTask, AngularFireStorageReference } from 'angularfire2/storage';
 import Swal from 'sweetalert2';
+import { AuthService } from '../../../services/auth.service';
+import { Router } from '@angular/router';
 
 interface HtmlInputEvent extends Event {
   target: HTMLInputElement & EventTarget;
@@ -24,11 +26,15 @@ export class RegistrarProductoComponent implements OnInit {
   imgURL = '';
   subido = false;
   pausado = false;
+  isAdmin: boolean;
 
   constructor( private fb: FormBuilder,
                private productoService: ProductoService,
-               private storage: AngularFireStorage) {
+               private storage: AngularFireStorage,
+               private authService: AuthService,
+               private router: Router) {
     this.crearFormulario();
+    this.botarIntruso();
    }
 
   ngOnInit() {
@@ -57,7 +63,8 @@ export class RegistrarProductoComponent implements OnInit {
       proveedor   : ['', Validators.required],
       precio     : ['', Validators.required],
       descripcion: ['', Validators.required],
-      presentacion: ['']
+      presentacion: [''],
+      img: []
     });
   }
 
@@ -73,7 +80,6 @@ export class RegistrarProductoComponent implements OnInit {
       let nombre = new Date().getTime().toString();
       nombre = nombre + file.name.toString().substring( file.name.toString().lastIndexOf('.') );
       const ruta = 'Productos/'  + nombre;
-      console.log(nombre);
       const ref = this.storage.ref(ruta);
       this.tarea = ref.put( file );
 
@@ -112,12 +118,20 @@ export class RegistrarProductoComponent implements OnInit {
     if (this.formulario.valid) {
       this.producto = this.formulario.value;
       this.producto.imageURL = this.imgURL;
+      Swal.fire({
+        icon: 'info',
+        title: 'Guardando producto',
+        text: 'Por favor espere...',
+        allowOutsideClick: false
+      });
+      Swal.showLoading();
       this.productoService.post(this.producto).subscribe( p => {
         if (p != null) {
           Swal.fire({
             title: 'Registrado correctamente',
             icon: 'success'
           });
+          this.formulario.reset();
         } else {
           Swal.fire({
             icon: 'error',
@@ -139,6 +153,20 @@ export class RegistrarProductoComponent implements OnInit {
 
   cancelarSubida() {
     this.subido = !this.tarea.cancel();
+  }
+
+  botarIntruso() {
+    if (!this.authService.verificarAdmin()) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Alto ahi intruso!!!',
+        text: 'este lugar es solo para administradores',
+        allowOutsideClick: false,
+        confirmButtonAriaLabel: 'Ok, me voy'
+      }).then( rest => {
+        this.router.navigateByUrl('/');
+      });
+    }
   }
 
 }

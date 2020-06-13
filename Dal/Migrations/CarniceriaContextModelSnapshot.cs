@@ -26,14 +26,14 @@ namespace Dal.Migrations
                     b.Property<int>("Cantidad")
                         .HasColumnType("int");
 
+                    b.Property<string>("IdProducto")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PedidoId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Presentacion")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ProductoId")
-                        .HasColumnType("nvarchar(450)");
 
                     b.Property<float>("SubTotal")
                         .HasColumnType("real");
@@ -42,8 +42,6 @@ namespace Dal.Migrations
 
                     b.HasIndex("PedidoId");
 
-                    b.HasIndex("ProductoId");
-
                     b.ToTable("DetallesPedido");
                 });
 
@@ -51,6 +49,9 @@ namespace Dal.Migrations
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Estado")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Fecha")
                         .HasColumnType("nvarchar(max)");
@@ -121,10 +122,6 @@ namespace Dal.Migrations
                     b.HasOne("Entity.Pedido", null)
                         .WithMany("DetallePedido")
                         .HasForeignKey("PedidoId");
-
-                    b.HasOne("Entity.Producto", "Producto")
-                        .WithMany()
-                        .HasForeignKey("ProductoId");
                 });
 #pragma warning restore 612, 618
         }
