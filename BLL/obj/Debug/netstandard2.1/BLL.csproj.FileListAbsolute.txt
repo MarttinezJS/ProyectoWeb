@@ -26,3 +26,17 @@ C:\Users\Martinez\Documents\Web\ProyectoWeb\BLL\obj\Debug\netstandard2.1\BLL.csp
 C:\Users\Martinez\Documents\Web\ProyectoWeb\BLL\obj\Debug\netstandard2.1\BLL.csproj.CopyComplete
 C:\Users\Martinez\Documents\Web\ProyectoWeb\BLL\obj\Debug\netstandard2.1\BLL.dll
 C:\Users\Martinez\Documents\Web\ProyectoWeb\BLL\obj\Debug\netstandard2.1\BLL.pdb
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\BLL\bin\Debug\netstandard2.1\BLL.deps.json
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\BLL\bin\Debug\netstandard2.1\BLL.dll
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\BLL\bin\Debug\netstandard2.1\BLL.pdb
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\BLL\bin\Debug\netstandard2.1\Dal.dll
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\BLL\bin\Debug\netstandard2.1\Entity.dll
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\BLL\bin\Debug\netstandard2.1\Entity.pdb
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\BLL\bin\Debug\netstandard2.1\Dal.pdb
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\BLL\obj\Debug\netstandard2.1\BLL.csprojAssemblyReference.cache
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\BLL\obj\Debug\netstandard2.1\BLL.csproj.CoreCompileInputs.cache
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\BLL\obj\Debug\netstandard2.1\BLL.AssemblyInfoInputs.cache
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\BLL\obj\Debug\netstandard2.1\BLL.AssemblyInfo.cs
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\BLL\obj\Debug\netstandard2.1\BLL.csproj.CopyComplete
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\BLL\obj\Debug\netstandard2.1\BLL.dll
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\BLL\obj\Debug\netstandard2.1\BLL.pdb
