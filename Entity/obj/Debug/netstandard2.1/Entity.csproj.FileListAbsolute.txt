@@ -16,3 +16,12 @@ C:\Users\Martinez\Documents\Web\ProyectoWeb\Entity\obj\Debug\netstandard2.1\Enti
 C:\Users\Martinez\Documents\Web\ProyectoWeb\Entity\obj\Debug\netstandard2.1\Entity.csproj.CoreCompileInputs.cache
 C:\Users\Martinez\Documents\Web\ProyectoWeb\Entity\obj\Debug\netstandard2.1\Entity.dll
 C:\Users\Martinez\Documents\Web\ProyectoWeb\Entity\obj\Debug\netstandard2.1\Entity.pdb
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\Entity\bin\Debug\netstandard2.1\Entity.deps.json
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\Entity\bin\Debug\netstandard2.1\Entity.dll
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\Entity\bin\Debug\netstandard2.1\Entity.pdb
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\Entity\obj\Debug\netstandard2.1\Entity.csprojAssemblyReference.cache
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\Entity\obj\Debug\netstandard2.1\Entity.csproj.CoreCompileInputs.cache
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\Entity\obj\Debug\netstandard2.1\Entity.AssemblyInfoInputs.cache
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\Entity\obj\Debug\netstandard2.1\Entity.AssemblyInfo.cs
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\Entity\obj\Debug\netstandard2.1\Entity.dll
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\Entity\obj\Debug\netstandard2.1\Entity.pdb
