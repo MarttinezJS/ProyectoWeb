@@ -63,10 +63,17 @@ export class CarritoComponent implements OnInit {
 
     this.pedidoService.post( this.pedido ).subscribe( p => {
       console.log(p);
-      // Swal.fire({
-      //   icon: 'success',
-      //   title: 'Hecho'
-      // });
+      if (p != null) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Hecho'
+        });
+      } else {
+        Swal.fire({
+          icon: 'error',
+          text: 'No se pudo prosesar tu solicitud.'
+        });
+      }
       Swal.close();
     });
 
