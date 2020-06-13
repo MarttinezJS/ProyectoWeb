@@ -5,3 +5,7 @@ p{
 .a{
     padding-top: 5vh;
 }
+
+.img-fluid{
+    height: 250px;
+}

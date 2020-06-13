@@ -22,3 +22,15 @@ C:\Users\Martinez\Documents\Web\ProyectoWeb\Dal\obj\Debug\netstandard2.1\Dal.csp
 C:\Users\Martinez\Documents\Web\ProyectoWeb\Dal\obj\Debug\netstandard2.1\Dal.csproj.CopyComplete
 C:\Users\Martinez\Documents\Web\ProyectoWeb\Dal\obj\Debug\netstandard2.1\Dal.dll
 C:\Users\Martinez\Documents\Web\ProyectoWeb\Dal\obj\Debug\netstandard2.1\Dal.pdb
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\Dal\bin\Debug\netstandard2.1\Dal.deps.json
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\Dal\bin\Debug\netstandard2.1\Dal.dll
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\Dal\bin\Debug\netstandard2.1\Dal.pdb
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\Dal\bin\Debug\netstandard2.1\Entity.dll
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\Dal\bin\Debug\netstandard2.1\Entity.pdb
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\Dal\obj\Debug\netstandard2.1\Dal.csprojAssemblyReference.cache
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\Dal\obj\Debug\netstandard2.1\Dal.csproj.CoreCompileInputs.cache
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\Dal\obj\Debug\netstandard2.1\Dal.AssemblyInfoInputs.cache
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\Dal\obj\Debug\netstandard2.1\Dal.AssemblyInfo.cs
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\Dal\obj\Debug\netstandard2.1\Dal.csproj.CopyComplete
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\Dal\obj\Debug\netstandard2.1\Dal.dll
+C:\Users\enmod\OneDrive\Escritorio\proyecto web\Dal\obj\Debug\netstandard2.1\Dal.pdb
