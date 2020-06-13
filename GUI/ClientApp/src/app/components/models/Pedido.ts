@@ -8,6 +8,8 @@ export class Pedido {
     detallePedido: DetallePedido[];
     idCliente: string;
     estado: string;
+    cliente: Usuario;
+
     constructor() {
         this.id = new Date().getTime().toString();
         this.fecha = new Date().toString();

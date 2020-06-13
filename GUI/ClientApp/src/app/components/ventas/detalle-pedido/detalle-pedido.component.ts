@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PedidoService } from '../../../services/pedido.service';
 
 @Component({
   selector: 'app-detalle-pedido',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetallePedidoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private rutaActiva: ActivatedRoute,
+              private pedidoService: PedidoService ) { }
 
   ngOnInit(): void {
+    this.traerPedido();
   }
 
+  traerPedido() {
+    this.pedidoService.get().subscribe( p => {
+      console.log(p.filter( pedido => pedido.id === this.rutaActiva.snapshot.params.id));
+    });
+  }
 }

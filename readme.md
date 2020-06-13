@@ -53,3 +53,5 @@
 0.4.6 - Bugfix guardar pedido
 
 0.4.7 - Bugfix guardar producto pedido
+
+1.0.0 - La app ya hace un pedido y se puede consultar por parte del cliente

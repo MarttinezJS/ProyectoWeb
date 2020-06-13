@@ -24,6 +24,13 @@ namespace Logica
                         }
                     });
                 });
+                _context.Usuarios.ToList().ForEach( c => {
+                    if (p.IdCliente == c.Id)
+                    {
+                        p.Cliente = c;
+                        return;
+                    }
+                });
                 pedidos.Add(p);
             });
             return pedidos;

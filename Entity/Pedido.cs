@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entity
 {
@@ -16,6 +17,8 @@ namespace Entity
         public float Total { get; set; }
         public List<DetallePedido> DetallePedido { get; set; }
         public string IdCliente { get; set; }
+        [NotMapped]
+        public Usuario Cliente { get; set; }
         public string Estado { get; set; }
         
     }
