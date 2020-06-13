@@ -40,10 +40,12 @@
                 <p>Direccion: <i>{{ usuario.direccion }}</i></p>
                 <div class="container">
                     <h3 class="">Total</h3>
-                    <h3>{{ total | currency }}</h3>
+                    <h3>{{ total | currency }} COP</h3>
                 </div>
                 <hr>
-                <button (click)="finalizaCompra()" class="btn btn-primary mt-1 mb-2">comprar</button>
+                <button *ngIf="logueado" (click)="finalizaCompra()" class="btn btn-primary mt-1 mb-2">comprar</button>
+                <h2 *ngIf="!logueado">Modo Cotizacion</h2>
+                <small *ngIf="!logueado">Ingresa o registrate para comprar.</small>
                 <hr>
             </div>
         </div>

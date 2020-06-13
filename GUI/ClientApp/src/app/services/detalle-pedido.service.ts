@@ -49,7 +49,9 @@ export class DetallePedidoService {
       switch ( dPedido.presentacion ) {
         case 'Gramo': kilo = dPedido.cantidad / 1000; break;
         case 'Libra': kilo = dPedido.cantidad / 2; break;
-        default: kilo = dPedido.cantidad; break;
+        default: kilo = dPedido.cantidad;
+                 dPedido.presentacion = 'Kilo';
+          break;
       }
       dPedido.subTotal = kilo * dPedido.producto.precio;
     });

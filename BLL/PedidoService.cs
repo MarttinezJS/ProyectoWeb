@@ -13,7 +13,19 @@ namespace Logica
             _context = context;
         }
         public List<Pedido> consultarTodos() {
-            List<Pedido> pedidos = _context.Pedidos.ToList();
+            List<Pedido> pedidos = new List<Pedido>();
+            _context.Pedidos.ToList().ForEach( p =>{
+                _context.DetallesPedido.ToList().ForEach( dp =>{
+                    _context.Productos.ToList().ForEach( prod => {
+                        if (dp.IdProducto == prod.Id)
+                        {
+                            dp.Producto = prod;
+                            return;
+                        }
+                    });
+                });
+                pedidos.Add(p);
+            });
             return pedidos;
         }
         public GuardarPedidoResponse guardar(Pedido pedido) {

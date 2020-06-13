@@ -40,6 +40,7 @@ namespace GUI.controllers
             pedido.DetallePedido = pedidoInput.detallePedido;
             pedido.Fecha = pedidoInput.fecha;
             pedido.Total = pedidoInput.total;
+            pedido.Estado = pedidoInput.estado;
             return pedido;
         }
     }

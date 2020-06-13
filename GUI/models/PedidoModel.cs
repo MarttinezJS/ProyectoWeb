@@ -15,6 +15,7 @@ namespace GUI.Models
         public float total { get; set; }
         public List<DetallePedido> detallePedido { get; set; }
         public string idCliente { get; set; }
+        public string estado { get; set; }
     }
 
     public class PedidoViewModel: PedidoInputModel
@@ -30,6 +31,7 @@ namespace GUI.Models
             total = pedido.Total;
             detallePedido = pedido.DetallePedido;
             idCliente = pedido.IdCliente;
+            estado = pedido.Estado;
         }
     }
 }
