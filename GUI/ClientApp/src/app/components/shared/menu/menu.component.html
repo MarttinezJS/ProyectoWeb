@@ -10,23 +10,23 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
             <li class="nav-item a mr-sm-3" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['/productos']">Productos</a>
+                <a class="nav-link" [routerLink]="['/Productos']">Productos</a>
             </li>
             <li class="nav-item mr-sm-3 a" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['/servicios']">Servicio</a>
+                <a class="nav-link" [routerLink]="['/Servicios']">Servicio</a>
             </li>
             <li class="nav-item  mr-sm-3 a" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['/proveedores']">Proveedores</a>
+                <a class="nav-link" [routerLink]="['/Proveedores']">Proveedores</a>
             </li>
             <li class="nav-item a" *ngIf="logeado" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['/pedidos', id]">Pedidos</a>
+                <a class="nav-link" [routerLink]="['/Pedidos', id]">Pedidos</a>
             </li>
         </ul>
         <div class="col text-right ">
-            <a class="mr-sm-4 mt-2" [routerLink]="['/carrito']"> <i class="fas fa-cart-arrow-down b"></i> </a>
-            <button class="btn btn-outline-primary  mr-sm-2 c" *ngIf="!logeado" routerLink="/login">
+            <a class="mr-sm-4 mt-2" [routerLink]="['/Carrito']"> <i class="fas fa-cart-arrow-down b"></i> </a>
+            <button class="btn btn-outline-primary  mr-sm-2 c" *ngIf="!logeado" routerLink="/Login">
           <i class="fas fa-user-circle"></i> Login</button>
-            <button class="btn btn-outline-primary my-2 my-sm-0 c" *ngIf="!logeado" routerLink="/signin">
+            <button class="btn btn-outline-primary my-2 my-sm-0 c" *ngIf="!logeado" routerLink="/Signin">
           <i class="fas fa-address-card"></i> Registrarse</button>
             <button *ngIf="logeado" (click)="logout()" class="btn btn-outline-red my-2 my-sm-0">
           <i class="fas fa-sign-out-alt"></i> Cerrar sesion</button>

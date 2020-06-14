@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Producto } from '../../models/Producto';
-import { ProductoService } from '../../../services/producto.service';
 import { AngularFireStorage, AngularFireUploadTask, AngularFireStorageReference } from 'angularfire2/storage';
-import Swal from 'sweetalert2';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ProductoService } from '../../../services/producto.service';
 import { AuthService } from '../../../services/auth.service';
-import { Router } from '@angular/router';
+import { Producto } from '../../models/Producto';
+import Swal from 'sweetalert2';
 
 interface HtmlInputEvent extends Event {
   target: HTMLInputElement & EventTarget;
@@ -27,14 +27,17 @@ export class RegistrarProductoComponent implements OnInit {
   subido = false;
   pausado = false;
   isAdmin: boolean;
+  accion: string;
 
   constructor( private fb: FormBuilder,
                private productoService: ProductoService,
                private storage: AngularFireStorage,
                private authService: AuthService,
-               private router: Router) {
+               private router: Router,
+               private rutaActiva: ActivatedRoute) {
     this.crearFormulario();
     this.botarIntruso();
+    this.accion = this.rutaActiva.snapshot.params.action;
    }
 
   ngOnInit() {
@@ -57,13 +60,14 @@ export class RegistrarProductoComponent implements OnInit {
   }
 
   crearFormulario() {
+    this.producto = new Producto();
     this.formulario = this.fb.group({
-      id         : ['', [Validators.required, Validators.maxLength(3)]],
-      nombre     : ['', Validators.required],
-      proveedor   : ['', Validators.required],
-      precio     : ['', Validators.required],
-      descripcion: ['', Validators.required],
-      presentacion: [''],
+      id         : [this.producto.id, [Validators.required, Validators.maxLength(3)]],
+      nombre     : [this.producto.nombre, Validators.required],
+      proveedor   : [this.producto.provedor, Validators.required],
+      precio     : [this.producto.precio, Validators.required],
+      descripcion: [this.producto.descripcion],
+      presentacion: [this.producto.presentacion, Validators.required],
       img: []
     });
   }
@@ -114,7 +118,7 @@ export class RegistrarProductoComponent implements OnInit {
     });
   }
 
-  guardarProducto() {
+  onSubmit() {
     if (this.formulario.valid) {
       this.producto = this.formulario.value;
       this.producto.imageURL = this.imgURL;
@@ -125,22 +129,32 @@ export class RegistrarProductoComponent implements OnInit {
         allowOutsideClick: false
       });
       Swal.showLoading();
-      this.productoService.post(this.producto).subscribe( p => {
-        if (p != null) {
-          Swal.fire({
-            title: 'Registrado correctamente',
-            icon: 'success'
-          });
-          this.formulario.reset();
-        } else {
-          Swal.fire({
-            icon: 'error',
-            title: 'Error al registrar',
-            text: 'No se pudo completar la operacion'
-          });
-        }
-      });
+      if ( this.accion === 'Registrar' ) {
+        this.guardarProducto();
+      } else {
+        this.modificaProducto();
+      }
     }
+  }
+
+  modificaProducto() {}
+
+  guardarProducto() {
+    this.productoService.post(this.producto).subscribe( p => {
+      if (p != null) {
+        Swal.fire({
+          title: 'Registrado correctamente',
+          icon: 'success'
+        });
+        this.formulario.reset();
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error al registrar',
+          text: 'No se pudo completar la operacion'
+        });
+      }
+    });
   }
 
   pausarSubida() {
@@ -168,5 +182,6 @@ export class RegistrarProductoComponent implements OnInit {
       });
     }
   }
+
 
 }
