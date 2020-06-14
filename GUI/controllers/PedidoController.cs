@@ -22,6 +22,12 @@ namespace GUI.controllers
             var pedidos = _PedidoService.consultarTodos().Select(p => new PedidoViewModel(p));
             return pedidos;
         }
+        [HttpPut("{identificacion}")]
+        public ActionResult<string> Put(string identificacion, Pedido pedido)
+        {
+            var mensaje=_PedidoService.Modificar(pedido);
+            return Ok(mensaje) ;
+        }
         [HttpPost]
         public ActionResult<PedidoViewModel> Post(PedidoInputModel pedidoInput) {
             Pedido pedido = mapearPedido(pedidoInput);

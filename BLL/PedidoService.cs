@@ -35,6 +35,15 @@ namespace Logica
             });
             return pedidos;
         }
+        public string Modificar( Pedido pedido) {
+            if ( _context.Pedidos.Find( pedido.Id ) != null )
+            {
+                _context.Pedidos.Update(pedido);
+                _context.SaveChanges();
+                return "Pedido Actualizado";
+            }
+            return "No se encontro el pedido con id: " + pedido.Id;
+        }
         public GuardarPedidoResponse guardar(Pedido pedido) {
             try{
                 _context.Pedidos.Add(pedido);

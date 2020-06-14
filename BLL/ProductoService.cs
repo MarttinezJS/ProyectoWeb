@@ -54,6 +54,7 @@ namespace Logica
             if ( _context.Productos.Find( producto.Id ) != null )
             {
                 _context.Productos.Update(producto);
+                _context.SaveChanges();
                 return "Producto Actualizado";
             }
             return "No se encontro el producto con id: " + producto.Id;

@@ -40,7 +40,7 @@ export class ProductoService {
    }
 
    put(producto: Producto): Observable<any> {
-      const url = `${this.baseUrl}api/producto/${producto.id}`;
+      const url = `${this.baseUrl}api/Producto/${producto.id}`;
       return this.http.put(url, producto, httpOptions)
       .pipe(
         tap(_ => this.handleErrorService.log('datos enviados')),
@@ -50,7 +50,7 @@ export class ProductoService {
 
    delete(producto: Producto| string): Observable<string> {
       const id = typeof producto === 'string' ? producto : producto.id;
-      return this.http.delete<string>(this.baseUrl + 'api/producto/' + id)
+      return this.http.delete<string>(this.baseUrl + 'api/Producto/' + id)
       .pipe(
         tap(_ => this.handleErrorService.log('datos enviados')),
         catchError(this.handleErrorService.handleError<string>('Elimiar Producto', null))
