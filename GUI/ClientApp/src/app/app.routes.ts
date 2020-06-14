@@ -13,16 +13,16 @@ import { PedidosComponent } from './components/ventas/pedidos/pedidos.component'
 import { CarritoComponent } from './components/ventas/carrito/carrito.component';
 
 export const ROUTES: Routes = [
-    { path: 'inicio', component: InicioComponent },
-    { path: 'login', component: LoginComponent },
-    { path: 'signin', component: SigninComponent },
-    { path: 'productos', component: ProductoComponent},
-    { path: 'servicios', component: ServiciosComponent},
-    { path: 'proveedores', component: ProveedoresComponent},
-    { path: 'registroProducto', component: RegistrarProductoComponent, canActivate: [AuthGuard] },
-    { path: 'usuarioconfig', component: ConfiguracionComponent, canActivate: [AuthGuard] },
-    { path: 'pedidos/:id', component: PedidosComponent },
-    { path: 'carrito', component: CarritoComponent },
-    { path: 'detallePedido/:id', component: DetallePedidoComponent},
+    { path: 'Inicio', component: InicioComponent },
+    { path: 'Login', component: LoginComponent },
+    { path: 'Signin', component: SigninComponent },
+    { path: 'Productos', component: ProductoComponent},
+    { path: 'Servicios', component: ServiciosComponent},
+    { path: 'Proveedores', component: ProveedoresComponent},
+    { path: 'Producto/:action/:id', component: RegistrarProductoComponent, canActivate: [AuthGuard] },
+    { path: 'Usuarioconfig', component: ConfiguracionComponent, canActivate: [AuthGuard] },
+    { path: 'Pedidos/:id', component: PedidosComponent },
+    { path: 'Carrito', component: CarritoComponent },
+    { path: 'DetallePedido/:id', component: DetallePedidoComponent},
     { path: '**', component: InicioComponent },
 ];

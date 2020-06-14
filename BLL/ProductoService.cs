@@ -50,22 +50,13 @@ namespace Logica
             }
         }
 
-        public string modificar( Producto productoNuevo ) {
-            var producto = _context.Productos.Find( productoNuevo.Id );
-            if (producto == null)
+        public string modificar( Producto producto) {
+            if ( _context.Productos.Find( producto.Id ) != null )
             {
-                return "El producto no se encuentra registrado";
+                _context.Productos.Update(producto);
+                return "Producto Actualizado";
             }
-            producto.Descripcion = productoNuevo.Descripcion;
-            producto.Nombre = productoNuevo.Nombre;
-            producto.Precio = productoNuevo.Precio;
-            producto.Presentacion = productoNuevo.Presentacion;
-            producto.Proveedor = productoNuevo.Proveedor;
-
-            _context.Productos.Update( producto );
-            _context.SaveChanges();
-
-            return "El producto se actualizó";
+            return "No se encontro el producto con id: " + producto.Id;
         }
     }
     public class GuardarProductoResponse{

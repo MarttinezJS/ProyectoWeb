@@ -74,7 +74,7 @@ export class CarritoComponent implements OnInit {
           icon: 'success',
           title: 'Hecho'
         });
-        this.router.navigateByUrl('/pedidos/' + this.usuario.id);
+        this.router.navigateByUrl('/Pedidos/' + this.usuario.id);
       } else {
         Swal.fire({
           icon: 'error',
