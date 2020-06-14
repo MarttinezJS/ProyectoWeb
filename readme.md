@@ -58,4 +58,6 @@
 
 1.0.1 - Agreagado metodos eliminar y modificar, a productos
 
-1.0.1 - Agreagado metodo modificar, a pedidos
+1.0.2 - Agreagado metodo modificar, a pedidos
+
+1.0.3 - Implementados los metodos modificar pedidos( bug en modificar estado )

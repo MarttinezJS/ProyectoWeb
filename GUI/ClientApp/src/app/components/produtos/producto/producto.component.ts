@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ProductoService } from 'src/app/services/producto.service';
 import { Producto } from '../../models/Producto';
 import { AuthService } from '../../../services/auth.service';
@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
   templateUrl: './producto.component.html',
   styleUrls: ['./producto.component.css']
 })
-export class ProductoComponent implements OnDestroy {
+export class ProductoComponent implements OnDestroy, OnInit {
 
   productos: Producto[];
   detalles: DetallePedido[] = [];
@@ -33,8 +33,6 @@ export class ProductoComponent implements OnDestroy {
   constructor(private productosServicio: ProductoService,
               private authService: AuthService,
               private detallePedidoService: DetallePedidoService ) {
-    this.cargarLista();
-    this.validarAdmin();
     this.detalles = detallePedidoService.getdetalles();
   }
 
@@ -42,6 +40,9 @@ export class ProductoComponent implements OnDestroy {
     this.detallePedidoService.setdetalles(this.detalles);
   }
 
+  ngOnInit(): void {
+    this.cargarLista();
+  }
   cargarLista() {
     Swal.fire({
       icon: 'info',
@@ -51,13 +52,10 @@ export class ProductoComponent implements OnDestroy {
     });
     Swal.showLoading();
     this.productosServicio.get().subscribe(result => {
+      this.isAdmin = this.authService.verificarAdmin();
       this.productos = result;
       Swal.close();
     });
-  }
-
-  validarAdmin() {
-    this.isAdmin = this.authService.verificarAdmin();
   }
 
   agregarProd( producto: Producto, cantidad: number, presentacion: string ) {
@@ -85,7 +83,7 @@ export class ProductoComponent implements OnDestroy {
         }
       }
     }).then( cantidad => {
-      if (!cantidad.dismiss) {
+      if (!cantidad.dismiss || cantidad.value > 0) {
         Swal.fire({
           title: 'Presentacion (Kilo por defecto)',
           input: 'select',

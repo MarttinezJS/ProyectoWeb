@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PedidoService } from '../../../services/pedido.service';
+import { DetallePedido } from '../../models/DetallePedido';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-detalle-pedido',
@@ -9,6 +11,7 @@ import { PedidoService } from '../../../services/pedido.service';
 })
 export class DetallePedidoComponent implements OnInit {
 
+  detallesPedido: DetallePedido[];
   constructor(private rutaActiva: ActivatedRoute,
               private pedidoService: PedidoService ) { }
 
@@ -17,8 +20,16 @@ export class DetallePedidoComponent implements OnInit {
   }
 
   traerPedido() {
+    Swal.fire({
+      icon: 'info',
+      title: 'Buscando datos',
+      text: 'Por favor espera...',
+      allowOutsideClick: false
+    });
+    Swal.showLoading();
     this.pedidoService.get().subscribe( p => {
-      console.log(p.filter( pedido => pedido.id === this.rutaActiva.snapshot.params.id));
+      Swal.close();
+      this.detallesPedido = p.filter( pedido => pedido.id === this.rutaActiva.snapshot.params.id)[0].detallePedido;
     });
   }
 }
