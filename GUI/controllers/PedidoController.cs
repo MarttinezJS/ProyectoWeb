@@ -30,7 +30,6 @@ namespace GUI.controllers
             }
             var mensaje = _PedidoService.Modificar(pedido);
             return Ok(mensaje) ;
-
         }
         [HttpPost]
         public ActionResult<PedidoViewModel> Post(PedidoInputModel pedidoInput) {
