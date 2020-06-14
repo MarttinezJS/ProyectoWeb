@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\Entity\\Entity.csproj": {}
+    "C:\\Users\\enmod\\OneDrive\\Escritorio\\proyecto web\\Entity\\Entity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\Entity\\Entity.csproj": {
+    "C:\\Users\\enmod\\OneDrive\\Escritorio\\proyecto web\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\Entity\\Entity.csproj",
+        "projectUniqueName": "C:\\Users\\enmod\\OneDrive\\Escritorio\\proyecto web\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\Entity\\Entity.csproj",
-        "packagesPath": "C:\\Users\\Martinez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\Entity\\obj\\",
+        "projectPath": "C:\\Users\\enmod\\OneDrive\\Escritorio\\proyecto web\\Entity\\Entity.csproj",
+        "packagesPath": "C:\\Users\\enmod\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\enmod\\OneDrive\\Escritorio\\proyecto web\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Martinez\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\enmod\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -56,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

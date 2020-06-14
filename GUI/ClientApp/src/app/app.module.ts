@@ -11,6 +11,7 @@ import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
 // Providers
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore } from 'angularfire2/firestore';
@@ -73,7 +74,7 @@ import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
     FormsModule,
     NgxSpinnerModule,
     AngularFireStorageModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [
     AngularFireAuth,
