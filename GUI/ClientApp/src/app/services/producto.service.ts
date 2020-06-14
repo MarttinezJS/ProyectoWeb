@@ -1,10 +1,13 @@
 import { Injectable, Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { HandleHttpErrorService } from '../@base/handle-http-error.service';
 import { Observable } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { Producto } from '../components/models/Producto';
 
+const httpOptions = {
+   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
    providedIn: 'root'
@@ -35,4 +38,22 @@ export class ProductoService {
          catchError(this.handleErrorService.handleError<Producto>('Registrar Producto', null))
       );
    }
+
+   put(producto: Producto): Observable<any> {
+      const url = `${this.baseUrl}api/producto/${producto.id}`;
+      return this.http.put(url, producto, httpOptions)
+      .pipe(
+        tap(_ => this.handleErrorService.log('datos enviados')),
+        catchError(this.handleErrorService.handleError<any>('Editar Producto'))
+      );
+   }
+
+   delete(producto: Producto| string): Observable<string> {
+      const id = typeof producto === 'string' ? producto : producto.id;
+      return this.http.delete<string>(this.baseUrl + 'api/producto/' + id)
+      .pipe(
+        tap(_ => this.handleErrorService.log('datos enviados')),
+        catchError(this.handleErrorService.handleError<string>('Elimiar Producto', null))
+      );
+    }
 }

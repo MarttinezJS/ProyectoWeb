@@ -23,6 +23,21 @@ namespace GUI.Controllers
           var productos = _productoService.consultarTodos().Select(u => new ProductoViewModel(u));
           return productos;
       }
+
+      [HttpPut("{identificacion}")]
+      public ActionResult<string> Put(string identificacion, Producto producto)
+      {
+          var mensaje = _productoService.modificar(producto);
+          return Ok(mensaje);
+      }
+
+      [HttpDelete("{identificacion}")]
+      public ActionResult<string> Delete(string identificacion)
+      {
+          string mensaje = _productoService.eliminar(identificacion);
+          return Ok(mensaje);
+      }
+
       [HttpPost]
       public ActionResult<ProductoViewModel> Post(ProductoInputModel productoInput) {
           Producto producto = mapearProducto(productoInput);
