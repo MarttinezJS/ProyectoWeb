@@ -57,3 +57,5 @@
 1.0.0 - La app ya hace un pedido y se puede consultar por parte del cliente
 
 1.0.1 - Agreagado metodos eliminar y modificar, a productos
+
+1.0.1 - Agreagado metodo modificar, a pedidos

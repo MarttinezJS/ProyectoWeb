@@ -1,11 +1,13 @@
 import { Injectable, Inject } from '@angular/core';
 import { Pedido } from '../components/models/Pedido';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { HandleHttpErrorService } from '../@base/handle-http-error.service';
 import { tap, catchError } from 'rxjs/operators';
-import { DetallePedido } from '../components/models/DetallePedido';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 @Injectable({
   providedIn: 'root'
 })
@@ -31,6 +33,15 @@ export class PedidoService {
     return this.http.post<Pedido>(this.baseUrl + 'api/Pedido', pedido).pipe(
       tap(_ => this.handleErrorService.log('datos enviados')),
       catchError(this.handleErrorService.handleError<Pedido>('Registrar Pedido', null))
+    );
+  }
+
+  put(pedido: Pedido): Observable<any> {
+    const url = `${this.baseUrl}api/Pedido/${pedido.id}`;
+    return this.http.put(url, pedido, httpOptions)
+    .pipe(
+      tap(_ => this.handleErrorService.log('datos enviados')),
+      catchError(this.handleErrorService.handleError<any>('Editar Pedido'))
     );
   }
 }
