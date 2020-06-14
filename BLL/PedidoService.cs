@@ -36,13 +36,16 @@ namespace Logica
             return pedidos;
         }
         public string Modificar( Pedido pedido) {
-            if ( _context.Pedidos.Find( pedido.Id ) != null )
-            {
-                _context.Pedidos.Update(pedido);
-                _context.SaveChanges();
-                return "Pedido Actualizado";
-            }
-            return "No se encontro el pedido con id: " + pedido.Id;
+                try
+                {
+                    _context.Pedidos.Update( pedido);
+                    _context.SaveChanges();
+                    return "Pedido Actualizado";
+                }
+                catch (Exception e)
+                {
+                    return "Error al actualizar: " + e.Message;
+                }
         }
         public GuardarPedidoResponse guardar(Pedido pedido) {
             try{

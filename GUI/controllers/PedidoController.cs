@@ -25,8 +25,12 @@ namespace GUI.controllers
         [HttpPut("{identificacion}")]
         public ActionResult<string> Put(string identificacion, Pedido pedido)
         {
-            var mensaje=_PedidoService.Modificar(pedido);
+            if( pedido == null){
+                return BadRequest("No encontrado");
+            }
+            var mensaje = _PedidoService.Modificar(pedido);
             return Ok(mensaje) ;
+
         }
         [HttpPost]
         public ActionResult<PedidoViewModel> Post(PedidoInputModel pedidoInput) {

@@ -18,8 +18,11 @@
                 <div class="card-body">
                     <h4 class="card-title"> {{ producto.nombre }} x <small>{{ producto.presentacion }}</small></h4>
                     <p class="card-text text-center"> {{ producto.precio | currency:'COP' }} </p>
-                    <button type="button" [routerLink]="['/detallePedido', producto.id]" class="btn btn-outline-primary text-center">Ver mas..</button>
+                    <button type="button" class="btn btn-outline-primary text-center">Ver mas..</button>
                     <button type="button" (click)="modalEmergente( producto )" class="btn btn-outline-success text-center">Lo quiero</button>
+                    <hr>
+                    <button *ngIf="isAdmin" class="btn btn-dark-green" [routerLink]="['/Producto','Modificar', producto.id]" type="button">Editar</button>
+                    <button *ngIf="isAdmin" class="btn btn-danger" type="button">Eliminar</button>
                 </div>
             </div>
         </div>

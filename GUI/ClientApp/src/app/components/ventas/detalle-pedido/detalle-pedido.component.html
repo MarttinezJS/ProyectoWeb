@@ -11,22 +11,19 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr *ngFor="let detalle of detallesPedido">
                     <td>
-                        <img src="" class="img-thumb">
+                        <img [src]=" detalle.producto.imageURL | noImage " class="img-thumb">
                     </td>
                     <td>
                         <div class="container">
-                            <h1>carne de cerdo</h1>
-                            <p>codigo pedido: <i>124521412</i></p>
-                            <p>codigo producto: <i>21f21fas21</i></p>
-                            <p>precio unitario: <i>$ 10.000</i></p>
-                            <p>cantidad: <i>4  kilo</i></p>
-                            <p>precio total: <i>$ 40.000</i></p>
+                            <h1>{{ detalle.producto.nombre }}</h1>
+                            <p>codigo producto: <i>{{ detalle.producto.id }}</i></p>
+                            <p>precio unitario: <i>{{ detalle.producto.precio }} COP</i></p>
+                            <p>cantidad: <i>{{ detalle.cantidad }} {{ detalle.presentacion }}</i></p>
+                            <p>precio total: <i>{{ detalle.subTotal }}</i></p>
                         </div>
                     </td>
-                    <button class="btn btn-outline-blue">Modificar</button>
-                    <button class="btn btn-outline-danger">Eliminar</button>
                 </tr>
             </tbody>
         </table>

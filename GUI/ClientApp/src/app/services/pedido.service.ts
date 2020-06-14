@@ -29,7 +29,6 @@ export class PedidoService {
   }
 
   post(pedido: Pedido): Observable<Pedido> {
-    console.log(JSON.stringify( pedido ));
     return this.http.post<Pedido>(this.baseUrl + 'api/Pedido', pedido).pipe(
       tap(_ => this.handleErrorService.log('datos enviados')),
       catchError(this.handleErrorService.handleError<Pedido>('Registrar Pedido', null))
@@ -37,7 +36,7 @@ export class PedidoService {
   }
 
   put(pedido: Pedido): Observable<any> {
-    const url = `${this.baseUrl}api/Pedido/${pedido.id}`;
+    const url = `${this.baseUrl}api/pedido/${pedido.id}`;
     return this.http.put(url, pedido, httpOptions)
     .pipe(
       tap(_ => this.handleErrorService.log('datos enviados')),
