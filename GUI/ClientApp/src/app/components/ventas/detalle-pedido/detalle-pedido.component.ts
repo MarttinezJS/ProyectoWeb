@@ -13,10 +13,11 @@ export class DetallePedidoComponent implements OnInit {
 
   detallesPedido: DetallePedido[];
   constructor(private rutaActiva: ActivatedRoute,
-              private pedidoService: PedidoService ) { }
+              private pedidoService: PedidoService ) {
+    this.traerPedido();
+  }
 
   ngOnInit(): void {
-    this.traerPedido();
   }
 
   traerPedido() {
@@ -30,6 +31,7 @@ export class DetallePedidoComponent implements OnInit {
     this.pedidoService.get().subscribe( p => {
       Swal.close();
       this.detallesPedido = p.filter( pedido => pedido.id === this.rutaActiva.snapshot.params.id)[0].detallePedido;
+      console.log( this.detallesPedido );
     });
   }
 }

@@ -63,12 +63,12 @@ export class CarritoComponent implements OnInit {
 
     this.pedido = new Pedido();
     this.pedido.idCliente = this.usuario.id;
+    this.pedido.cliente = this.usuario;
     this.pedido.detallePedido = this.detallePedido;
     this.pedido.total = this.total;
 
 
     this.pedidoService.post( this.pedido ).subscribe( p => {
-      console.log(p);
       if (p != null) {
         Swal.fire({
           icon: 'success',

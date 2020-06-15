@@ -61,3 +61,5 @@
 1.0.2 - Agreagado metodo modificar, a pedidos
 
 1.0.3 - Implementados los metodos modificar pedidos( bug en modificar estado )
+
+1.1.0 - Agregado SignalR e implementado
