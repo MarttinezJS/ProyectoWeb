@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "wYXbNw8GmG1bnM7iqiaeAibfede3Jdb2CFvbHltOwkgDPzkzB8DRdffR23H+yQORU2PW7t8vwPn5PSENycniLQ==",
+  "dgSpecHash": "dSY6Uf77/VnySI+gvmOF7QCqUPnFw6EC3o39+RZPyAQo1+vj52LPBxLDwG5kG9FHEg1x+OKXFKvdc1ORju7Zmg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\Entity\\Entity.csproj",
+  "projectFilePath": "C:\\Users\\enmod\\OneDrive\\Escritorio\\proyecto web\\Entity\\Entity.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Martinez\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+    "C:\\Users\\enmod\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }
