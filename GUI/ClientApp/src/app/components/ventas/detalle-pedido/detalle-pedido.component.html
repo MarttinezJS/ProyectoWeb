@@ -1,7 +1,7 @@
 <div class="container d-flex  w-100 justify-content-center mt-3">
     <h1>Detalle pedido</h1>
 </div>
-<div class="container">
+<div class="container mt-2">
     <div class="col">
         <table class="table">
             <thead class="thead-dark">
@@ -17,7 +17,7 @@
                     </td>
                     <td>
                         <div class="container">
-                            <h1>{{ detalle.producto.nombre }}</h1>
+                            <h2>{{ detalle.producto.nombre }}</h2>
                             <p>codigo producto: <i>{{ detalle.producto.id }}</i></p>
                             <p>precio unitario: <i>{{ detalle.producto.precio }} COP</i></p>
                             <p>cantidad: <i>{{ detalle.cantidad }} {{ detalle.presentacion }}</i></p>

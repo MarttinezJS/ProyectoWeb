@@ -40,6 +40,7 @@ import { DetallePedidoComponent } from './components/ventas/detalle-pedido/detal
 import { PedidosComponent } from './components/ventas/pedidos/pedidos.component';
 import { CarritoComponent } from './components/ventas/carrito/carrito.component';
 import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
+import { RegistrarOtrosComponent } from './components/produtos/registrar-otros/registrar-otros.component';
 
 
 
@@ -61,7 +62,8 @@ import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
     DetallePedidoComponent,
     PedidosComponent,
     CarritoComponent,
-    TarjetaComponent
+    TarjetaComponent,
+    RegistrarOtrosComponent
   ],
   imports: [
     TooltipModule.forRoot(),
