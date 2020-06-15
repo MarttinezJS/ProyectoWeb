@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
-import { Pedido } from '../../models/Pedido';
+import { SignalRService } from 'src/app/services/signal-r.service';
 import { PedidoService } from '../../../services/pedido.service';
-import Swal from 'sweetalert2';
+import { AuthService } from 'src/app/services/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Pedido } from '../../models/Pedido';
+import Swal from 'sweetalert2';
 
 
 const swalYesNot = Swal.mixin({
@@ -23,7 +24,6 @@ export class PedidosComponent implements OnInit {
 
   isAdmin: boolean;
   pedidos: Pedido[];
-  dirty = false;
   pedidosModificados: Pedido[];
   toast = Swal.mixin({
     toast: true,
@@ -39,14 +39,21 @@ export class PedidosComponent implements OnInit {
   constructor(private authService: AuthService,
               private pedidoService: PedidoService,
               private rutaActiva: ActivatedRoute,
-              private ruta: Router) {
+              private ruta: Router,
+              private signalRS: SignalRService) {
     this.pedidosModificados = new Array;
   }
 
   ngOnInit(): void {
     this.cargarPedidos();
+    this.signalListen();
   }
 
+  signalListen() {
+    this.signalRS.signalRecived.subscribe( (pedido: Pedido) => {
+      this.pedidos.push(pedido);
+    });
+  }
 
   cargarPedidos() {
     Swal.fire({
@@ -96,7 +103,6 @@ export class PedidosComponent implements OnInit {
         title: 'Cambiado'
       });
     });
-    // this.dirty = true;
   }
 
   cancelarPedido( pedido: Pedido ) {
