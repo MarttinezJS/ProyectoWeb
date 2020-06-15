@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.SignalR;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 using System.Linq;
+using GUI.Models;
 using Entity;
 using Logica;
-using Microsoft.AspNetCore.Mvc;
-using GUI.Models;
 using Dal;
 
 namespace GUI.controllers
@@ -13,9 +15,11 @@ namespace GUI.controllers
     public class PedidoController: ControllerBase
     {
         private readonly PedidoService _PedidoService;
+        private readonly IHubContext<SignaHub> _HubContext;
 
-        public PedidoController( CarniceriaContext context ){
+        public PedidoController( CarniceriaContext context, IHubContext<SignaHub> hubContext ){
             _PedidoService = new PedidoService( context );
+            _HubContext = hubContext;
         }
         [HttpGet]
         public IEnumerable<PedidoViewModel> Get() {
@@ -33,14 +37,16 @@ namespace GUI.controllers
 
         }
         [HttpPost]
-        public ActionResult<PedidoViewModel> Post(PedidoInputModel pedidoInput) {
+        public async Task<ActionResult<PedidoViewModel>> Post(PedidoInputModel pedidoInput) {
             Pedido pedido = mapearPedido(pedidoInput);
             var respuesta = _PedidoService.guardar(pedido);
             if (respuesta.Error)
             {
                 return BadRequest(respuesta.Mensaje);
             }
-            return Ok(respuesta.Pedido);
+            var pedidoViewModel = new PedidoViewModel(respuesta.Pedido);
+            await _HubContext.Clients.All.SendAsync("GuardarPedido", pedidoViewModel);
+            return Ok(pedidoViewModel);
         }
         
         private Pedido mapearPedido(PedidoInputModel pedidoInput){

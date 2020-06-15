@@ -6,9 +6,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using Dal;
-using Microsoft.EntityFrameworkCore;
+using GUI.Models;
 
 namespace GUI
 {
@@ -28,6 +29,7 @@ namespace GUI
             services.AddDbContext<CarniceriaContext>(p=>p.UseSqlServer( Configuration.GetConnectionString("DefaultConnection") ));
 
             services.AddControllersWithViews();
+            services.AddSignalR();
             //Agregar OpenApi Swagger
             services.AddSwaggerGen(c =>
             {
@@ -80,11 +82,13 @@ namespace GUI
 
             app.UseRouting();
 
+            //SignalR service configured
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
+                endpoints.MapHub<SignaHub>("/SignalHub");
             });
             //start swagger
             app.UseSwagger();
