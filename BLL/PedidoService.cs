@@ -36,6 +36,7 @@ namespace Logica
             return pedidos;
         }
         public string Modificar( Pedido pedido) {
+
                 try
                 {
                     _context.Pedidos.Update( pedido);

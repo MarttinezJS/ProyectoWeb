@@ -34,7 +34,6 @@ namespace GUI.controllers
             }
             var mensaje = _PedidoService.Modificar(pedido);
             return Ok(mensaje) ;
-
         }
         [HttpPost]
         public async Task<ActionResult<PedidoViewModel>> Post(PedidoInputModel pedidoInput) {
