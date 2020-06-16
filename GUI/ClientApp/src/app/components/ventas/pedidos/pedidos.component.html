@@ -17,25 +17,25 @@
                     <td>
                         <div class="container">
                             <div class="col d-flex">
-                                <p class="d1">Fecha de solicitud:</p> <p class="mr-1">{{ pedido.fechaInicio }}</p>
+                                <p class="d1">Fecha de solicitud:</p> <p class="ml-2">{{ pedido.fechaInicio }}</p>
                             </div>
                             <div class="col d-flex">
-                                <p class="d1">Fecha de entrega:</p> <p class="mr-1">{{ pedido.fechaFin }}</p>
+                                <p class="d1">Fecha de entrega:</p> <p class="ml-2">{{ pedido.fechaFin }}</p>
                             </div>
                             <div class="col d-flex">
-                                <p class="d1">codigo pedido: </p> <p>{{ pedido.id }}</p>
+                                <p class="d1">codigo pedido: </p> <p class="ml-2">{{ pedido.id }}</p>
                             </div> 
                             <div class="col d-flex">
-                                <p class="d1">Total: </p> <p>{{ pedido.total | currency }} COP</p>
+                                <p class="d1">Total: </p> <p class="ml-2">{{ pedido.total | currency }} COP</p>
                             </div>
                             <div class="col d-flex">
-                                <p class="d1">Nombre destinatario: </p><p> {{ pedido.cliente.nombre }}</p>
+                                <p class="d1">Nombre destinatario: </p><p class="ml-2"> {{ pedido.cliente.nombre }}</p>
                             </div>
                             <div class="col d-flex">
-                                <p class="d1">Direccion: </p><p>{{ pedido.cliente.direccion }}</p>
+                                <p class="d1">Direccion: </p><p class="ml-2">{{ pedido.cliente.direccion }}</p>
                             </div>
                             <div class="col d-flex">
-                                <p class="d1">telefono:</p> <p>{{ pedido.cliente.telefono }}</p>
+                                <p class="d1">telefono:</p> <p class="ml-2">{{ pedido.cliente.telefono }}</p>
                             </div>
                         </div>
                     </td>

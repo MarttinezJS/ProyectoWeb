@@ -3,8 +3,11 @@
     height: 150px;
 }
 p{
+    font-size: 18px;  
+  }
+.d1{
+      font-size: 20px;
     font-family: 'Hind', sans-serif;
-    font-size: 18px;
 }
 .a{
     padding-top: 12vh;   
