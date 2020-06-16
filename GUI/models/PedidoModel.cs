@@ -9,6 +9,7 @@ namespace GUI.Models
         public PedidoInputModel()
         {
             detallePedido = new List<DetallePedido>();
+            cliente = new Usuario();
         }
         public string id { get; set; }
         public string fechaInicio { get; set; }

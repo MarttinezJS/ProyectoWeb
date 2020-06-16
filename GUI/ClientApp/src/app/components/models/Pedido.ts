@@ -16,5 +16,6 @@ export class Pedido {
         this.fechaInicio = new Date().toTimeString();
         this.estado = 'Pendiente';
         this.fechaFin = 'En proceso';
+        this.cliente = new Usuario();
     }
 }

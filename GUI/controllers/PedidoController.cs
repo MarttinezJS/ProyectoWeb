@@ -1,3 +1,4 @@
+using System.Reflection.PortableExecutable;
 using Microsoft.AspNetCore.SignalR;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
@@ -44,7 +45,7 @@ namespace GUI.controllers
                 return BadRequest(respuesta.Mensaje);
             }
             var pedidoViewModel = new PedidoViewModel(respuesta.Pedido);
-            await _HubContext.Clients.All.SendAsync("GuardarPedido", pedidoViewModel);
+            await _HubContext.Clients.All.SendAsync("GuardarPedido", pedido);
             return Ok(pedidoViewModel);
         }
         
@@ -57,6 +58,7 @@ namespace GUI.controllers
             pedido.FechaFin = pedidoInput.fechaFin;
             pedido.Total = pedidoInput.total;
             pedido.Estado = pedidoInput.estado;
+            pedido.cliente 
             return pedido;
         }
     }
