@@ -30,7 +30,6 @@ export class PedidoService {
   }
 
   post(pedido: Pedido): Observable<Pedido> {
-    console.log(JSON.stringify( pedido ));
     return this.http.post<Pedido>(this.baseUrl + 'api/Pedido', pedido).pipe(
       tap(_ => this.handleErrorService.log('datos enviados')),
       catchError(this.handleErrorService.handleError<Pedido>('Registrar Pedido', null))
