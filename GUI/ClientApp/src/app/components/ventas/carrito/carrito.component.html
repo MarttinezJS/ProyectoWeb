@@ -19,12 +19,25 @@
                         </td>
                         <td>
                             <div class="container">
-                                <h2>{{ dPedido.producto.nombre }}</h2>
-                                <p>Codigo Pedido: <i>{{ dPedido.id }}</i></p>
-                                <p>Codigo Producto: <i>{{ dPedido.producto.id }}</i></p>
-                                <p>Precio Unitario: <i>{{ dPedido.producto.precio | currency }} x {{ dPedido.producto.presentacion }}</i></p>
-                                <p>Cantidad: <i>{{ dPedido.cantidad }}  {{ dPedido.presentacion }}</i></p>
-                                <p>Precio SubTotal: <i>{{ dPedido.subTotal | currency }}</i></p>
+                                
+                                <div class="col d-flex">
+                                     <h2>{{ dPedido.producto.nombre }}</h2>
+                                 </div>
+                                <div class="col d-flex">
+                                   <p class="d1">Codigo Pedido: </p> <p class="ml-2">{{ dPedido.id }}</p>
+                                </div>
+                                <div class="col d-flex">
+                                   <p class="d1">Codigo Producto: </p> <p class="ml-2">{{ dPedido.producto.id }}</p>
+                                </div>
+                                <div class="col d-flex">
+                                    <p class="d1">Precio Unitario:</p> <p class="ml-2">{{ dPedido.producto.precio | currency }} x {{ dPedido.producto.presentacion }}</p>
+                                </div>
+                                <div class="col d-flex">
+                                    <p class="d1">Cantidad: </p> <p class="ml-2">{{ dPedido.cantidad }}  {{ dPedido.presentacion }}</p>
+                                 </div>
+                                 <div class="col d-flex">
+                                    <p class="d1">Precio SubTotal: </p> <p class="ml-2">{{ dPedido.subTotal | currency }}</p>
+                                 </div>
                             </div>
                         </td>
                     </tr>
