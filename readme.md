@@ -63,3 +63,5 @@
 1.0.3 - Implementados los metodos modificar pedidos( bug en modificar estado )
 
 1.1.0 - Agregado SignalR e implementado
+
+1.2.0 - BugFix pedido de signalR, agregado e implementado el pipe filtro

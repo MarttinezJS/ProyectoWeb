@@ -41,6 +41,8 @@ import { PedidosComponent } from './components/ventas/pedidos/pedidos.component'
 import { CarritoComponent } from './components/ventas/carrito/carrito.component';
 import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
 import { RegistrarOtrosComponent } from './components/produtos/registrar-otros/registrar-otros.component';
+import { FiltroPipe } from './pipes/filtro.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -63,7 +65,8 @@ import { RegistrarOtrosComponent } from './components/produtos/registrar-otros/r
     PedidosComponent,
     CarritoComponent,
     TarjetaComponent,
-    RegistrarOtrosComponent
+    RegistrarOtrosComponent,
+    FiltroPipe
   ],
   imports: [
     TooltipModule.forRoot(),
@@ -77,6 +80,7 @@ import { RegistrarOtrosComponent } from './components/produtos/registrar-otros/r
     NgxSpinnerModule,
     AngularFireStorageModule,
     BrowserAnimationsModule,
+    NgbModule,
   ],
   providers: [
     AngularFireAuth,

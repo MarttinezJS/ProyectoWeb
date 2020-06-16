@@ -78,8 +78,8 @@ export class ProductoComponent implements OnDestroy, OnInit {
       input: 'number',
       showCancelButton: true,
       inputValidator: (value) => {
-        if (!value) {
-          return 'Necesitas especificar la cantidad.';
+        if (!value || parseInt(value, 10) === 0) {
+          return 'Cantidad no valida.';
         }
       }
     }).then( cantidad => {
@@ -101,6 +101,6 @@ export class ProductoComponent implements OnDestroy, OnInit {
         });
       }
     });
-
   }
+
 }
