@@ -64,7 +64,6 @@ dlldata.c
 *.pidb
 *.svclog
 *.scc
-*.dll
 
 # Chutzpah Test files
 _Chutzpah*
@@ -131,10 +130,6 @@ DocProject/Help/html
 
 # Click-Once directory
 publish/
-../BLL/obj
-../BLL/bin
-../Dal/bin
-../Dal/obj
 
 # Publish Web Output
 *.[Pp]ublish.xml

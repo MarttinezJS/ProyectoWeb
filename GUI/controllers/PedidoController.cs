@@ -58,7 +58,7 @@ namespace GUI.controllers
             pedido.FechaFin = pedidoInput.fechaFin;
             pedido.Total = pedidoInput.total;
             pedido.Estado = pedidoInput.estado;
-            pedido.cliente = pedidoInput.cliente;
+            pedido.Cliente = pedidoInput.cliente;
             return pedido;
         }
     }
