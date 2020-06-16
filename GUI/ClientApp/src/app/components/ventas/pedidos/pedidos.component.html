@@ -16,13 +16,27 @@
                     <td> {{ i }} </td>
                     <td>
                         <div class="container">
-                            <p>Fecha de solicitud: <i>{{ pedido.fechaInicio }}</i></p>
-                            <p>Fecha de entrega: <i>{{ pedido.fechaFin }}</i></p>
-                            <p>codigo pedido: <i>{{ pedido.id }}</i></p>
-                            <p>Total: <i>{{ pedido.total | currency }} COP</i></p>
-                            <p>Nombre destinatario: <i>{{ pedido.cliente.nombre }}</i></p>
-                            <p>Direccion: <i>{{ pedido.cliente.direccion }}</i></p>
-                            <p>telefono: <i>{{ pedido.cliente.telefono }}</i></p>
+                            <div class="col d-flex">
+                                <p class="d1">Fecha de solicitud:</p> <p class="ml-2">{{ pedido.fechaInicio }}</p>
+                            </div>
+                            <div class="col d-flex">
+                                <p class="d1">Fecha de entrega:</p> <p class="ml-2">{{ pedido.fechaFin }}</p>
+                            </div>
+                            <div class="col d-flex">
+                                <p class="d1">codigo pedido: </p> <p class="ml-2">{{ pedido.id }}</p>
+                            </div> 
+                            <div class="col d-flex">
+                                <p class="d1">Total: </p> <p class="ml-2">{{ pedido.total | currency }} COP</p>
+                            </div>
+                            <div class="col d-flex">
+                                <p class="d1">Nombre destinatario: </p><p class="ml-2"> {{ pedido.cliente.nombre }}</p>
+                            </div>
+                            <div class="col d-flex">
+                                <p class="d1">Direccion: </p><p class="ml-2">{{ pedido.cliente.direccion }}</p>
+                            </div>
+                            <div class="col d-flex">
+                                <p class="d1">telefono:</p> <p class="ml-2">{{ pedido.cliente.telefono }}</p>
+                            </div>
                         </div>
                     </td>
                     <td>
