@@ -90,6 +90,11 @@ export class PedidosComponent implements OnInit {
 
   modificar( pedido: Pedido, estado: string ) {
     pedido.estado = estado;
+    switch ( pedido.estado ) {
+      case 'Cancelado': pedido.fechaFin = 'Cancelado'; break;
+      case 'Finalizado': pedido.fechaFin = new Date().toTimeString(); break;
+      default: break;
+    }
     this.pedidosModificados.push(pedido);
     this.toast.fire({
       icon: 'info',
@@ -97,7 +102,6 @@ export class PedidosComponent implements OnInit {
     });
     this.toast.showLoading();
     this.pedidoService.put( pedido ).subscribe( rest => {
-      console.log(rest);
       this.toast.fire({
         icon: 'success',
         title: 'Cambiado'

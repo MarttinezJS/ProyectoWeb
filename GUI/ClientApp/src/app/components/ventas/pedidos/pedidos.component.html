@@ -16,7 +16,8 @@
                     <td> {{ i }} </td>
                     <td>
                         <div class="container">
-                            <p>Fechas: <i>{{ pedido.fecha }}</i></p>
+                            <p>Fecha de solicitud: <i>{{ pedido.fechaInicio }}</i></p>
+                            <p>Fecha de entrega: <i>{{ pedido.fechaFin }}</i></p>
                             <p>codigo pedido: <i>{{ pedido.id }}</i></p>
                             <p>Total: <i>{{ pedido.total | currency }} COP</i></p>
                             <p>Nombre destinatario: <i>{{ pedido.cliente.nombre }}</i></p>
