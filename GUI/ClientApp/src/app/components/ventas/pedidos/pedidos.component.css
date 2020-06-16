@@ -9,8 +9,8 @@
     height: 150px;
 }
 p{
-    font-family: 'Oswald', sans-serif;
-    font-size: 20px;
+    font-family: 'Hind', sans-serif;
+    font-size: 18px;
 }
 .border{
     border: 4px black ;
@@ -18,4 +18,7 @@ p{
 
 .z{
     font-size: 23px;
+}
+h1{
+    font-family: 'Suez One', serif;
 }
