@@ -9,9 +9,11 @@ namespace GUI.Models
         public PedidoInputModel()
         {
             detallePedido = new List<DetallePedido>();
+            cliente = new Usuario();
         }
         public string id { get; set; }
-        public string fecha { get; set; }
+        public string fechaInicio { get; set; }
+        public string fechaFin { get; set; }
         public float total { get; set; }
         public List<DetallePedido> detallePedido { get; set; }
         public string idCliente { get; set; }
@@ -28,7 +30,8 @@ namespace GUI.Models
         public PedidoViewModel( Pedido pedido )
         {
             id = pedido.Id;
-            fecha = pedido.Fecha;
+            fechaInicio = pedido.FechaInicio;
+            fechaFin = pedido.FechaFin;
             total = pedido.Total;
             detallePedido = pedido.DetallePedido;
             idCliente = pedido.IdCliente;

@@ -40,6 +40,7 @@ export class SignalRService {
   private registerSignaEvents = () => {
     this.hubConnection.on('GuardarPedido', (pedido: Pedido) => {
       this.signalRecived.emit(pedido);
+      console.log(pedido);
     });
   }
 }

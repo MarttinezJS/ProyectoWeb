@@ -3,7 +3,8 @@ import { Usuario } from './Usuario';
 
 export class Pedido {
     id: string;
-    fecha: string;
+    fechaInicio: string;
+    fechaFin: string;
     total: number;
     detallePedido: DetallePedido[];
     idCliente: string;
@@ -12,7 +13,9 @@ export class Pedido {
 
     constructor() {
         this.id = new Date().getTime().toString();
-        this.fecha = new Date().toString();
+        this.fechaInicio = new Date().toTimeString();
         this.estado = 'Pendiente';
+        this.fechaFin = 'En proceso';
+        this.cliente = new Usuario();
     }
 }

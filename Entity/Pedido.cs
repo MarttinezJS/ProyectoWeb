@@ -13,7 +13,8 @@ namespace Entity
         }
         [Key]
         public string Id { get; set; }
-        public string Fecha { get; set; }
+        public string FechaInicio { get; set; }
+        public string FechaFin { get; set; }
         public float Total { get; set; }
         public List<DetallePedido> DetallePedido { get; set; }
         public string IdCliente { get; set; }
