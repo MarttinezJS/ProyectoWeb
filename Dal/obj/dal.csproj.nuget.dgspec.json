@@ -1,34 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\enmod\\OneDrive\\Escritorio\\proyecto web\\Dal\\Dal.csproj": {}
+    "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\Dal\\Dal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\enmod\\OneDrive\\Escritorio\\proyecto web\\Dal\\Dal.csproj": {
+    "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\Dal\\Dal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\enmod\\OneDrive\\Escritorio\\proyecto web\\Dal\\Dal.csproj",
+        "projectUniqueName": "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\Dal\\Dal.csproj",
         "projectName": "Dal",
-        "projectPath": "C:\\Users\\enmod\\OneDrive\\Escritorio\\proyecto web\\Dal\\Dal.csproj",
-        "packagesPath": "C:\\Users\\enmod\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\enmod\\OneDrive\\Escritorio\\proyecto web\\Dal\\obj\\",
+        "projectPath": "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\Dal\\Dal.csproj",
+        "packagesPath": "C:\\Users\\Martinez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\Dal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\enmod\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Martinez\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.1": {
             "projectReferences": {
-              "C:\\Users\\enmod\\OneDrive\\Escritorio\\proyecto web\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\enmod\\OneDrive\\Escritorio\\proyecto web\\Entity\\Entity.csproj"
+              "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\Entity\\Entity.csproj": {
+                "projectPath": "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\Entity\\Entity.csproj"
               }
             }
           }
@@ -70,28 +68,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\enmod\\OneDrive\\Escritorio\\proyecto web\\Entity\\Entity.csproj": {
+    "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\enmod\\OneDrive\\Escritorio\\proyecto web\\Entity\\Entity.csproj",
+        "projectUniqueName": "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\enmod\\OneDrive\\Escritorio\\proyecto web\\Entity\\Entity.csproj",
-        "packagesPath": "C:\\Users\\enmod\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\enmod\\OneDrive\\Escritorio\\proyecto web\\Entity\\obj\\",
+        "projectPath": "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\Entity\\Entity.csproj",
+        "packagesPath": "C:\\Users\\Martinez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Martinez\\Documents\\Web\\ProyectoWeb\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\enmod\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Martinez\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -128,7 +124,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

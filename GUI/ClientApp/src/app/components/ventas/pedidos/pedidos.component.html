@@ -11,8 +11,21 @@
                     <th scope="col">Estado</th>
                 </tr>
             </thead>
+            <div class="row">
+                <div class="col mt-1">
+                    <div ngbDropdown class="d-inline-block">
+                        <select class="custom-select mr-sm-2" #estadoBusqueda id="inlineFormCustomSelect">
+                            <option selected value=null>Filtrar por Estado</option>
+                            <option value="Pendiente">Pendiente</option>
+                            <option value="Enviado">Enviado</option>
+                            <option value="Finalizado">Finalizado</option>
+                            <option value="Cancelado">Cancelado</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
             <tbody>
-                <tr *ngFor="let pedido of pedidos; let i = index">
+                <tr *ngFor="let pedido of pedidos | filtro: estadoBusqueda.value ; let i = index">
                     <td> {{ i }} </td>
                     <td>
                         <div class="container">

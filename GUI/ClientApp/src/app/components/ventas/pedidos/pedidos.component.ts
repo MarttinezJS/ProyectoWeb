@@ -1,7 +1,7 @@
 import { SignalRService } from 'src/app/services/signal-r.service';
 import { PedidoService } from '../../../services/pedido.service';
 import { AuthService } from 'src/app/services/auth.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Pedido } from '../../models/Pedido';
 import Swal from 'sweetalert2';
@@ -25,9 +25,9 @@ export class PedidosComponent implements OnInit {
   isAdmin: boolean;
   pedidos: Pedido[];
   pedidosModificados: Pedido[];
+  estado: string;
   toast = Swal.mixin({
     toast: true,
-    position: 'top-end',
     showConfirmButton: false,
     timer: 2000,
     onOpen: (toast) => {
@@ -39,7 +39,6 @@ export class PedidosComponent implements OnInit {
   constructor(private authService: AuthService,
               private pedidoService: PedidoService,
               private rutaActiva: ActivatedRoute,
-              private ruta: Router,
               private signalRS: SignalRService) {
     this.pedidosModificados = new Array;
   }
@@ -52,6 +51,11 @@ export class PedidosComponent implements OnInit {
   signalListen() {
     this.signalRS.signalRecived.subscribe( (pedido: Pedido) => {
       this.pedidos.push(pedido);
+      this.toast.fire({
+        icon: 'success',
+        title: 'Nuevo Pedido',
+        position: 'top-start'
+      });
     });
   }
 
@@ -98,7 +102,8 @@ export class PedidosComponent implements OnInit {
     this.pedidosModificados.push(pedido);
     this.toast.fire({
       icon: 'info',
-      title: 'Modificando pedido: ' + pedido.id
+      title: 'Modificando pedido: ' + pedido.id,
+      position: 'top-right'
     });
     this.toast.showLoading();
     this.pedidoService.put( pedido ).subscribe( rest => {

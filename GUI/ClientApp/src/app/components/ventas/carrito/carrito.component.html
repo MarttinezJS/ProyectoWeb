@@ -41,6 +41,11 @@
                             </div>
                         </td>
                     </tr>
+                    <div *ngIf="!carritoVacio" class="col text-center border m-5">
+                        <h1>( ‾ʖ̫‾)</h1>
+                        <h1> Oops..</h1>
+                        <h3>Creo que se te cayó el pedido en el camino</h3>
+                    </div>
                 </tbody>
             </table>
         </div>
@@ -61,7 +66,7 @@
                 <h2 *ngIf="!logueado">Modo Cotizacion</h2>
                 <small *ngIf="!logueado">Ingresa o registrate para comprar.</small>
                 <hr>
-                <button class="btn btn-danger mt-1 mb-2"> <i class="far fa-trash-alt"></i> Vaciar Carrito</button>
+                <button *ngIf="carritoVacio" class="btn btn-danger mt-1 mb-2" (click)="vaciarCarrito()"> <i class="far fa-trash-alt"></i> Vaciar Carrito</button>
                 <hr>
             </div>
         </div>

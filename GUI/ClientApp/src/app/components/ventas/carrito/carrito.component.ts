@@ -1,5 +1,5 @@
 import { DetallePedidoService } from '../../../services/detalle-pedido.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { Pedido } from '../../models/Pedido';
 import { DetallePedido } from '../../models/DetallePedido';
 import { UsuarioService } from '../../../services/usuario.service';
@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 import { PedidoService } from '../../../services/pedido.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
+import { empty } from 'rxjs';
 
 @Component({
   selector: 'app-carrito',
@@ -31,6 +32,7 @@ export class CarritoComponent implements OnInit {
     this.buscarUsuario();
     this.logueado = authService.usuarioAutenticado();
   }
+
 
   ngOnInit(): void {
     this.calcularTotal();
@@ -74,6 +76,7 @@ export class CarritoComponent implements OnInit {
           icon: 'success',
           title: 'Hecho'
         });
+        this.vaciarCarrito();
         this.router.navigateByUrl('/Pedidos/' + this.usuario.id);
       } else {
         Swal.fire({
@@ -82,6 +85,16 @@ export class CarritoComponent implements OnInit {
         });
       }
     });
-
   }
+
+  vaciarCarrito() {
+    this.detallePedido = [];
+    this.detallePService.setdetalles( this.detallePedido);
+  }
+
+
+  get carritoVacio() {
+    return this.detallePedido === [];
+  }
+
 }
