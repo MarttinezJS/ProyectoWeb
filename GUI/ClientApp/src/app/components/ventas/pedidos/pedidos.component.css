@@ -9,8 +9,11 @@
     height: 150px;
 }
 p{
-    font-family: 'Hind', sans-serif;
-    font-size: 18px;
+  font-size: 18px;  
+}
+.d1{
+    font-size: 20px;
+  font-family: 'Hind', sans-serif;
 }
 .border{
     border: 4px black ;

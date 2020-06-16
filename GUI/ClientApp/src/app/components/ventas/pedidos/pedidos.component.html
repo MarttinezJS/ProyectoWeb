@@ -16,12 +16,25 @@
                     <td> {{ i }} </td>
                     <td>
                         <div class="container">
-                            <p>Fechas: <i>{{ pedido.fecha }}</i></p>
-                            <p>codigo pedido: <i>{{ pedido.id }}</i></p>
-                            <p>Total: <i>{{ pedido.total | currency }} COP</i></p>
-                            <p>Nombre destinatario: <i>{{ pedido.cliente.nombre }}</i></p>
-                            <p>Direccion: <i>{{ pedido.cliente.direccion }}</i></p>
-                            <p>telefono: <i>{{ pedido.cliente.telefono }}</i></p>
+                            <div class="col d-flex">
+                                <p class="d1">Fechas: </p> <p class="mr-1">{{ pedido.fecha }}</p>
+                            </div>
+                            <div class="col d-flex">
+                                <p class="d1">codigo pedido: </p> <p>{{ pedido.id }}</p>
+                            </div> 
+                            <div class="col d-flex">
+                                <p class="d1">Total: </p> <p>{{ pedido.total | currency }} COP</p>
+                            </div>
+                            <div class="col d-flex">
+                                <p class="d1">Nombre destinatario: </p><p> {{ pedido.cliente.nombre }}</p>
+                            </div>
+                            <div class="col d-flex">
+                                <p class="d1">Direccion: </p><p>{{ pedido.cliente.direccion }}</p>
+                            </div>
+                            <div class="col d-flex">
+                                <p class="d1">telefono:</p> <p>{{ pedido.cliente.telefono }}</p>
+                            </div>
+                            
                         </div>
                     </td>
                     <td>
