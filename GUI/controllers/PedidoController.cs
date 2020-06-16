@@ -53,7 +53,8 @@ namespace GUI.controllers
             pedido.Id = pedidoInput.id;
             pedido.IdCliente = pedidoInput.idCliente;
             pedido.DetallePedido = pedidoInput.detallePedido;
-            pedido.Fecha = pedidoInput.fecha;
+            pedido.FechaInicio = pedidoInput.fechaInicio;
+            pedido.FechaFin = pedidoInput.fechaFin;
             pedido.Total = pedidoInput.total;
             pedido.Estado = pedidoInput.estado;
             return pedido;

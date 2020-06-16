@@ -17,7 +17,10 @@
                     <td>
                         <div class="container">
                             <div class="col d-flex">
-                                <p class="d1">Fechas: </p> <p class="mr-1">{{ pedido.fecha }}</p>
+                                <p class="d1">Fecha de solicitud:</p> <p class="mr-1">{{ pedido.fechaInicio }}</p>
+                            </div>
+                            <div class="col d-flex">
+                                <p class="d1">Fecha de entrega:</p> <p class="mr-1">{{ pedido.fechaFin }}</p>
                             </div>
                             <div class="col d-flex">
                                 <p class="d1">codigo pedido: </p> <p>{{ pedido.id }}</p>
@@ -34,7 +37,6 @@
                             <div class="col d-flex">
                                 <p class="d1">telefono:</p> <p>{{ pedido.cliente.telefono }}</p>
                             </div>
-                            
                         </div>
                     </td>
                     <td>
